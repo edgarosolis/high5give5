@@ -1,0 +1,128 @@
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { countries, getCountryBySlug } from "@/lib/countries";
+
+export async function generateStaticParams() {
+  return countries.map((country) => ({
+    country: country.slug,
+  }));
+}
+
+export default async function CountryPage({
+  params,
+}: {
+  params: Promise<{ country: string }>;
+}) {
+  const { country: slug } = await params;
+  const country = getCountryBySlug(slug);
+
+  if (!country) {
+    notFound();
+  }
+
+  return (
+    <div>
+      {/* Hero */}
+      <section className="bg-secondary h-80 flex flex-col items-center justify-center text-center px-4">
+        <h1 className="font-serif text-4xl md:text-5xl text-white mb-3">
+          {country.name}
+        </h1>
+        <p className="text-white/80 text-lg">{country.projectType}</p>
+      </section>
+
+      {/* Main Content */}
+      <section className="py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Country Image */}
+          <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-lg mb-10">
+            <Image
+              src={country.imageUrl}
+              alt={country.name}
+              fill
+              className="object-cover"
+              sizes="(max-width: 896px) 100vw, 896px"
+              priority
+            />
+          </div>
+
+          {/* Description */}
+          <p className="text-lg text-text leading-relaxed mb-10">
+            {country.description}
+          </p>
+
+          {/* Impact Stats */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
+            <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 text-center">
+              <p className="font-serif text-3xl font-bold text-primary">
+                {country.mealsPerFive}
+              </p>
+              <p className="text-muted mt-1">meals provided per $5</p>
+            </div>
+            <div className="bg-accent/10 border border-accent/30 rounded-xl p-6 text-center">
+              <p className="font-serif text-3xl font-bold text-secondary">
+                {country.childrenFed}
+              </p>
+              <p className="text-muted mt-1">children currently being fed</p>
+            </div>
+          </div>
+
+          {/* Photo Placeholder Grid */}
+          <h3 className="font-serif text-2xl font-bold text-secondary mb-6">
+            Photos from the Field
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+            {[1, 2, 3].map((i) => (
+              <div
+                key={i}
+                className="bg-light rounded-xl h-48 flex items-center justify-center"
+              >
+                <span className="text-muted text-sm">Photo {i}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="bg-secondary rounded-2xl p-8 md:p-12 text-center">
+            <h3 className="font-serif text-2xl md:text-3xl font-bold text-white mb-3">
+              Support {country.name}
+            </h3>
+            <p className="text-white/80 mb-6">
+              Your donation directly feeds children and families in{" "}
+              {country.name}.
+            </p>
+            <Link
+              href="/donate"
+              className="inline-block bg-coral text-white font-semibold py-3 px-10 rounded-full text-lg hover:bg-coral/90 transition-colors duration-200"
+            >
+              Donate Now
+            </Link>
+          </div>
+
+          {/* Back Link */}
+          <div className="mt-10">
+            <Link
+              href="/our-work"
+              className="inline-flex items-center text-primary hover:text-primary-dark font-medium transition-colors"
+            >
+              <svg
+                className="w-5 h-5 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+              Back to Our Work
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
