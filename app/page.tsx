@@ -175,7 +175,17 @@ export default function Home() {
               See the Impact of Your Generosity
             </h2>
           </div>
-          <VideoEmbed videoId="dQw4w9WgXcQ" title="High 5 Give 5 Story" />
+          <div className="rounded-2xl overflow-hidden shadow-xl">
+            <video
+              controls
+              preload="metadata"
+              poster="/images/hero.jpg"
+              className="w-full h-auto"
+            >
+              <source src="/images/story-video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
       </section>
 
