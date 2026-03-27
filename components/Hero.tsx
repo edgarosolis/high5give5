@@ -27,7 +27,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="font-serif text-5xl md:text-7xl font-bold text-white mb-6"
         >
-          Give $5. Feed 50.
+          Give $5 to a Higher Cause
         </motion.h1>
 
         <motion.p

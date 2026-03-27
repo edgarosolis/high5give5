@@ -21,6 +21,8 @@ export default async function CountryPage({
     notFound();
   }
 
+  const hasRichContent = country.sections && country.sections.length > 0;
+
   return (
     <div>
       {/* Hero */}
@@ -29,6 +31,11 @@ export default async function CountryPage({
           {country.name}
         </h1>
         <p className="text-white/80 text-lg">{country.projectType}</p>
+        {country.partner && (
+          <p className="text-white/60 text-sm mt-2">
+            In partnership with {country.partner}
+          </p>
+        )}
       </section>
 
       {/* Main Content */}
@@ -46,9 +53,9 @@ export default async function CountryPage({
             />
           </div>
 
-          {/* Description */}
+          {/* Introduction / Description */}
           <p className="text-lg text-text leading-relaxed mb-10">
-            {country.description}
+            {country.intro || country.description}
           </p>
 
           {/* Impact Stats */}
@@ -67,20 +74,52 @@ export default async function CountryPage({
             </div>
           </div>
 
-          {/* Photo Placeholder Grid */}
-          <h3 className="font-serif text-2xl font-bold text-secondary mb-6">
-            Photos from the Field
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-            {[1, 2, 3].map((i) => (
-              <div
-                key={i}
-                className="bg-light rounded-xl h-48 flex items-center justify-center"
-              >
-                <span className="text-muted text-sm">Photo {i}</span>
+          {/* Rich Content Sections */}
+          {hasRichContent ? (
+            <div className="space-y-12 mb-12">
+              {country.sections!.map((section, index) => (
+                <div key={index}>
+                  <h2 className="font-serif text-2xl md:text-3xl font-bold text-secondary mb-4">
+                    {section.title}
+                  </h2>
+                  {section.content && (
+                    <p className="text-text leading-relaxed mb-4">
+                      {section.content}
+                    </p>
+                  )}
+                  {section.bullets && section.bullets.length > 0 && (
+                    <ul className="space-y-3">
+                      {section.bullets.map((bullet, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <span className="mt-1.5 w-2 h-2 bg-primary rounded-full flex-shrink-0" />
+                          <span className="text-text leading-relaxed">
+                            {bullet}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
+            </div>
+          ) : (
+            <>
+              {/* Photo Placeholder Grid for countries without rich content */}
+              <h3 className="font-serif text-2xl font-bold text-secondary mb-6">
+                Photos from the Field
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+                {[1, 2, 3].map((i) => (
+                  <div
+                    key={i}
+                    className="bg-light rounded-xl h-48 flex items-center justify-center"
+                  >
+                    <span className="text-muted text-sm">Photo {i}</span>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </>
+          )}
 
           {/* CTA */}
           <div className="bg-secondary rounded-2xl p-8 md:p-12 text-center">
