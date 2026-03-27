@@ -130,14 +130,16 @@ export default function AboutPage() {
           <h2 className="font-serif text-3xl font-bold text-secondary mb-8 text-center">
             See Our Impact
           </h2>
-          <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-lg bg-secondary/5">
-            <iframe
-              className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-              title="High 5 Give 5 - Our Story"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
+          <div className="rounded-2xl overflow-hidden shadow-lg">
+            <video
+              controls
+              preload="metadata"
+              poster="/images/hero.jpg"
+              className="w-full h-auto"
+            >
+              <source src="/images/story-video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </section>
