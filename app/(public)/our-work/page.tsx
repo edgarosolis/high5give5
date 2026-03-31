@@ -1,8 +1,15 @@
 import Link from "next/link";
-import { countries } from "@/lib/countries";
 import CountryFilter from "@/components/CountryFilter";
+import { getAllCountries, getGlobalStats } from "@/lib/content";
 
-export default function OurWorkPage() {
+export const revalidate = 60;
+
+export default async function OurWorkPage() {
+  const [countries, stats] = await Promise.all([
+    getAllCountries(),
+    getGlobalStats(),
+  ]);
+
   return (
     <div>
       {/* Hero Banner */}
@@ -14,15 +21,15 @@ export default function OurWorkPage() {
       <section className="bg-primary py-10">
         <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div>
-            <p className="text-4xl font-bold text-white">24+</p>
+            <p className="text-4xl font-bold text-white">{stats.countriesServed}+</p>
             <p className="text-white/80 text-lg mt-1">Countries</p>
           </div>
           <div>
-            <p className="text-4xl font-bold text-white">6,000+</p>
+            <p className="text-4xl font-bold text-white">{stats.childrenFed.toLocaleString()}+</p>
             <p className="text-white/80 text-lg mt-1">Children</p>
           </div>
           <div>
-            <p className="text-4xl font-bold text-white">2,000+</p>
+            <p className="text-4xl font-bold text-white">{stats.elderlyServed.toLocaleString()}+</p>
             <p className="text-white/80 text-lg mt-1">Elderly</p>
           </div>
         </div>

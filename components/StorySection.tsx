@@ -1,6 +1,17 @@
 import Link from "next/link";
+import type { StoryContent } from "@/lib/types";
 
-export default function StorySection() {
+interface StorySectionProps {
+  content?: StoryContent;
+}
+
+export default function StorySection({ content }: StorySectionProps) {
+  const sectionLabel = content?.sectionLabel || "Our Story";
+  const heading = content?.heading || "It Started With Two 7-Year-Olds and $5";
+  const bodyText = content?.bodyText || 'It all began when Sam, just 7 years old, sold his toys to raise money to feed the poor. Around the same time, a little girl named Genevieve, also 7, sent a handwritten card along with $5, with a simple message: \u201cTake a chance with 5.\u201d Their compassion sparked a movement \u2014 proving that even the smallest gift can make the biggest difference. Today, High 5 Give 5 carries that spirit forward, turning every $5 into 50 meals for those in need around the world.';
+  const linkText = content?.linkText || "Read Our Story";
+  const linkUrl = content?.linkUrl || "/about";
+
   return (
     <section className="py-24 bg-accent/10">
       <div className="max-w-7xl mx-auto px-4">
@@ -8,26 +19,19 @@ export default function StorySection() {
           {/* Text side */}
           <div>
             <p className="text-primary uppercase tracking-wider text-sm font-semibold mb-4">
-              Our Story
+              {sectionLabel}
             </p>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-secondary mb-6">
-              It Started With Two 7-Year-Olds and $5
+              {heading}
             </h2>
             <p className="text-muted leading-relaxed mb-6">
-              It all began when Sam, just 7 years old, sold his toys to raise
-              money to feed the poor. Around the same time, a little girl named
-              Genevieve, also 7, sent a handwritten card along with $5, with a
-              simple message: &ldquo;Take a chance with 5.&rdquo; Their
-              compassion sparked a movement — proving that even the smallest
-              gift can make the biggest difference. Today, High 5 Give 5
-              carries that spirit forward, turning every $5 into 50 meals for
-              those in need around the world.
+              {bodyText}
             </p>
             <Link
-              href="/about"
+              href={linkUrl}
               className="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-dark transition-colors"
             >
-              Read Our Story
+              {linkText}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

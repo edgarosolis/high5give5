@@ -50,14 +50,19 @@ function AnimatedNumber({
   );
 }
 
-const stats = [
-  { target: 22, suffix: "+", label: "Countries" },
-  { target: 6000, suffix: "+", label: "Children Fed" },
-  { target: 2000, suffix: "+", label: "Elderly Served" },
-  { target: 50, prefix: "$5 = ", label: "Meals", suffix: "" },
-];
+import type { GlobalStats } from "@/lib/types";
 
-export default function ImpactCounter() {
+interface ImpactCounterProps {
+  stats?: GlobalStats;
+}
+
+export default function ImpactCounter({ stats: globalStats }: ImpactCounterProps) {
+  const stats = [
+    { target: globalStats?.countriesServed ?? 22, suffix: "+", label: "Countries" },
+    { target: globalStats?.childrenFed ?? 6000, suffix: "+", label: "Children Fed" },
+    { target: globalStats?.elderlyServed ?? 2000, suffix: "+", label: "Elderly Served" },
+    { target: globalStats?.mealsPerFive ?? 50, prefix: "$5 = ", label: "Meals", suffix: "" },
+  ];
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
 
   return (

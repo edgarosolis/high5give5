@@ -4,20 +4,37 @@ import StorySection from "@/components/StorySection";
 import CountryCard from "@/components/CountryCard";
 import InteractiveMap from "@/components/InteractiveMap";
 import DonateSection from "@/components/DonateSection";
-import VideoEmbed from "@/components/VideoEmbed";
-import { countries } from "@/lib/countries";
 import Link from "next/link";
+import {
+  getHomepageHero,
+  getGlobalStats,
+  getHomepageStory,
+  getHomepageVideo,
+  getDonateCTA,
+  getAllCountries,
+} from "@/lib/content";
 
-export default function Home() {
-  const featuredCountries = countries.slice(0, 8);
+export const revalidate = 60;
+
+export default async function Home() {
+  const [hero, stats, story, video, donateCta, countries] = await Promise.all([
+    getHomepageHero(),
+    getGlobalStats(),
+    getHomepageStory(),
+    getHomepageVideo(),
+    getDonateCTA(),
+    getAllCountries(),
+  ]);
+
+  const featuredCountries = countries.slice(0, 4);
 
   return (
     <>
-      <Hero />
+      <Hero content={hero} />
 
-      <ImpactCounter />
+      <ImpactCounter stats={stats} />
 
-      <StorySection />
+      <StorySection content={story} />
 
       {/* How It Works */}
       <section className="py-24 bg-white">
@@ -82,7 +99,7 @@ export default function Home() {
               </h3>
               <p className="text-muted leading-relaxed">
                 Our partners on the ground deliver food directly to communities
-                in 22+ countries.
+                in {stats.countriesServed}+ countries.
               </p>
             </div>
 
@@ -127,14 +144,14 @@ export default function Home() {
               Making an Impact Around the World
             </h2>
             <p className="text-muted max-w-2xl mx-auto">
-              Click on any pin to explore our work in that country. Every $5 donated provides 50 meals.
+              Click on any pin to explore our work in that country. Every $5 donated provides {stats.mealsPerFive} meals.
             </p>
           </div>
 
           <InteractiveMap />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
-            {featuredCountries.slice(0, 4).map((country) => (
+            {featuredCountries.map((country) => (
               <CountryCard key={country.slug} country={country} />
             ))}
           </div>
@@ -169,27 +186,27 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-12">
             <p className="text-primary uppercase tracking-wider text-sm font-semibold mb-4">
-              Watch Our Story
+              {video.sectionLabel}
             </p>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-secondary">
-              See the Impact of Your Generosity
+              {video.heading}
             </h2>
           </div>
           <div className="rounded-2xl overflow-hidden shadow-xl">
             <video
               controls
               preload="metadata"
-              poster="/images/hero.jpg"
+              poster={video.posterImage}
               className="w-full h-auto"
             >
-              <source src="/images/story-video.mp4" type="video/mp4" />
+              <source src={video.videoUrl} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
         </div>
       </section>
 
-      <DonateSection />
+      <DonateSection content={donateCta} />
     </>
   );
 }

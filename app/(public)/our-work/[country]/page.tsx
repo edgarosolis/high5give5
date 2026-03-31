@@ -1,7 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { countries, getCountryBySlug } from "@/lib/countries";
+import { countries } from "@/lib/countries";
+import { getCountryBySlug } from "@/lib/content";
+
+export const revalidate = 60;
 
 export async function generateStaticParams() {
   return countries.map((country) => ({
@@ -15,7 +18,7 @@ export default async function CountryPage({
   params: Promise<{ country: string }>;
 }) {
   const { country: slug } = await params;
-  const country = getCountryBySlug(slug);
+  const country = await getCountryBySlug(slug);
 
   if (!country) {
     notFound();

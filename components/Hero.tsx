@@ -3,14 +3,26 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { heroImageUrl } from "@/lib/countries";
+import type { HeroContent } from "@/lib/types";
 
-export default function Hero() {
+interface HeroProps {
+  content?: HeroContent;
+}
+
+export default function Hero({ content }: HeroProps) {
+  const heading = content?.heading || "Give $5 to a Higher Cause";
+  const tagline = content?.tagline || "From those who have to those who need — join us feed the hungry and bring hope";
+  const backgroundImage = content?.backgroundImage || "/images/hero.jpg";
+  const ctaPrimaryText = content?.ctaPrimaryText || "See Our Impact";
+  const ctaPrimaryLink = content?.ctaPrimaryLink || "#impact";
+  const ctaSecondaryText = content?.ctaSecondaryText || "Donate Now";
+  const ctaSecondaryLink = content?.ctaSecondaryLink || "/donate";
+
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-secondary overflow-hidden">
       {/* Background image */}
       <Image
-        src={heroImageUrl}
+        src={backgroundImage}
         alt="Children smiling"
         fill
         className="object-cover"
@@ -27,7 +39,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="font-serif text-5xl md:text-7xl font-bold text-white mb-6"
         >
-          Give $5 to a Higher Cause
+          {heading}
         </motion.h1>
 
         <motion.p
@@ -36,8 +48,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="text-xl md:text-2xl text-white/90 italic mb-10 max-w-2xl mx-auto"
         >
-          From those who have to those who need — join us feed the hungry and
-          bring hope
+          {tagline}
         </motion.p>
 
         <motion.div
@@ -47,16 +58,16 @@ export default function Hero() {
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <Link
-            href="#impact"
+            href={ctaPrimaryLink}
             className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-secondary transition-colors"
           >
-            See Our Impact
+            {ctaPrimaryText}
           </Link>
           <Link
-            href="/donate"
+            href={ctaSecondaryLink}
             className="bg-coral text-white px-8 py-3 rounded-full font-semibold hover:bg-coral/90 transition-colors"
           >
-            Donate Now
+            {ctaSecondaryText}
           </Link>
         </motion.div>
       </div>
