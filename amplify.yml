@@ -6,6 +6,7 @@ frontend:
         - npm ci
     build:
       commands:
+        - env | grep -E '^(ADMIN_PASSWORD|NEXTAUTH_SECRET|DYNAMODB_TABLE_NAME|S3_BUCKET_NAME|S3_REGION|APP_AWS_REGION|CLOUDFRONT_DOMAIN)=' > .env.production
         - npm run build
   artifacts:
     baseDirectory: .next
