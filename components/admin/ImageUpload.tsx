@@ -31,41 +31,30 @@ export default function ImageUpload({ value, onChange, label = "Image" }: ImageU
     setProgress(0);
 
     try {
-      // 1. Get presigned URL
-      const res = await fetch("/api/admin/upload", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          filename: file.name,
-          contentType: file.type,
-        }),
-      });
+      const formData = new FormData();
+      formData.append("file", file);
 
-      if (!res.ok) {
-        const data = await res.json();
-        throw new Error(data.error || "Failed to get upload URL");
-      }
-
-      const { uploadUrl, publicUrl } = await res.json();
-
-      // 2. Upload directly to S3
       setProgress(30);
 
-      const uploadRes = await fetch(uploadUrl, {
-        method: "PUT",
-        body: file,
-        headers: {
-          "Content-Type": file.type,
-        },
+      const res = await fetch("/api/admin/upload", {
+        method: "POST",
+        body: formData,
       });
 
-      if (!uploadRes.ok) {
-        throw new Error("Upload to S3 failed");
+      setProgress(80);
+
+      if (!res.ok) {
+        let errMsg = "Upload failed";
+        try {
+          const data = await res.json();
+          errMsg = data.error || errMsg;
+        } catch { /* empty response */ }
+        throw new Error(errMsg);
       }
 
+      const { publicUrl } = await res.json();
       setProgress(100);
 
-      // 3. Set the public URL
       onChange(publicUrl);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Upload failed");

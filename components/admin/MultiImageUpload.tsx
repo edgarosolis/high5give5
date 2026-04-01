@@ -36,17 +36,20 @@ export default function MultiImageUpload({
       setProgress(0);
 
       try {
+        const formData = new FormData();
+        formData.append("file", file);
+
+        setProgress(30);
+
         const res = await fetch("/api/admin/upload", {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            filename: file.name,
-            contentType: file.type,
-          }),
+          body: formData,
         });
 
+        setProgress(80);
+
         if (!res.ok) {
-          let errMsg = "Failed to get upload URL";
+          let errMsg = "Upload failed";
           try {
             const data = await res.json();
             errMsg = data.error || errMsg;
@@ -54,17 +57,7 @@ export default function MultiImageUpload({
           throw new Error(errMsg);
         }
 
-        const { uploadUrl, publicUrl } = await res.json();
-        setProgress(30);
-
-        const uploadRes = await fetch(uploadUrl, {
-          method: "PUT",
-          body: file,
-          headers: { "Content-Type": file.type },
-        });
-
-        if (!uploadRes.ok) throw new Error("Upload to S3 failed");
-
+        const { publicUrl } = await res.json();
         setProgress(100);
         onChange([...values, publicUrl]);
       } catch (err) {
