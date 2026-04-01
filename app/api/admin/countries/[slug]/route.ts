@@ -28,14 +28,21 @@ export async function PUT(
   const { slug } = await params;
   const data = await request.json();
 
-  await putItem({
-    PK: "COUNTRY",
-    SK: slug,
-    ...data,
-    slug,
-  });
-
-  return Response.json({ success: true });
+  try {
+    await putItem({
+      PK: "COUNTRY",
+      SK: slug,
+      ...data,
+      slug,
+    });
+    return Response.json({ success: true });
+  } catch (error) {
+    console.error("Failed to update country:", error);
+    return Response.json(
+      { error: "Failed to save country" },
+      { status: 500 }
+    );
+  }
 }
 
 export async function DELETE(
