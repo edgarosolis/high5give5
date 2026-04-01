@@ -53,8 +53,9 @@ export async function POST(request: Request) {
     return Response.json({ uploadUrl, publicUrl, key });
   } catch (error) {
     console.error("Failed to generate presigned URL:", error);
+    const message = error instanceof Error ? error.message : "Unknown error";
     return Response.json(
-      { error: "Failed to generate upload URL" },
+      { error: `Failed to generate upload URL: ${message}` },
       { status: 500 }
     );
   }
