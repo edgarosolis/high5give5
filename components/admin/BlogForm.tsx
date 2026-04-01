@@ -179,10 +179,10 @@ export default function BlogForm({ initialData, isNew, onSave }: BlogFormProps) 
         />
         <FormField
           label="Published Date"
+          type="date"
           value={data.publishedAt}
           onChange={(v) => setData({ ...data, publishedAt: v })}
           required
-          placeholder="YYYY-MM-DD"
         />
       </SectionCard>
 

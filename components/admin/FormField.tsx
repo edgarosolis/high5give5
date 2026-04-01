@@ -1,6 +1,6 @@
 interface FormFieldProps {
   label: string;
-  type?: "text" | "number" | "textarea" | "select";
+  type?: "text" | "number" | "textarea" | "select" | "date";
   value: string | number;
   onChange: (value: string) => void;
   placeholder?: string;

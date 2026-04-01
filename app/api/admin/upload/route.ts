@@ -42,12 +42,20 @@ export async function POST(request: Request) {
     ContentType: contentType,
   });
 
-  const uploadUrl = await getSignedUrl(s3, command, { expiresIn: 300 });
+  try {
+    const uploadUrl = await getSignedUrl(s3, command, { expiresIn: 300 });
 
-  // Public URL: prefer CloudFront if configured, else use S3 URL
-  const publicUrl = CDN_DOMAIN
-    ? `https://${CDN_DOMAIN}/${key}`
-    : `https://${BUCKET}.s3.amazonaws.com/${key}`;
+    // Public URL: prefer CloudFront if configured, else use S3 URL
+    const publicUrl = CDN_DOMAIN
+      ? `https://${CDN_DOMAIN}/${key}`
+      : `https://${BUCKET}.s3.amazonaws.com/${key}`;
 
-  return Response.json({ uploadUrl, publicUrl, key });
+    return Response.json({ uploadUrl, publicUrl, key });
+  } catch (error) {
+    console.error("Failed to generate presigned URL:", error);
+    return Response.json(
+      { error: "Failed to generate upload URL" },
+      { status: 500 }
+    );
+  }
 }

@@ -46,8 +46,12 @@ export default function MultiImageUpload({
         });
 
         if (!res.ok) {
-          const data = await res.json();
-          throw new Error(data.error || "Failed to get upload URL");
+          let errMsg = "Failed to get upload URL";
+          try {
+            const data = await res.json();
+            errMsg = data.error || errMsg;
+          } catch { /* empty response */ }
+          throw new Error(errMsg);
         }
 
         const { uploadUrl, publicUrl } = await res.json();
