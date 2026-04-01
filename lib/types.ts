@@ -94,3 +94,15 @@ export interface Country {
   intro?: string;
   sections?: CountrySection[];
 }
+
+export interface BlogPost {
+  slug: string;
+  title: string;
+  body: string;
+  countrySlug: string;
+  countryName: string;
+  images: string[];
+  youtubeUrl?: string;
+  publishedAt: string;
+  facebookPostId?: string;
+}

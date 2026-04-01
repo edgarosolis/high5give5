@@ -9,6 +9,7 @@ const navItems = [
   { href: "/admin/global-stats", label: "Global Stats", icon: "📈" },
   { href: "/admin/homepage", label: "Homepage", icon: "🏠" },
   { href: "/admin/countries", label: "Countries", icon: "🌍" },
+  { href: "/admin/blog", label: "Blog Posts", icon: "📝" },
   { href: "/admin/about", label: "About Page", icon: "📄" },
   { href: "/admin/contact", label: "Contact Info", icon: "📬" },
 ];

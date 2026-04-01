@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { countries } from "@/lib/countries";
-import { getCountryBySlug } from "@/lib/content";
+import { getCountryBySlug, getBlogPostsByCountry } from "@/lib/content";
 
 export const revalidate = 60;
 
@@ -25,6 +25,7 @@ export default async function CountryPage({
   }
 
   const hasRichContent = country.sections && country.sections.length > 0;
+  const blogPosts = await getBlogPostsByCountry(slug);
 
   return (
     <div>
@@ -122,6 +123,79 @@ export default async function CountryPage({
                 ))}
               </div>
             </>
+          )}
+
+          {/* Latest Updates */}
+          {blogPosts.length > 0 && (
+            <div className="mb-12">
+              <h2 className="font-serif text-2xl md:text-3xl font-bold text-secondary mb-6">
+                Latest Updates
+              </h2>
+              <div className="space-y-8">
+                {blogPosts.map((post) => {
+                  const youtubeMatch = post.youtubeUrl?.match(
+                    /(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^&?\s]+)/
+                  );
+                  const youtubeId = youtubeMatch ? youtubeMatch[1] : null;
+
+                  return (
+                    <article
+                      key={post.slug}
+                      className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm"
+                    >
+                      {/* Images */}
+                      {post.images && post.images.length > 0 && (
+                        <div className={`grid ${post.images.length === 1 ? "grid-cols-1" : post.images.length === 2 ? "grid-cols-2" : "grid-cols-2 sm:grid-cols-3"} gap-0.5`}>
+                          {post.images.map((img, i) => (
+                            <div
+                              key={i}
+                              className={`relative ${post.images.length === 1 ? "h-64 md:h-80" : "h-48"} ${i === 0 && post.images.length === 3 ? "col-span-2 sm:col-span-1" : ""}`}
+                            >
+                              <Image
+                                src={img}
+                                alt={`${post.title} - Photo ${i + 1}`}
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 896px) 100vw, 448px"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      )}
+
+                      {/* YouTube embed */}
+                      {youtubeId && (
+                        <div className="aspect-video">
+                          <iframe
+                            src={`https://www.youtube.com/embed/${youtubeId}`}
+                            className="w-full h-full"
+                            allowFullScreen
+                            title={post.title}
+                          />
+                        </div>
+                      )}
+
+                      {/* Content */}
+                      <div className="p-6">
+                        <p className="text-xs text-muted mb-2">
+                          {new Date(post.publishedAt).toLocaleDateString("en-US", {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                          })}
+                        </p>
+                        <h3 className="font-serif text-xl font-bold text-secondary mb-2">
+                          {post.title}
+                        </h3>
+                        <p className="text-text leading-relaxed whitespace-pre-line">
+                          {post.body}
+                        </p>
+                      </div>
+                    </article>
+                  );
+                })}
+              </div>
+            </div>
           )}
 
           {/* CTA */}

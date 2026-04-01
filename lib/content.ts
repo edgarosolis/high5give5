@@ -12,6 +12,7 @@ import type {
   MinistryOverview,
   ContactInfo,
   Country,
+  BlogPost,
 } from "./types";
 
 // ─── Defaults (fallbacks if DynamoDB is unreachable) ─────────────
@@ -243,6 +244,43 @@ export async function getCountryBySlug(slug: string): Promise<Country | undefine
     console.error("Failed to fetch country:", error);
   }
   return hardcodedCountries.find((c) => c.slug === slug);
+}
+
+// ─── Blog Functions ─────────────
+
+export async function getBlogPostsByCountry(countrySlug: string): Promise<BlogPost[]> {
+  try {
+    const items = await queryByPK("BLOG");
+    const filtered = items.filter((item) => item.countrySlug === countrySlug);
+    return (filtered as unknown as BlogPost[]).sort(
+      (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+    );
+  } catch (error) {
+    console.error("Failed to fetch blog posts for country:", error);
+  }
+  return [];
+}
+
+export async function getAllBlogPosts(): Promise<BlogPost[]> {
+  try {
+    const items = await queryByPK("BLOG");
+    return (items as unknown as BlogPost[]).sort(
+      (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+    );
+  } catch (error) {
+    console.error("Failed to fetch blog posts:", error);
+  }
+  return [];
+}
+
+export async function getBlogPostBySlug(slug: string): Promise<BlogPost | undefined> {
+  try {
+    const item = await getItem("BLOG", slug);
+    if (item) return item as unknown as BlogPost;
+  } catch (error) {
+    console.error("Failed to fetch blog post:", error);
+  }
+  return undefined;
 }
 
 // Re-export defaults for use in admin forms and seeding
