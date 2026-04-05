@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import SectionCard from "./SectionCard";
 import FormField from "./FormField";
 import SaveButton from "./SaveButton";
@@ -71,6 +71,34 @@ export default function CountryForm({ initialData, isNew, onSave }: CountryFormP
   });
   const [loading, setLoading] = useState(false);
   const [toast, setToast] = useState<{ message: string; type: "success" | "error" } | null>(null);
+  const [locationQuery, setLocationQuery] = useState("");
+  const [geocoding, setGeocoding] = useState(false);
+
+  const geocodeLocation = useCallback(async (query: string) => {
+    if (!query.trim()) return;
+    setGeocoding(true);
+    try {
+      const res = await fetch(
+        `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=json&limit=1`,
+        { headers: { "User-Agent": "High5Give5Admin/1.0" } }
+      );
+      const results = await res.json();
+      if (results.length > 0) {
+        setData((prev) => ({
+          ...prev,
+          lat: parseFloat(results[0].lat),
+          lng: parseFloat(results[0].lon),
+        }));
+        setToast({ message: `Location set: ${results[0].display_name.split(",").slice(0, 2).join(",")}`, type: "success" });
+      } else {
+        setToast({ message: "Location not found. Try a different search.", type: "error" });
+      }
+    } catch {
+      setToast({ message: "Failed to look up location.", type: "error" });
+    } finally {
+      setGeocoding(false);
+    }
+  }, []);
 
   function handleNameChange(name: string) {
     const updates: Partial<CountryData> = { name };
@@ -115,8 +143,8 @@ export default function CountryForm({ initialData, isNew, onSave }: CountryFormP
         )}
       </div>
 
-      {/* 1. Name & Tagline */}
-      <SectionCard title="Name & Identity">
+      {/* 1. Country Info */}
+      <SectionCard title="Country Info">
         <FormField label="Name" value={data.name} onChange={handleNameChange} required />
         <FormField
           label="Tagline"
@@ -185,12 +213,36 @@ export default function CountryForm({ initialData, isNew, onSave }: CountryFormP
         />
       </SectionCard>
 
-      {/* 7. Location (collapsed) */}
-      <SectionCard title="Map Location">
-        <div className="grid grid-cols-2 gap-4">
-          <FormField label="Latitude" type="number" value={data.lat} onChange={(v) => setData({ ...data, lat: Number(v) })} required />
-          <FormField label="Longitude" type="number" value={data.lng} onChange={(v) => setData({ ...data, lng: Number(v) })} required />
+      {/* 7. Map Location */}
+      <SectionCard title="Map Location" description="Search by city or country name to set the map pin.">
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            City / Country
+          </label>
+          <div className="flex gap-2">
+            <input
+              type="text"
+              value={locationQuery}
+              onChange={(e) => setLocationQuery(e.target.value)}
+              onKeyDown={(e) => { if (e.key === "Enter") { e.preventDefault(); geocodeLocation(locationQuery); } }}
+              placeholder={data.name ? `e.g. Tirana, ${data.name}` : "e.g. Tirana, Albania"}
+              className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-[#2A9D8F] focus:border-transparent outline-none"
+            />
+            <button
+              type="button"
+              onClick={() => geocodeLocation(locationQuery)}
+              disabled={geocoding || !locationQuery.trim()}
+              className="px-4 py-2 bg-[#264653] text-white text-sm font-medium rounded-lg hover:bg-[#1a3540] disabled:opacity-50 transition-colors"
+            >
+              {geocoding ? "..." : "Find"}
+            </button>
+          </div>
         </div>
+        {(data.lat !== 0 || data.lng !== 0) && (
+          <p className="text-sm text-gray-500">
+            📍 Coordinates: {data.lat.toFixed(4)}, {data.lng.toFixed(4)}
+          </p>
+        )}
       </SectionCard>
 
       <SaveButton loading={loading} onClick={handleSubmit} />
