@@ -2,7 +2,7 @@ import Link from "next/link";
 import CountryFilter from "@/components/CountryFilter";
 import { getAllCountries, getGlobalStats } from "@/lib/content";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 export default async function OurWorkPage() {
   const [countries, stats] = await Promise.all([

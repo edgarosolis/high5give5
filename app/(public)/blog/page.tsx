@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getAllBlogPosts } from "@/lib/content";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 export default async function BlogPage() {
   const posts = await getAllBlogPosts();

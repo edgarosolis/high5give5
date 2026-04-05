@@ -6,7 +6,7 @@ import {
   getHomepageVideo,
 } from "@/lib/content";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 export default async function AboutPage() {
   const [story, timeline, ministry, video] = await Promise.all([

@@ -14,7 +14,7 @@ import {
   getAllCountries,
 } from "@/lib/content";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 export default async function Home() {
   const [hero, stats, story, video, donateCta, countries] = await Promise.all([
