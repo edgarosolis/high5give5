@@ -29,7 +29,7 @@ export default async function BlogPage() {
                 return (
                   <Link
                     key={post.slug}
-                    href={`/our-work/${post.countrySlug}`}
+                    href={`/blog/${post.slug}`}
                     className="bg-light rounded-xl shadow overflow-hidden hover:shadow-lg transition-shadow"
                   >
                     {/* Thumbnail */}
@@ -82,7 +82,7 @@ export default async function BlogPage() {
                         {post.title}
                       </h3>
                       <p className="text-text text-sm leading-relaxed line-clamp-3">
-                        {post.body}
+                        {post.body.replace(/<[^>]*>/g, "")}
                       </p>
                     </div>
                   </Link>

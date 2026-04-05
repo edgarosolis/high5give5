@@ -5,6 +5,7 @@ import SectionCard from "./SectionCard";
 import FormField from "./FormField";
 import SaveButton from "./SaveButton";
 import MultiImageUpload from "./MultiImageUpload";
+import RichTextEditor from "./RichTextEditor";
 import Toast from "./Toast";
 
 interface BlogData {
@@ -178,7 +179,7 @@ export default function BlogForm({ initialData, isNew, onSave }: BlogFormProps) 
           options={countries.map((c) => ({ value: c.slug, label: c.name }))}
         />
         <FormField
-          label="Published Date"
+          label="Publish Date"
           type="date"
           value={data.publishedAt}
           onChange={(v) => setData({ ...data, publishedAt: v })}
@@ -186,15 +187,13 @@ export default function BlogForm({ initialData, isNew, onSave }: BlogFormProps) 
         />
       </SectionCard>
 
-      <SectionCard title="Content">
-        <FormField
-          label="Body"
-          type="textarea"
+      <SectionCard title="Content" description="Write the blog post content. What you write here is how it will look on the website.">
+        <RichTextEditor
+          label=""
           value={data.body}
           onChange={(v) => setData({ ...data, body: v })}
-          required
-          rows={8}
           placeholder="Write the blog post content here..."
+          minHeight="250px"
         />
       </SectionCard>
 
