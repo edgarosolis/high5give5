@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { countries } from "@/lib/countries";
-import { getCountryBySlug, getBlogPostsByCountry } from "@/lib/content";
+import { getCountryBySlug, getBlogPostsByCountry, getAllCountries } from "@/lib/content";
 
 export const revalidate = 60;
+export const dynamicParams = true;
 
 export async function generateStaticParams() {
+  const countries = await getAllCountries();
   return countries.map((country) => ({
     country: country.slug,
   }));
