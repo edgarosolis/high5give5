@@ -17,8 +17,8 @@ export default async function CountryPage({
     notFound();
   }
 
-  const hasRichContent = country.sections && country.sections.length > 0;
   const blogPosts = await getBlogPostsByCountry(slug);
+  const isHtml = (text: string) => /<[a-z][\s\S]*>/i.test(text);
 
   return (
     <div>
@@ -27,7 +27,11 @@ export default async function CountryPage({
         <h1 className="font-serif text-4xl md:text-5xl text-white mb-3">
           {country.name}
         </h1>
-        <p className="text-white/80 text-lg">{country.projectType}</p>
+        {country.tagline ? (
+          <p className="text-white/80 text-lg">{country.tagline}</p>
+        ) : (
+          <p className="text-white/80 text-lg">{country.projectType}</p>
+        )}
         {country.partner && (
           <p className="text-white/60 text-sm mt-2">
             In partnership with {country.partner}
@@ -50,10 +54,19 @@ export default async function CountryPage({
             />
           </div>
 
-          {/* Introduction / Description */}
-          <p className="text-lg text-text leading-relaxed mb-10">
-            {country.intro || country.description}
-          </p>
+          {/* Introduction */}
+          {country.description && (
+            isHtml(country.description) ? (
+              <div
+                className="rich-content text-lg leading-relaxed mb-10"
+                dangerouslySetInnerHTML={{ __html: country.description }}
+              />
+            ) : (
+              <p className="text-lg text-text leading-relaxed mb-10">
+                {country.description}
+              </p>
+            )
+          )}
 
           {/* Impact Stats */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
@@ -71,10 +84,24 @@ export default async function CountryPage({
             </div>
           </div>
 
-          {/* Rich Content Sections */}
-          {hasRichContent ? (
+          {/* Project Description (rich text or legacy sections) */}
+          {country.intro && (
+            isHtml(country.intro) ? (
+              <div
+                className="rich-content mb-12"
+                dangerouslySetInnerHTML={{ __html: country.intro }}
+              />
+            ) : (
+              <p className="text-text leading-relaxed mb-12">
+                {country.intro}
+              </p>
+            )
+          )}
+
+          {/* Legacy Rich Content Sections (for backward compat) */}
+          {country.sections && country.sections.length > 0 && !country.intro && (
             <div className="space-y-12 mb-12">
-              {country.sections!.map((section, index) => (
+              {country.sections.map((section, index) => (
                 <div key={index}>
                   <h2 className="font-serif text-2xl md:text-3xl font-bold text-secondary mb-4">
                     {section.title}
@@ -99,23 +126,6 @@ export default async function CountryPage({
                 </div>
               ))}
             </div>
-          ) : (
-            <>
-              {/* Photo Placeholder Grid for countries without rich content */}
-              <h3 className="font-serif text-2xl font-bold text-secondary mb-6">
-                Photos from the Field
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-                {[1, 2, 3].map((i) => (
-                  <div
-                    key={i}
-                    className="bg-light rounded-xl h-48 flex items-center justify-center"
-                  >
-                    <span className="text-muted text-sm">Photo {i}</span>
-                  </div>
-                ))}
-              </div>
-            </>
           )}
 
           {/* Latest Updates */}
@@ -136,7 +146,6 @@ export default async function CountryPage({
                       key={post.slug}
                       className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm"
                     >
-                      {/* Images */}
                       {post.images && post.images.length > 0 && (
                         <div className={`grid ${post.images.length === 1 ? "grid-cols-1" : post.images.length === 2 ? "grid-cols-2" : "grid-cols-2 sm:grid-cols-3"} gap-0.5`}>
                           {post.images.map((img, i) => (
@@ -156,7 +165,6 @@ export default async function CountryPage({
                         </div>
                       )}
 
-                      {/* YouTube embed */}
                       {youtubeId && (
                         <div className="aspect-video">
                           <iframe
@@ -168,7 +176,6 @@ export default async function CountryPage({
                         </div>
                       )}
 
-                      {/* Content */}
                       <div className="p-6">
                         <p className="text-xs text-muted mb-2">
                           {new Date(post.publishedAt).toLocaleDateString("en-US", {
