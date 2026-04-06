@@ -102,6 +102,7 @@ export interface BlogPost {
   body: string;
   countrySlug: string;
   countryName: string;
+  heroImage?: string;
   images: string[];
   youtubeUrl?: string;
   publishedAt: string;

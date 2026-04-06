@@ -8,6 +8,35 @@ interface ImageUploadProps {
   label?: string;
 }
 
+async function uploadFile(file: File): Promise<string> {
+  // Step 1: Get presigned URL from server
+  const res = await fetch("/api/admin/upload", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ filename: file.name, contentType: file.type }),
+  });
+
+  if (!res.ok) {
+    const data = await res.json().catch(() => ({}));
+    throw new Error(data.error || "Failed to get upload URL");
+  }
+
+  const { uploadUrl, publicUrl } = await res.json();
+
+  // Step 2: Upload directly to S3
+  const s3Res = await fetch(uploadUrl, {
+    method: "PUT",
+    headers: { "Content-Type": file.type },
+    body: file,
+  });
+
+  if (!s3Res.ok) {
+    throw new Error("Failed to upload to storage");
+  }
+
+  return publicUrl;
+}
+
 export default function ImageUpload({ value, onChange, label = "Image" }: ImageUploadProps) {
   const [uploading, setUploading] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -28,33 +57,12 @@ export default function ImageUpload({ value, onChange, label = "Image" }: ImageU
 
     setError("");
     setUploading(true);
-    setProgress(0);
+    setProgress(30);
 
     try {
-      const formData = new FormData();
-      formData.append("file", file);
-
-      setProgress(30);
-
-      const res = await fetch("/api/admin/upload", {
-        method: "POST",
-        body: formData,
-      });
-
-      setProgress(80);
-
-      if (!res.ok) {
-        let errMsg = "Upload failed";
-        try {
-          const data = await res.json();
-          errMsg = data.error || errMsg;
-        } catch { /* empty response */ }
-        throw new Error(errMsg);
-      }
-
-      const { publicUrl } = await res.json();
+      setProgress(50);
+      const publicUrl = await uploadFile(file);
       setProgress(100);
-
       onChange(publicUrl);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Upload failed");

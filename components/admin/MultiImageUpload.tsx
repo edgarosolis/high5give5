@@ -8,73 +8,84 @@ interface MultiImageUploadProps {
   label?: string;
 }
 
+async function uploadFile(file: File): Promise<string> {
+  // Step 1: Get presigned URL from server
+  const res = await fetch("/api/admin/upload", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ filename: file.name, contentType: file.type }),
+  });
+
+  if (!res.ok) {
+    const data = await res.json().catch(() => ({}));
+    throw new Error(data.error || "Failed to get upload URL");
+  }
+
+  const { uploadUrl, publicUrl } = await res.json();
+
+  // Step 2: Upload directly to S3
+  const s3Res = await fetch(uploadUrl, {
+    method: "PUT",
+    headers: { "Content-Type": file.type },
+    body: file,
+  });
+
+  if (!s3Res.ok) {
+    throw new Error("Failed to upload to storage");
+  }
+
+  return publicUrl;
+}
+
 export default function MultiImageUpload({
   values,
   onChange,
   label = "Images",
 }: MultiImageUploadProps) {
   const [uploading, setUploading] = useState(false);
-  const [progress, setProgress] = useState(0);
+  const [uploadCount, setUploadCount] = useState({ done: 0, total: 0 });
   const [error, setError] = useState("");
   const [dragOver, setDragOver] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const handleFile = useCallback(
-    async (file: File) => {
-      if (!file.type.startsWith("image/")) {
-        setError("Please select an image file.");
+  const handleFiles = useCallback(
+    async (files: FileList) => {
+      const imageFiles = Array.from(files).filter((f) => f.type.startsWith("image/"));
+      if (imageFiles.length === 0) {
+        setError("Please select image files.");
         return;
       }
 
-      if (file.size > 10 * 1024 * 1024) {
-        setError("File must be under 10MB.");
+      const oversized = imageFiles.find((f) => f.size > 10 * 1024 * 1024);
+      if (oversized) {
+        setError(`${oversized.name} is over 10MB.`);
         return;
       }
 
       setError("");
       setUploading(true);
-      setProgress(0);
+      setUploadCount({ done: 0, total: imageFiles.length });
 
-      try {
-        const formData = new FormData();
-        formData.append("file", file);
-
-        setProgress(30);
-
-        const res = await fetch("/api/admin/upload", {
-          method: "POST",
-          body: formData,
-        });
-
-        setProgress(80);
-
-        if (!res.ok) {
-          let errMsg = "Upload failed";
-          try {
-            const data = await res.json();
-            errMsg = data.error || errMsg;
-          } catch { /* empty response */ }
-          throw new Error(errMsg);
+      const newUrls: string[] = [];
+      for (const file of imageFiles) {
+        try {
+          const url = await uploadFile(file);
+          newUrls.push(url);
+          setUploadCount((prev) => ({ ...prev, done: prev.done + 1 }));
+        } catch (err) {
+          setError(err instanceof Error ? err.message : `Failed to upload ${file.name}`);
         }
-
-        const { publicUrl } = await res.json();
-        setProgress(100);
-        onChange([...values, publicUrl]);
-      } catch (err) {
-        setError(err instanceof Error ? err.message : "Upload failed");
-      } finally {
-        setUploading(false);
-        setProgress(0);
       }
+
+      if (newUrls.length > 0) {
+        onChange([...values, ...newUrls]);
+      }
+
+      setUploading(false);
+      setUploadCount({ done: 0, total: 0 });
     },
     [onChange, values]
   );
-
-  async function handleFiles(files: FileList) {
-    for (const file of Array.from(files)) {
-      await handleFile(file);
-    }
-  }
 
   function handleDrop(e: React.DragEvent) {
     e.preventDefault();
@@ -175,11 +186,13 @@ export default function MultiImageUpload({
 
         {uploading ? (
           <div className="space-y-2">
-            <p className="text-sm text-gray-600">Uploading...</p>
+            <p className="text-sm text-gray-600">
+              Uploading {uploadCount.done + 1} of {uploadCount.total}...
+            </p>
             <div className="w-full bg-gray-200 rounded-full h-2">
               <div
                 className="bg-[#2A9D8F] h-2 rounded-full transition-all duration-300"
-                style={{ width: `${progress}%` }}
+                style={{ width: `${((uploadCount.done) / uploadCount.total) * 100}%` }}
               />
             </div>
           </div>

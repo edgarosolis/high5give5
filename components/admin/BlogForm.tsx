@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import SectionCard from "./SectionCard";
 import FormField from "./FormField";
 import SaveButton from "./SaveButton";
+import ImageUpload from "./ImageUpload";
 import MultiImageUpload from "./MultiImageUpload";
 import RichTextEditor from "./RichTextEditor";
 import Toast from "./Toast";
@@ -14,6 +15,7 @@ interface BlogData {
   body: string;
   countrySlug: string;
   countryName: string;
+  heroImage: string;
   images: string[];
   youtubeUrl: string;
   publishedAt: string;
@@ -51,6 +53,7 @@ export default function BlogForm({ initialData, isNew, onSave }: BlogFormProps) 
     body: initialData?.body || "",
     countrySlug: initialData?.countrySlug || "",
     countryName: initialData?.countryName || "",
+    heroImage: initialData?.heroImage || "",
     images: initialData?.images || [],
     youtubeUrl: initialData?.youtubeUrl || "",
     publishedAt: initialData?.publishedAt || new Date().toISOString().split("T")[0],
@@ -143,12 +146,12 @@ export default function BlogForm({ initialData, isNew, onSave }: BlogFormProps) 
         <SaveButton loading={loading} onClick={handleSubmit} />
         {!isNew && data.slug && (
           <a
-            href={`/our-work/${data.countrySlug}`}
+            href={`/blog/${data.slug}`}
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm text-[#2A9D8F] hover:underline"
           >
-            View Country Page ↗
+            View Post ↗
           </a>
         )}
       </div>
@@ -197,30 +200,39 @@ export default function BlogForm({ initialData, isNew, onSave }: BlogFormProps) 
         />
       </SectionCard>
 
-      <SectionCard title="Media">
+      <SectionCard title="Hero Image" description="The main banner image shown at the top of the blog post.">
+        <ImageUpload
+          label="Hero Image"
+          value={data.heroImage}
+          onChange={(v) => setData({ ...data, heroImage: v })}
+        />
+      </SectionCard>
+
+      <SectionCard title="Photos" description="Additional images displayed in the post. You can upload multiple at once.">
         <MultiImageUpload
-          label="Photos"
+          label="Post Photos"
           values={data.images}
           onChange={(images) => setData({ ...data, images })}
         />
-        <div className="mt-4">
-          <FormField
-            label="YouTube Video URL (optional)"
-            value={data.youtubeUrl}
-            onChange={(v) => setData({ ...data, youtubeUrl: v })}
-            placeholder="https://www.youtube.com/watch?v=..."
-          />
-          {youtubeId && (
-            <div className="mt-2 aspect-video rounded-lg overflow-hidden border border-gray-200">
-              <iframe
-                src={`https://www.youtube.com/embed/${youtubeId}`}
-                className="w-full h-full"
-                allowFullScreen
-                title="YouTube preview"
-              />
-            </div>
-          )}
-        </div>
+      </SectionCard>
+
+      <SectionCard title="Video">
+        <FormField
+          label="YouTube Video URL (optional)"
+          value={data.youtubeUrl}
+          onChange={(v) => setData({ ...data, youtubeUrl: v })}
+          placeholder="https://www.youtube.com/watch?v=..."
+        />
+        {youtubeId && (
+          <div className="mt-2 aspect-video rounded-lg overflow-hidden border border-gray-200">
+            <iframe
+              src={`https://www.youtube.com/embed/${youtubeId}`}
+              className="w-full h-full"
+              allowFullScreen
+              title="YouTube preview"
+            />
+          </div>
+        )}
       </SectionCard>
 
       <SectionCard title="Publishing">

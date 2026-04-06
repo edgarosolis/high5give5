@@ -53,7 +53,21 @@ export default async function BlogPostPage({
       {/* Content */}
       <section className="py-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Images */}
+          {/* Hero Image */}
+          {post.heroImage && (
+            <div className="relative w-full h-72 md:h-[28rem] rounded-2xl overflow-hidden mb-10">
+              <Image
+                src={post.heroImage}
+                alt={post.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 768px"
+                priority
+              />
+            </div>
+          )}
+
+          {/* Additional Photos */}
           {post.images && post.images.length > 0 && (
             <div className={`grid ${post.images.length === 1 ? "grid-cols-1" : "grid-cols-2"} gap-2 mb-10 rounded-2xl overflow-hidden`}>
               {post.images.map((img, i) => (
@@ -67,7 +81,6 @@ export default async function BlogPostPage({
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 768px"
-                    priority={i === 0}
                   />
                 </div>
               ))}
