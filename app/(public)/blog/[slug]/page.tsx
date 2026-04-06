@@ -67,6 +67,18 @@ export default async function BlogPostPage({
             </div>
           )}
 
+          {/* Body */}
+          {isHtml(post.body) ? (
+            <div
+              className="rich-content text-lg leading-relaxed mb-10"
+              dangerouslySetInnerHTML={{ __html: post.body }}
+            />
+          ) : (
+            <p className="text-lg text-text leading-relaxed whitespace-pre-line mb-10">
+              {post.body}
+            </p>
+          )}
+
           {/* Additional Photos */}
           {post.images && post.images.length > 0 && (
             <div className={`grid ${post.images.length === 1 ? "grid-cols-1" : "grid-cols-2"} gap-2 mb-10 rounded-2xl overflow-hidden`}>
@@ -97,18 +109,6 @@ export default async function BlogPostPage({
                 title={post.title}
               />
             </div>
-          )}
-
-          {/* Body */}
-          {isHtml(post.body) ? (
-            <div
-              className="rich-content text-lg leading-relaxed"
-              dangerouslySetInnerHTML={{ __html: post.body }}
-            />
-          ) : (
-            <p className="text-lg text-text leading-relaxed whitespace-pre-line">
-              {post.body}
-            </p>
           )}
 
           {/* Country CTA */}
