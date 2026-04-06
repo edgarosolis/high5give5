@@ -11,7 +11,7 @@ interface Country {
   childrenFed: number;
   region: string;
   partner?: string;
-  sections?: unknown[];
+  archived?: boolean;
 }
 
 export default function CountryListPage() {
@@ -20,6 +20,7 @@ export default function CountryListPage() {
   const [regionFilter, setRegionFilter] = useState("");
   const [loading, setLoading] = useState(true);
   const [deleteSlug, setDeleteSlug] = useState<string | null>(null);
+  const [archiving, setArchiving] = useState<string | null>(null);
   const [toast, setToast] = useState<{ message: string; type: "success" | "error" } | null>(null);
 
   useEffect(() => {
@@ -45,6 +46,30 @@ export default function CountryListPage() {
       setToast({ message: "Failed to delete", type: "error" });
     }
     setDeleteSlug(null);
+  }
+
+  async function handleArchive(slug: string, currentlyArchived: boolean) {
+    setArchiving(slug);
+    try {
+      const country = countries.find((c) => c.slug === slug);
+      if (!country) return;
+      const res = await fetch(`/api/admin/countries/${slug}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...country, archived: !currentlyArchived }),
+      });
+      if (res.ok) {
+        setCountries(countries.map((c) =>
+          c.slug === slug ? { ...c, archived: !currentlyArchived } : c
+        ));
+        setToast({ message: currentlyArchived ? "Country restored" : "Country archived", type: "success" });
+      } else {
+        setToast({ message: "Failed to update", type: "error" });
+      }
+    } catch {
+      setToast({ message: "Failed to update", type: "error" });
+    }
+    setArchiving(null);
   }
 
   const filtered = countries.filter((c) => {
@@ -106,7 +131,7 @@ export default function CountryListPage() {
                 <th className="text-left py-3 px-4 font-medium text-gray-600">Project Type</th>
                 <th className="text-left py-3 px-4 font-medium text-gray-600">Children Fed</th>
                 <th className="text-left py-3 px-4 font-medium text-gray-600">Partner</th>
-                <th className="text-center py-3 px-4 font-medium text-gray-600">Content</th>
+                <th className="text-center py-3 px-4 font-medium text-gray-600">Status</th>
                 <th className="text-right py-3 px-4 font-medium text-gray-600">Actions</th>
               </tr>
             </thead>
@@ -119,10 +144,10 @@ export default function CountryListPage() {
                   <td className="py-3 px-4 text-gray-600">{country.childrenFed}</td>
                   <td className="py-3 px-4 text-gray-600">{country.partner || "—"}</td>
                   <td className="py-3 px-4 text-center">
-                    {country.sections && country.sections.length > 0 ? (
-                      <span className="text-green-600">✓</span>
+                    {country.archived ? (
+                      <span className="inline-block px-2 py-0.5 text-xs font-medium rounded-full bg-gray-100 text-gray-500">Archived</span>
                     ) : (
-                      <span className="text-gray-300">✗</span>
+                      <span className="inline-block px-2 py-0.5 text-xs font-medium rounded-full bg-green-50 text-green-700">Live</span>
                     )}
                   </td>
                   <td className="py-3 px-4 text-right space-x-2">
@@ -132,6 +157,13 @@ export default function CountryListPage() {
                     >
                       Edit
                     </Link>
+                    <button
+                      onClick={() => handleArchive(country.slug, !!country.archived)}
+                      disabled={archiving === country.slug}
+                      className="text-amber-600 hover:underline disabled:opacity-50"
+                    >
+                      {country.archived ? "Restore" : "Archive"}
+                    </button>
                     <button
                       onClick={() => setDeleteSlug(country.slug)}
                       className="text-red-500 hover:underline"

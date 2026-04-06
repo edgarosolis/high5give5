@@ -228,7 +228,9 @@ export async function getAllCountries(): Promise<Country[]> {
   try {
     const items = await queryByPK("COUNTRY");
     if (items.length > 0) {
-      return (items as unknown as Country[]).sort((a, b) => a.name.localeCompare(b.name));
+      return (items as unknown as Country[])
+        .filter((c) => !c.archived)
+        .sort((a, b) => a.name.localeCompare(b.name));
     }
   } catch (error) {
     console.error("Failed to fetch countries:", error);

@@ -94,6 +94,7 @@ export interface Country {
   partner?: string;
   intro?: string;
   sections?: CountrySection[];
+  archived?: boolean;
 }
 
 export interface BlogPost {
