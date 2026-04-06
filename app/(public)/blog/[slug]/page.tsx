@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getBlogPostBySlug } from "@/lib/content";
+import PhotoCarousel from "@/components/PhotoCarousel";
 
 export const dynamic = "force-dynamic";
 
@@ -81,22 +82,7 @@ export default async function BlogPostPage({
 
           {/* Additional Photos */}
           {post.images && post.images.length > 0 && (
-            <div className={`grid ${post.images.length === 1 ? "grid-cols-1" : "grid-cols-2"} gap-2 mb-10 rounded-2xl overflow-hidden`}>
-              {post.images.map((img, i) => (
-                <div
-                  key={i}
-                  className={`relative ${post.images.length === 1 ? "h-72 md:h-[28rem]" : "h-56 md:h-72"} ${i === 0 && post.images.length === 3 ? "col-span-2" : ""}`}
-                >
-                  <Image
-                    src={img}
-                    alt={`${post.title} - Photo ${i + 1}`}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 768px"
-                  />
-                </div>
-              ))}
-            </div>
+            <PhotoCarousel images={post.images} alt={post.title} />
           )}
 
           {/* YouTube embed */}
