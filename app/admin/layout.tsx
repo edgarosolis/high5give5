@@ -12,6 +12,7 @@ const navItems = [
   { href: "/admin/blog", label: "Blog Posts", icon: "📝" },
   { href: "/admin/about", label: "About Page", icon: "📄" },
   { href: "/admin/contact", label: "Contact Info", icon: "📬" },
+  { href: "/admin/guide", label: "Guide", icon: "📖" },
 ];
 
 export default function AdminLayout({
