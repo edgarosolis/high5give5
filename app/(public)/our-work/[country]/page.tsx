@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getCountryBySlug, getBlogPostsByCountry } from "@/lib/content";
+import { getCountryMedia } from "@/lib/media";
 
 export const dynamic = "force-dynamic";
 
@@ -18,6 +19,7 @@ export default async function CountryPage({
   }
 
   const blogPosts = await getBlogPostsByCountry(slug);
+  const media = getCountryMedia(slug);
   const isHtml = (text: string) => /<[a-z][\s\S]*>/i.test(text);
 
   return (
@@ -125,6 +127,46 @@ export default async function CountryPage({
                   )}
                 </div>
               ))}
+            </div>
+          )}
+
+          {/* Photos */}
+          {media && media.photoCount > 0 && (
+            <div className="mb-12">
+              <div className="flex items-end justify-between mb-6">
+                <h2 className="font-serif text-2xl md:text-3xl font-bold text-secondary">
+                  Photos
+                </h2>
+                <p className="text-muted text-sm">
+                  {media.photoCount} from {country.name}
+                </p>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+                {media.photos.map((p) => (
+                  <a
+                    key={p.fileId}
+                    href={p.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative aspect-square rounded-lg overflow-hidden bg-light shadow-sm hover:shadow-md transition-shadow"
+                  >
+                    <Image
+                      src={p.url}
+                      alt={p.alt || `${country.name} photo`}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
+                    />
+                    {p.blogTitle && (
+                      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <p className="text-white text-[10px] font-medium line-clamp-2">
+                          {p.blogTitle}
+                        </p>
+                      </div>
+                    )}
+                  </a>
+                ))}
+              </div>
             </div>
           )}
 
