@@ -14,6 +14,11 @@ interface CountrySection {
   bullets?: string[];
 }
 
+interface CountryHighlight {
+  value: string;
+  label: string;
+}
+
 interface CountryData {
   name: string;
   tagline: string;
@@ -24,6 +29,7 @@ interface CountryData {
   intro: string;
   mealsPerFive: number;
   childrenFed: number;
+  highlights: CountryHighlight[];
   region: string;
   lat: number;
   lng: number;
@@ -63,6 +69,15 @@ export default function CountryForm({ initialData, isNew, onSave }: CountryFormP
     intro: initialData?.intro || "",
     mealsPerFive: initialData?.mealsPerFive || 50,
     childrenFed: initialData?.childrenFed || 0,
+    highlights:
+      initialData?.highlights && initialData.highlights.length > 0
+        ? initialData.highlights
+        : initialData?.mealsPerFive || initialData?.childrenFed
+        ? [
+            { value: String(initialData.mealsPerFive ?? 50), label: "meals provided per $5" },
+            { value: String(initialData.childrenFed ?? 0), label: "children currently being fed" },
+          ]
+        : [],
     region: initialData?.region || "",
     lat: initialData?.lat || 0,
     lng: initialData?.lng || 0,
@@ -194,11 +209,65 @@ export default function CountryForm({ initialData, isNew, onSave }: CountryFormP
         />
       </SectionCard>
 
-      {/* 5. Impact Stats */}
-      <SectionCard title="Impact Stats">
-        <div className="grid grid-cols-2 gap-4">
-          <FormField label="Meals per $5" type="number" value={data.mealsPerFive} onChange={(v) => setData({ ...data, mealsPerFive: Number(v) })} required />
-          <FormField label="Children Currently Fed" type="number" value={data.childrenFed} onChange={(v) => setData({ ...data, childrenFed: Number(v) })} required />
+      {/* 5. Highlights */}
+      <SectionCard
+        title="Highlights"
+        description="Free-text impact callouts shown on the country page. Add as many or as few as you'd like (1–6 typically reads best). Value can be a number, short phrase, or any text."
+      >
+        <div className="space-y-3">
+          {data.highlights.map((h, i) => (
+            <div
+              key={i}
+              className="grid grid-cols-1 sm:grid-cols-[1fr_2fr_auto] gap-2 items-start bg-gray-50 border border-gray-200 rounded-lg p-3"
+            >
+              <input
+                type="text"
+                value={h.value}
+                onChange={(e) => {
+                  const next = [...data.highlights];
+                  next[i] = { ...next[i], value: e.target.value };
+                  setData({ ...data, highlights: next });
+                }}
+                placeholder="Value (e.g. 50, 800 loaves, Daily)"
+                className="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-[#2A9D8F] focus:border-transparent outline-none"
+              />
+              <input
+                type="text"
+                value={h.label}
+                onChange={(e) => {
+                  const next = [...data.highlights];
+                  next[i] = { ...next[i], label: e.target.value };
+                  setData({ ...data, highlights: next });
+                }}
+                placeholder="Label (e.g. meals provided per $5)"
+                className="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-[#2A9D8F] focus:border-transparent outline-none"
+              />
+              <button
+                type="button"
+                onClick={() => {
+                  setData({
+                    ...data,
+                    highlights: data.highlights.filter((_, idx) => idx !== i),
+                  });
+                }}
+                className="px-3 py-2 text-sm text-red-600 hover:bg-red-50 rounded-lg border border-red-200"
+              >
+                Remove
+              </button>
+            </div>
+          ))}
+          <button
+            type="button"
+            onClick={() => {
+              setData({
+                ...data,
+                highlights: [...data.highlights, { value: "", label: "" }],
+              });
+            }}
+            className="px-4 py-2 bg-[#264653] text-white text-sm font-medium rounded-lg hover:bg-[#1a3540] transition-colors"
+          >
+            + Add Highlight
+          </button>
         </div>
       </SectionCard>
 

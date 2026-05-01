@@ -79,6 +79,11 @@ export interface CountrySection {
   bullets?: string[];
 }
 
+export interface CountryHighlight {
+  value: string;
+  label: string;
+}
+
 export interface Country {
   name: string;
   slug: string;
@@ -87,6 +92,7 @@ export interface Country {
   description: string;
   mealsPerFive: number;
   childrenFed: number;
+  highlights?: CountryHighlight[];
   region: "europe" | "asia" | "africa" | "americas" | "middle-east";
   imageUrl: string;
   lat: number;

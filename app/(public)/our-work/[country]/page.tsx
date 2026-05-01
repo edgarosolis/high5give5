@@ -70,21 +70,50 @@ export default async function CountryPage({
             )
           )}
 
-          {/* Impact Stats */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
-            <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 text-center">
-              <p className="font-serif text-3xl font-bold text-primary">
-                {country.mealsPerFive}
-              </p>
-              <p className="text-muted mt-1">meals provided per $5</p>
-            </div>
-            <div className="bg-accent/10 border border-accent/30 rounded-xl p-6 text-center">
-              <p className="font-serif text-3xl font-bold text-secondary">
-                {country.childrenFed}
-              </p>
-              <p className="text-muted mt-1">children currently being fed</p>
-            </div>
-          </div>
+          {/* Highlights */}
+          {(() => {
+            const highlights =
+              country.highlights && country.highlights.length > 0
+                ? country.highlights
+                : [
+                    { value: String(country.mealsPerFive), label: "meals provided per $5" },
+                    { value: String(country.childrenFed), label: "children currently being fed" },
+                  ];
+            const cols =
+              highlights.length === 1
+                ? "grid-cols-1"
+                : highlights.length === 2
+                ? "grid-cols-1 sm:grid-cols-2"
+                : highlights.length === 3
+                ? "grid-cols-1 sm:grid-cols-3"
+                : highlights.length === 4
+                ? "grid-cols-2 sm:grid-cols-2 md:grid-cols-4"
+                : "grid-cols-2 md:grid-cols-3";
+            const tones = [
+              "bg-primary/5 border-primary/20 text-primary",
+              "bg-accent/10 border-accent/30 text-secondary",
+              "bg-secondary/5 border-secondary/20 text-secondary",
+              "bg-coral/5 border-coral/20 text-coral",
+            ];
+            return (
+              <div className={`grid ${cols} gap-4 mb-12`}>
+                {highlights.map((h, i) => {
+                  const tone = tones[i % tones.length];
+                  return (
+                    <div
+                      key={i}
+                      className={`${tone} border rounded-xl p-6 text-center`}
+                    >
+                      <p className="font-serif text-2xl md:text-3xl font-bold leading-tight break-words">
+                        {h.value}
+                      </p>
+                      <p className="text-muted mt-1 text-sm">{h.label}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })()}
 
           {/* Project Description (rich text or legacy sections) */}
           {country.intro && (
