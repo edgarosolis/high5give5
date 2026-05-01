@@ -1,40 +1,52 @@
+import Image from "next/image";
+import Link from "next/link";
+import { getAllCountryMedia } from "@/lib/media";
+
 export default function MediaPage() {
+  const countries = getAllCountryMedia().filter((c) => c.photoCount > 0);
+  const totalPhotos = countries.reduce((n, c) => n + c.photoCount, 0);
+
   return (
     <div>
-      {/* Hero Banner */}
-      <section className="bg-secondary h-48 flex items-center justify-center">
-        <h1 className="font-serif text-5xl text-white">Media</h1>
+      <section className="bg-secondary h-64 flex flex-col items-center justify-center text-center px-4">
+        <h1 className="font-serif text-4xl md:text-5xl text-white mb-3">Media</h1>
+        <p className="text-white/80 text-lg">
+          {totalPhotos.toLocaleString()} photos from {countries.length} countries
+        </p>
       </section>
 
-      {/* Media Grid */}
       <section className="py-16 bg-bg">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {Array.from({ length: 6 }, (_, i) => (
-              <div
-                key={i}
-                className="bg-light rounded-xl shadow h-64 flex items-center justify-center"
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {countries.map((c) => (
+              <Link
+                key={c.slug}
+                href={`/media/${c.slug}`}
+                className="group block rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 bg-white"
               >
-                <div className="text-center">
-                  <div className="w-12 h-12 rounded-full bg-muted/20 flex items-center justify-center mx-auto mb-3">
-                    <svg
-                      className="w-6 h-6 text-muted"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
-                      />
-                    </svg>
+                <div className="relative h-56 w-full overflow-hidden">
+                  {c.cover ? (
+                    <Image
+                      src={c.cover}
+                      alt={c.name}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 bg-light" />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                  <div className="absolute bottom-3 left-4 right-4 flex items-end justify-between">
+                    <h3 className="font-serif text-2xl font-bold text-white drop-shadow-md">
+                      {c.name}
+                    </h3>
+                    <span className="bg-primary text-white text-xs font-semibold px-2 py-1 rounded-full">
+                      {c.photoCount} photos
+                    </span>
                   </div>
-                  <p className="text-muted font-medium">Coming Soon</p>
-                  <p className="text-muted/60 text-sm mt-1">Media Item {i + 1}</p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

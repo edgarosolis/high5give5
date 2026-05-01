@@ -1,0 +1,2764 @@
+{
+  "collection": {
+    "id": "62d82c3cd5c3e42569862979",
+    "displayName": "Countries",
+    "singularName": "Country",
+    "slug": "countries",
+    "createdOn": "2022-07-20T16:24:28.967Z",
+    "lastUpdated": "2025-06-28T12:45:40.402Z",
+    "fields": [
+      {
+        "id": "5244e4636f9d78640c929fdbc53166a7",
+        "isEditable": true,
+        "isRequired": false,
+        "type": "PlainText",
+        "slug": "subtitle",
+        "displayName": "Subtitle",
+        "helpText": null,
+        "validations": {
+          "singleLine": true
+        }
+      },
+      {
+        "id": "435899564bc06580488e39bb99b2f5e7",
+        "isEditable": true,
+        "isRequired": false,
+        "type": "MultiImage",
+        "slug": "main-image-s",
+        "displayName": "Main Image(s)",
+        "helpText": null,
+        "validations": null
+      },
+      {
+        "id": "fe754de84b7f74af1abe3e0933815c18",
+        "isEditable": true,
+        "isRequired": false,
+        "type": "RichText",
+        "slug": "info",
+        "displayName": "Info",
+        "helpText": null,
+        "validations": null
+      },
+      {
+        "id": "3a126d722ff931b327996eb21447ca2b",
+        "isEditable": true,
+        "isRequired": false,
+        "type": "VideoLink",
+        "slug": "video-link",
+        "displayName": "Video Link",
+        "helpText": null,
+        "validations": null
+      },
+      {
+        "id": "29cfe04bb3b82593b0c1d25a5f158295",
+        "isEditable": true,
+        "isRequired": false,
+        "type": "MultiImage",
+        "slug": "other-images",
+        "displayName": "Other Images",
+        "helpText": null,
+        "validations": null
+      },
+      {
+        "id": "2667508fc1d9e28f7c85dfbb5843ae1f",
+        "isEditable": true,
+        "isRequired": false,
+        "type": "PlainText",
+        "slug": "map-code",
+        "displayName": "Map Code",
+        "helpText": null,
+        "validations": {
+          "singleLine": true
+        }
+      },
+      {
+        "id": "5a227122ab05096b550a475ade2532e7",
+        "isEditable": true,
+        "isRequired": false,
+        "type": "Switch",
+        "slug": "in-home-carousel",
+        "displayName": "In Home Carousel",
+        "helpText": null,
+        "validations": null
+      },
+      {
+        "id": "3916db4eac561af05e9712bde1de31f3",
+        "isEditable": true,
+        "isRequired": false,
+        "type": "Image",
+        "slug": "carousel-image",
+        "displayName": "Carousel Image",
+        "helpText": null,
+        "validations": null
+      },
+      {
+        "id": "a42ca4692b71c1198c8718ddb78792f3",
+        "isEditable": true,
+        "isRequired": false,
+        "type": "Number",
+        "slug": "order",
+        "displayName": "Order",
+        "helpText": null,
+        "validations": {
+          "format": "integer",
+          "precision": 1,
+          "allowNegative": false
+        }
+      },
+      {
+        "id": "fa3332418d8a767058ef39f568bbac7e",
+        "isEditable": true,
+        "isRequired": false,
+        "type": "RichText",
+        "slug": "carousel-info",
+        "displayName": "Carousel Info",
+        "helpText": null,
+        "validations": null
+      },
+      {
+        "id": "3b684fccd1795d55f8d547c582e069fe",
+        "isEditable": true,
+        "isRequired": false,
+        "type": "Switch",
+        "slug": "regular",
+        "displayName": "Regular",
+        "helpText": null,
+        "validations": null
+      },
+      {
+        "id": "aeb11eb9d22c49a318df8d64902baa7b",
+        "isEditable": true,
+        "isRequired": true,
+        "type": "PlainText",
+        "slug": "name",
+        "displayName": "Name",
+        "helpText": null,
+        "validations": {
+          "maxLength": 256
+        }
+      },
+      {
+        "id": "83889971eaffe52da3f96a5916bf75f2",
+        "isEditable": true,
+        "isRequired": true,
+        "type": "PlainText",
+        "slug": "slug",
+        "displayName": "Slug",
+        "helpText": null,
+        "validations": {
+          "maxLength": 256,
+          "pattern": {},
+          "messages": {
+            "pattern": "Must be alphanumerical and not contain any spaces or special characters",
+            "maxLength": "Must be less than 256 characters"
+          }
+        }
+      }
+    ]
+  },
+  "itemCount": 26,
+  "items": [
+    {
+      "id": "62e409fc8c6e3867dcc3c695",
+      "cmsLocaleId": "653ad68ee882f528b33aeeaa",
+      "lastPublished": null,
+      "lastUpdated": "2023-07-11T17:33:13.997Z",
+      "createdOn": "2022-07-29T16:25:32.143Z",
+      "isArchived": false,
+      "isDraft": true,
+      "fieldData": {
+        "subtitle": null,
+        "main-image-s": null,
+        "info": null,
+        "video-link": null,
+        "other-images": null,
+        "map-code": null,
+        "in-home-carousel": false,
+        "carousel-image": null,
+        "order": null,
+        "carousel-info": null,
+        "regular": false,
+        "name": "USA",
+        "slug": "usa"
+      }
+    },
+    {
+      "id": "62e409f088e0742fcaec3e68",
+      "cmsLocaleId": "653ad68ee882f528b33aeeaa",
+      "lastPublished": "2023-03-24T16:34:53.341Z",
+      "lastUpdated": "2023-03-24T16:34:07.736Z",
+      "createdOn": "2022-07-29T16:25:20.403Z",
+      "isArchived": false,
+      "isDraft": false,
+      "fieldData": {
+        "subtitle": null,
+        "main-image-s": null,
+        "info": "<p id=\"\">Djurdjevo is a small village in the region of Vojvodina. There are 5,000 people in this village and its Roma community makes up slightly over 10% of the total population. Among the 500 Roma people, 200 are children and they live in a camp. The Romani people are generally the poorest people and the most marginalized group in Serbia. The Evangelical Church of Kucura started 10 years ago by bringing the good news of Christ that can truly change lives in this community.</p><p id=\"\">Most of the Roma children are malnourished. Some spend most of their days outdoors, sometimes even during the night and the older ones are involved in drugs. We started with programs for the children and continue with these programs as we believe in the importance of investing in children as they our future generation. They need an education to have a better life, to persevere against and overcome discrimination. We assist them with their school work. In addition, we serve them a meal knowing that a child learns better with a full stomach. We encourage them to finish primary school and provide them with a stipend so that they continue and graduate from high school. For some we try to help them start their own business.</p><p id=\"\">Life is hard for the Romani people. Work is hard to come by, men are involved with the gangs, with drugs and alcohol whilst the women are caught up in prostitution. Over the years we see a decline in crime and prostitution. Even more children remain in school. However, we continue to pour into this camp as there is evidence these problems still linger.</p><p id=\"\">We also provide help to the elderly because they are generally left to fend for themselves. They receive a very small pension a month. Some of the elderly live without electricity, water, and most have never visited a doctor.</p><p id=\"\">Every week, we prepare 700 meals to feed Roma children and the elderly in 5 villages. In our church, with the help of High5Give5, we feed 100 persons, 80 children and 20 elderly persons.</p>",
+        "video-link": null,
+        "other-images": null,
+        "map-code": null,
+        "in-home-carousel": false,
+        "carousel-image": null,
+        "order": null,
+        "carousel-info": null,
+        "regular": false,
+        "name": "Serbia",
+        "slug": "serbia"
+      }
+    },
+    {
+      "id": "62e409de53c9cf24ed9d83d7",
+      "cmsLocaleId": "653ad68ee882f528b33aeeaa",
+      "lastPublished": null,
+      "lastUpdated": "2023-07-11T17:33:03.198Z",
+      "createdOn": "2022-07-29T16:25:02.953Z",
+      "isArchived": false,
+      "isDraft": true,
+      "fieldData": {
+        "subtitle": null,
+        "main-image-s": null,
+        "info": null,
+        "video-link": null,
+        "other-images": null,
+        "map-code": null,
+        "in-home-carousel": false,
+        "carousel-image": null,
+        "order": null,
+        "carousel-info": null,
+        "regular": false,
+        "name": "Nicaragua",
+        "slug": "nicaragua"
+      }
+    },
+    {
+      "id": "62e409cd764867668ee334ef",
+      "cmsLocaleId": "653ad68ee882f528b33aeeaa",
+      "lastPublished": "2023-03-24T16:34:53.341Z",
+      "lastUpdated": "2023-03-24T16:33:39.544Z",
+      "createdOn": "2022-07-29T16:24:45.723Z",
+      "isArchived": false,
+      "isDraft": false,
+      "fieldData": {
+        "subtitle": null,
+        "main-image-s": null,
+        "info": "<p id=\"\">Today many Lebanese are suffering because of a broken economy. According to the United Nations, more than 85% of the population of Lebanon are living below the level of poverty. Thousands are seeking immigration or help from their friends or loved ones living outside of Lebanon.</p><p id=\"\">As a church, we decided to rise up and to bring the Good News of the Gospel to those who are desperate around us. We are also very aware that many are unable to feed themselves and their families. In January 2020, we started to distribute food parcels to 250-300 families every month. During our visits, we spend time with these families, to listen to their stories and to share the gospel at every opportunity.</p><p id=\"\">We want our neighbors, those in our community to know that there is hope in the middle of despair and there is an answer to their struggles and challenges. We have seen tremendous results because of this outreach. God is allowing us to enter homes with physical food and the hearts with spiritual food.</p><p id=\"\">So far, we are privileged to see a few being added to the kingdom of God during these hard times. Our work continues with God’s help and the help of our partners.</p>",
+        "video-link": null,
+        "other-images": null,
+        "map-code": null,
+        "in-home-carousel": false,
+        "carousel-image": null,
+        "order": null,
+        "carousel-info": null,
+        "regular": false,
+        "name": "Lebanon",
+        "slug": "lebanon"
+      }
+    },
+    {
+      "id": "62e409b2fc030f24f53fce60",
+      "cmsLocaleId": "653ad68ee882f528b33aeeaa",
+      "lastPublished": "2023-03-24T16:34:53.341Z",
+      "lastUpdated": "2023-03-24T16:34:48.618Z",
+      "createdOn": "2022-07-29T16:24:18.165Z",
+      "isArchived": false,
+      "isDraft": false,
+      "fieldData": {
+        "subtitle": null,
+        "main-image-s": null,
+        "info": "<p id=\"\">Situated in the beautiful region of Puglia, Brindisi is one of the most beautiful cities in Puglia, rich with history and culture. However, underlying its beauty lies the challenges of life. Since 2020, Brindisi Tabernacle is bringing the tangible love of Christ to those in this town who face these challenges daily.</p><p id=\"\">The outreaches and programs at the Brindisi Tabernacle aim to promote Christian values and intercultural integration, concrete help towards those who are looking for support and help. Through their feeding program, their neighborhoods and local schools by partnering with non-profit organizations, local municipalities, supermarkets, grocery outlets and local people. 130 families are served every month.</p><p id=\"\">English classes are offered to all ages. Whether one learns at the beginner’s level or to pass an English exam, the volunteers help the students achieve their goals during the weekly classes. There are also music classes where students learn a musical instrument and these classes also provide an outlet for creativity. For children ages 4 to 11 years old, Brindisi Tabernacle has a special program called Gospel Kids, where children are taught English through Gospel music.</p><p id=\"\">Brindisi Tabernacle knows the importance of education; hence; there is tutorial classes to help students aged 6 to 19 with their school lessons and homework. Teenagers with learning disabilities are supported and helped by professional teachers.</p><p id=\"\">Together with High5Give5, 30 families with special needs receive food packages and 10 children under 2 years old receive milk and baby food once a month. With the current situation in Ukraine, 2 Ukrainian families are helped with food and education with High5’s assistance.</p>",
+        "video-link": null,
+        "other-images": null,
+        "map-code": null,
+        "in-home-carousel": false,
+        "carousel-image": null,
+        "order": null,
+        "carousel-info": null,
+        "regular": false,
+        "name": "Italy",
+        "slug": "italy"
+      }
+    },
+    {
+      "id": "62d84a17a5c4e76e880dbc9a",
+      "cmsLocaleId": "653ad68ee882f528b33aeeaa",
+      "lastPublished": "2023-01-11T20:41:57.183Z",
+      "lastUpdated": "2023-01-11T20:41:57.183Z",
+      "createdOn": "2022-07-20T18:31:51.981Z",
+      "isArchived": false,
+      "isDraft": false,
+      "fieldData": {
+        "subtitle": "FEEDING",
+        "main-image-s": [
+          {
+            "fileId": "63bf1f13481f322b35ea79e1",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf1f13481f322b35ea79e1_IMG_1454.jpg",
+            "alt": null
+          }
+        ],
+        "info": "<p id=\"\">We provide food for children at the orphanage and feed children at the church and some elderly people.</p><p id=\"\">We work with Gary, Samuel's House, a children’s home located on a rural farm outside Caracas. They are passionate about raising children who understand they are created in the image of God with the gifts and abilities to effect change in the world around them; children who strive to glorify God. We do this by inspiring hope through families; quality education and a personal, passionate devotion to Jesus Christ.</p><p id=\"\">The food crisis in Venezuela is very grave. Food is difficult to find and, when found, most people cannot afford it. However, Samuel’s House has started a Feeding Initiative. High5Give5 provides funding to feed the most vulnerable providing 100 bowls of vegetables and meat to children under 12 years old.</p>",
+        "video-link": null,
+        "other-images": [
+          {
+            "fileId": "62d84a0a13e6377be8f8c2fc",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d84a0a13e6377be8f8c2fc_Ven2.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d84a0a3a33e0df53196fd2",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d84a0a3a33e0df53196fd2_Ven1.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dae090964e069c0106324e",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dae090964e069c0106324e_IMG_1448.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dae090badc282fe03d9be8",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dae090badc282fe03d9be8_IMG_1449.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dae0907a96f65228415f71",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dae0907a96f65228415f71_IMG_1452.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dae090233d4d782c8c19b0",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dae090233d4d782c8c19b0_IMG_1453.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dae08fda168e0427317e2a",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dae08fda168e0427317e2a_IMG_1454.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dae08f2f91941e3921d0c0",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dae08f2f91941e3921d0c0_IMG_1455.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dae08f08ab2a214c5c9547",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dae08f08ab2a214c5c9547_IMG_1456.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dae08faa193fcf504e9b51",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dae08faa193fcf504e9b51_IMG_1457.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dae08fb1c2fc6c9d5c01dd",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dae08fb1c2fc6c9d5c01dd_IMG_2167.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dae08fbadc2885753d9be7",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dae08fbadc2885753d9be7_IMG_2168.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dae08faa193f4d734e9b49",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dae08faa193f4d734e9b49_IMG_2169.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dae08f2f91945a7321d089",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dae08f2f91945a7321d089_IMG_2172.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dae08fb1c2fc6cb15c013f",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dae08fb1c2fc6cb15c013f_IMG_2173.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dae08f7a96f6a45d415e7a",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dae08f7a96f6a45d415e7a_IMG_2174.jpeg",
+            "alt": null
+          }
+        ],
+        "map-code": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125549.08663173967!2d-66.89036584999998!3d10.46839175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c2a58adcd824807%3A0x93dd2eae0a998483!2sCaracas%2C%20Capital%20District%2C%20Venezuela!5e0!3m2!1sen!2smx!4v1658345437538!5m2!1sen!2smx",
+        "in-home-carousel": true,
+        "carousel-image": {
+          "fileId": "62dec9202414ad0ea3b786d5",
+          "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dec9202414ad0ea3b786d5_Venezuela.jpeg",
+          "alt": null
+        },
+        "order": null,
+        "carousel-info": "<p id=\"\">$5.00 = 50 meals in Venezuela</p><p id=\"\">Currently feeding 1500 children</p>",
+        "regular": false,
+        "name": "Venezuela",
+        "slug": "venezuela"
+      }
+    },
+    {
+      "id": "62d849a621fe62c13ed9f1b4",
+      "cmsLocaleId": "653ad68ee882f528b33aeeaa",
+      "lastPublished": "2023-01-11T20:40:36.795Z",
+      "lastUpdated": "2023-01-11T20:40:36.795Z",
+      "createdOn": "2022-07-20T18:29:58.223Z",
+      "isArchived": false,
+      "isDraft": false,
+      "fieldData": {
+        "subtitle": "CHILDREN'S FUND",
+        "main-image-s": [
+          {
+            "fileId": "63bf1eb7c5159a55dd926e45",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf1eb7c5159a55dd926e45_IMG_0651.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "63bf1ec1481f323789ea733d",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf1ec1481f323789ea733d_Ukraine%2BBanner.jpg",
+            "alt": null
+          }
+        ],
+        "info": "<p id=\"\">High 5 supports on the ground missional teams that work with widows and at-risk children by providing care packages along with evangelistic outreach in remote villages. We work with Bruce, Mir Ministries based in Ukraine. Political upheaval, revolution, and continued war in Eastern Ukraine ads to the already economic hardships of the former breadbasket of the Soviet Union. Unemployment and alcoholism combine to create devastation in the family. Now is an unprecedented time of freedom for sharing the love of Christ in Ukraine.</p>",
+        "video-link": null,
+        "other-images": [
+          {
+            "fileId": "62d849a0f0e5c4b8e8b4c6c8",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d849a0f0e5c4b8e8b4c6c8_Uk2.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d8499f21fe62e30fd9ea27",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d8499f21fe62e30fd9ea27_Uk1.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dae02e233d4d5c978be3e5",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dae02e233d4d5c978be3e5_IMG_0652.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dae02ef7d4d0c0bdcd0ddd",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dae02ef7d4d0c0bdcd0ddd_IMG_0653.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dae02e1c1d6330744e73f8",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dae02e1c1d6330744e73f8_IMG_0655.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dae02e1c1d630e814e73f7",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dae02e1c1d630e814e73f7_IMG_0656.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dae02e233d4d848c8be3e4",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dae02e233d4d848c8be3e4_IMG_0657.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dae02ec19e814c726287e2",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dae02ec19e814c726287e2_IMG_0658.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dae02e76d4d356ea1c6de1",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dae02e76d4d356ea1c6de1_IMG_0659.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dae02e576aab5aabdbf340",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dae02e576aab5aabdbf340_IMG_0660.jpeg",
+            "alt": null
+          }
+        ],
+        "map-code": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d662.505151817791!2d31.1653653!3d48.3793404!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x43b57bbf51636d76!2zNDjCsDIyJzQ2LjAiTiAzMcKwMDknNTYuMSJF!5e0!3m2!1sen!2smx!4v1658345324578!5m2!1sen!2smx",
+        "in-home-carousel": true,
+        "carousel-image": {
+          "fileId": "62dec919e6d0a9451aa15481",
+          "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dec919e6d0a9451aa15481_Ukraine.jpeg",
+          "alt": null
+        },
+        "order": null,
+        "carousel-info": "<p id=\"\">$5.00 = 50 meals in Ukraine</p><p id=\"\">Currently feeding 1500 children</p>",
+        "regular": false,
+        "name": "Ukraine",
+        "slug": "ukraine"
+      }
+    },
+    {
+      "id": "62d84940cc1bce32278b5fd4",
+      "cmsLocaleId": "653ad68ee882f528b33aeeaa",
+      "lastPublished": "2023-01-11T20:39:36.091Z",
+      "lastUpdated": "2023-01-11T20:39:36.091Z",
+      "createdOn": "2022-07-20T18:28:16.310Z",
+      "isArchived": false,
+      "isDraft": false,
+      "fieldData": {
+        "subtitle": "FEEDING AND SPECIAL PROJECTS",
+        "main-image-s": [
+          {
+            "fileId": "62d848fbb5b76dc811d7928b",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d848fbb5b76dc811d7928b_Uganda.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadfc723786f6d6104275d",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadfc723786f6d6104275d_IMG_0209.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadfcaeab4dcbb38d0a32a",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadfcaeab4dcbb38d0a32a_IMG_0205.jpeg",
+            "alt": null
+          }
+        ],
+        "info": "<p id=\"\">High5give5 supplies rice and beans to the 180 children in an orphanage through KingsBridge International. Also funds special projects on seasonal and ongoing outreaches.</p><p id=\"\">King's Bridge International was birthed out of a mission trip to Northern Uganda in the wake of a brutal civil war. After witnessing the unthinkable atrocities that were done - especially to children - the team's leader (Mike) was deeply moved to do more, and KBI was formed. &nbsp;For the past decade, KBI has been planting deep roots throughout Uganda's remote regions, working with isolated endogenous tribes living in extreme poverty. <em id=\"\">King's Bridge</em> is a front-lines ministry, serving the poor in a variety of ways, including providing food and medical supplies, along with teaching, counseling, and evangelism. &nbsp;Along with special projects and seasonal outreaches, KBI also supports an orphanage/school of 190 children. They help to supply food and other necessities to precious children who are often the worst victims of abject poverty and disease. Mike and the team would like to thank Bettina and \"High 5\" for their generous support of our work and mission.</p><p id=\"\">‍</p><p id=\"\">‍</p><h2 id=\"\"><strong id=\"\">FEEDING OUTREACH</strong></h2><p id=\"\">‍</p><p id=\"\">The ministry started with 28 street kids with a soccer ball and rice and beans. It quickly grew to 50 children. They feed every Tuesday and Thursday.</p><p id=\"\">We work with One Call Ministries led by Pastor Peter in Kampala. They reach out to street kids in the slums of Kampala with the Gospel, share the hope in Christ and build relationships. Meals are served after the program.</p>",
+        "video-link": {
+          "url": "https://youtu.be/AwG84dzV7_8",
+          "metadata": {
+            "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FAwG84dzV7_8%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DAwG84dzV7_8&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FAwG84dzV7_8%2Fhqdefault.jpg&key=96f1f04c5f4143bcb0f2e68c87d65feb&type=text%2Fhtml&schema=youtube\" width=\"854\" height=\"480\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\"></iframe>",
+            "type": "video",
+            "title": "One Call Mission Ministries, Uganda",
+            "width": 854,
+            "height": 480,
+            "aspectRatio": 0,
+            "author_name": "Edgar Solis",
+            "provider_name": "YouTube",
+            "thumbnail_url": "https://i.ytimg.com/vi/AwG84dzV7_8/hqdefault.jpg"
+          }
+        },
+        "other-images": [
+          {
+            "fileId": "62d8493964752d43e15662bf",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d8493964752d43e15662bf_Ug1.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d8493964752dd79f5662be",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d8493964752dd79f5662be_Ug2.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadfcd964e063f6005d91e",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadfcd964e063f6005d91e_3aecd34c-ab0e-46e8-af5b-8d936be6e706.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadfcc576aab479adbf305",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadfcc576aab479adbf305_4c214e99-9b59-4920-8c51-f2bc56289e11.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadfccfe68ff2e39b8f075",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadfccfe68ff2e39b8f075_5d107399-aa09-4a12-bff0-a04d43a86165.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadfcc7a96f682194088c3",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadfcc7a96f682194088c3_6d731468-7477-4a53-964d-71235c1389e2.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadfccfe68ffd917b8f06d",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadfccfe68ffd917b8f06d_10cfaefe-1eae-48ac-bea3-423ac48be2b1.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadfccfe68ffc040b8f058",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadfccfe68ffc040b8f058_67ecde97-dcd9-4c65-a7ff-1b4673034be7.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadfcb76d4d370a91bb2bf",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadfcb76d4d370a91bb2bf_912e7a7c-eba8-40bf-8905-bdc799e3ddb3.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadfccb1c2fc4e545b10a6",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadfccb1c2fc4e545b10a6_a1cabab4-0cd5-4965-81f5-50ac8d79e3db.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadfcbc19e812896625c14",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadfcbc19e812896625c14_a8d58909-b946-4cc0-93bf-5134f4bd49b9.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadfcb76d4d35d7e1bb288",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadfcb76d4d35d7e1bb288_b5231968-6cad-4ebf-8f8a-e9403bea23a0.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadfcb576aab77c3dbf304",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadfcb576aab77c3dbf304_cb9d8845-80e8-4c60-92e1-ad8932cf5748.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadfcb84c7bc6ca3a668cc",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadfcb84c7bc6ca3a668cc_e2927eae-0b0e-48cc-849c-39a272f7f555.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadfca576aab22cadbf303",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadfca576aab22cadbf303_f6b6531f-b7d8-40da-b3c7-adcce04506d8.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadfcb23786f260c042a5a",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadfcb23786f260c042a5a_f83e4f9f-fd16-433d-af5b-a6a4dea33856.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadfca233d4d7afc8b9bfc",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadfca233d4d7afc8b9bfc_f876b843-db0e-4390-8331-bb06c5e5d9c2.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadfcaeab4dcbb38d0a32a",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadfcaeab4dcbb38d0a32a_IMG_0205.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadfc86ddab666ac9a9960",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadfc86ddab666ac9a9960_IMG_0206.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadfc8da168ef3d530dba3",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadfc8da168ef3d530dba3_IMG_0207.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadfc7da168e788130db57",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadfc7da168e788130db57_IMG_0208.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadfc723786f6d6104275d",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadfc723786f6d6104275d_IMG_0209.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadfc77a96f64e9540835c",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadfc77a96f64e9540835c_IMG_0211.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadfc77a96f654be40835b",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadfc77a96f654be40835b_IMG_0212.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadfc79a049b72e802c9b1",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadfc79a049b72e802c9b1_IMG_0213.jpeg",
+            "alt": null
+          }
+        ],
+        "map-code": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d249.35905581790405!2d32.582401!3d0.3476085!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfe0dac334c8bc251!2zMMKwMjAnNTEuNCJOIDMywrAzNCc1Ny4xIkU!5e0!3m2!1sen!2smx!4v1658345278370!5m2!1sen!2smx",
+        "in-home-carousel": true,
+        "carousel-image": {
+          "fileId": "62dadfcaeab4dcbb38d0a32a",
+          "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadfcaeab4dcbb38d0a32a_IMG_0205.jpeg",
+          "alt": null
+        },
+        "order": null,
+        "carousel-info": "<p id=\"\">$5.00 = 50 meals in Uganda</p><p id=\"\">Currently feeding 1500 children</p>",
+        "regular": false,
+        "name": "Uganda",
+        "slug": "uganda"
+      }
+    },
+    {
+      "id": "62d848b1a5c4e776c00dbc7b",
+      "cmsLocaleId": "653ad68ee882f528b33aeeaa",
+      "lastPublished": "2023-01-11T20:38:05.855Z",
+      "lastUpdated": "2023-01-11T20:38:05.855Z",
+      "createdOn": "2022-07-20T18:25:53.401Z",
+      "isArchived": false,
+      "isDraft": false,
+      "fieldData": {
+        "subtitle": "SYRIAN REFUGEES OUTREACH",
+        "main-image-s": [
+          {
+            "fileId": "62d84891cc1bce7f378a305f",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d84891cc1bce7f378a305f_Turkey.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "63bf1e2b481f322818ea6e86",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf1e2b481f322818ea6e86_IMG_7764.jpeg",
+            "alt": null
+          }
+        ],
+        "info": "<p id=\"\">We work with Elmas, Tulin and team \"Antakya Mesihçiler Church.” They provide food goods, milk, eggs, cheese, chicken and healthy snacks to very poor Turkish children who live local to the church, and to some Syrian refugee children.</p><p id=\"\">‍<br>Our ministry to Syrian refugees living in the fields in southern Turkey was paused during the pandemic and ceased after the pandemic as we found that all the refugees we were helping had moved away -either back to Syria to a ‘safe zone’ created by Turkiye; or into various cities in Turkiye. During and immediately after the pandemic we continued to help about 100 families with food relief. However, because of incredible inflation in Turkey since December 2021 and because donations have decreased, we have only been able to help 30 extremely needy families. These are a mixture of Syrian refugee families and extremely poor Turkish families.</p><p id=\"\">‍<br>We distribute whatever God puts in our hands to give, which normally is a monthly sack of staple food goods, and when possible we bless the children with a healthy snack and milk. Each food sack holds 1 kg each of rice, ashure wheat, lentils, coarse bulgur, beans, sugar, 500 gm olives, 500 gm macaroni, 750 gm salt, 1 large tin tomato paste, 400 gm tea, 1 litre oil, 4 bars hand soap and when requested, sanitary pads for the women. As God provides we also distribute clothing and other items like cleaning supplies, eggs, cheese, chicken and if possible healthy breakfast foods.<br>Along with the food we share, we are always planting seeds of the Gospel of Jesus Christ in their wee lives so that in future these children will remember Christians and Christianity positively. Our prayer is that each of them comes to know Jesus as their personal Saviour and Lord! Each family is personally involved with us and has had the Good News shared with them over and over. Some have risen to the challenge of writing out the New Testament. Some of those have already finished this and carried on to writing out chosen Old Testament portions. We want to touch their hearts with the Good News of Jesus Christ.</p><p id=\"\">‍<br>We are very thankful to High5Give5 for their part in supplying funding so that we can give food relief and healthy snacks to the children, and to encourage them to consider the claims of Jesus Christ on their lives. We also want to promote much prayer for these people, and would be pleased to communicate regular prayer requests to you.</p><p id=\"\">‍</p>",
+        "video-link": null,
+        "other-images": [
+          {
+            "fileId": "62d848a9a84a0f2947f4f8e0",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d848a9a84a0f2947f4f8e0_Tur1.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d848a9a84a0fafcef4f8df",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d848a9a84a0fafcef4f8df_Tur2.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadeb3233d4d1f038b0a65",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadeb3233d4d1f038b0a65_IMG_0041.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadeb3b889824ec104dc44",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadeb3b889824ec104dc44_IMG_0043.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadeb3fe68ff5fc3b8a7ed",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadeb3fe68ff5fc3b8a7ed_IMG_0044.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadeb223786f2ccf03e19e",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadeb223786f2ccf03e19e_IMG_0046.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadeb323786f932b03e1cd",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadeb323786f932b03e1cd_IMG_0395.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadeb223786fa6a003e19f",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadeb223786fa6a003e19f_IMG_0397.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadeb2b58acd4777ddeabc",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadeb2b58acd4777ddeabc_IMG_0398.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadeb2f7d4d0e6fecb3076",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadeb2f7d4d0e6fecb3076_IMG_0400.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadeb274f948759ed5d730",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadeb274f948759ed5d730_IMG_0404.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dade9a233d4d7ae08af2f8",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dade9a233d4d7ae08af2f8_IMG_0407.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dade9acb5842d83c72ae86",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dade9acb5842d83c72ae86_IMG_0408.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dade9ab58acdfd58ddc5b5",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dade9ab58acdfd58ddc5b5_IMG_0409.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dade991dff25f4305c0b85",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dade991dff25f4305c0b85_IMG_0411.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dade99f00f3c9fe658ad33",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dade99f00f3c9fe658ad33_IMG_0480.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dade99f00f3cc93c58ad07",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dade99f00f3cc93c58ad07_IMG_0483.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dade99cb58429e5a72ad84",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dade99cb58429e5a72ad84_IMG_0486.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dade991dff2555505c0b76",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dade991dff2555505c0b76_IMG_0488.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dade99b58acda6f3ddc539",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dade99b58acda6f3ddc539_IMG_0890.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dade98233d4d76708af291",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dade98233d4d76708af291_IMG_0891.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dade974b7c97b5ff5cdcf0",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dade974b7c97b5ff5cdcf0_IMG_0893.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dade97233d4d4af08af267",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dade97233d4d4af08af267_IMG_0894.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadec49d5e5e9e6d326c29",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadec49d5e5e9e6d326c29_IMG_0399.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadec4233d4d92fd8b18b8",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadec4233d4d92fd8b18b8_IMG_0396.jpeg",
+            "alt": null
+          }
+        ],
+        "map-code": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d775.5647895877223!2d35.243333299999996!3d38.96374999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7d3b58fa4a352c3a!2zMzjCsDU3JzQ5LjUiTiAzNcKwMTQnMzYuMCJF!5e0!3m2!1sen!2smx!4v1658345173060!5m2!1sen!2smx",
+        "in-home-carousel": true,
+        "carousel-image": {
+          "fileId": "62dec90bdac6b4005db5e94d",
+          "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dec90bdac6b4005db5e94d_Turkey.jpeg",
+          "alt": null
+        },
+        "order": null,
+        "carousel-info": "<p id=\"\">$5.00 = 50 meals in Turkey</p><p id=\"\">Currently feeding 1500 children</p>",
+        "regular": false,
+        "name": "Turkey",
+        "slug": "turkey"
+      }
+    },
+    {
+      "id": "62d8482ed041e9583540d6c0",
+      "cmsLocaleId": "653ad68ee882f528b33aeeaa",
+      "lastPublished": null,
+      "lastUpdated": "2023-01-13T17:45:59.160Z",
+      "createdOn": "2022-07-20T18:23:42.257Z",
+      "isArchived": false,
+      "isDraft": true,
+      "fieldData": {
+        "subtitle": "FOOD BAGS FOR WIDOWS",
+        "main-image-s": [
+          {
+            "fileId": "63bf1da14e5a80df2b3b9992",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf1da14e5a80df2b3b9992_IMG_0799.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "63bf1e0279ef0de6175e7b4c",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf1e0279ef0de6175e7b4c_IMG_0797.jpeg",
+            "alt": null
+          }
+        ],
+        "info": "<p id=\"\">We provide assitance to 20 &nbsp;widows in Damascus, most of whom the husbands died during the war. Lidya, 82, her husband died a natural death, she doesn't have any children and she has cancer. Lena, 54 her husband was a victim of war, she has three children one is soldier, one has psychological problem and the other is a student in the university. Sosi, 55, &nbsp;her husband died because of a heart attack, she has three children one is married, and the others are students in school. Meline, 61 her husband died a natural death, she lives with her daughter-in-law whose husband was a victim of war and with her two grandchildrens, one has autism. Zvart 64 her husband died a natural death, she has three married daughters, she lives alone, she doesn't have any &nbsp;income. Georgette 47 her husband died a natural death, she doesn't have any children she lives with her single sister. Hayganoush 74 her husband died a natural death, she has one daughter who has died with cancer. Kohar 63 her husband died because of a heart attack, she works as a maid servant in school. </p><p id=\"\">Kohar 71 her husband died a natural death, she has married son and daughter, (her married son is displaced. Sevan 44 her husband died because of cancer, she has two daughters one is married and the other is single and displaced. Liza 65 her husband died because of a heart attack, she has a son who has bad income. Rita 62 her husband died a natural death, she has a single daughter, she lives with aids. Sona 62 her husband died a natural death, her sons live abroad, they are displaced, she lives alone. Rosine 70 her husband died a natural death, she is displaced, her home is destroyed by a missle. Mary &nbsp;71 her husband died a natural death, she has a single daughter, she lives with aids. Ani 60 her husband died because of a stroke, she has two sons under 18, her income is from caring sick and crippled people. Azadouhi 72 her husband died a natural death, she lives alone, she doesn't have any assistance. Arpine 82 her husband died a natural death, she has two sons one is a victim of war and the other is crippled, she lives with aids. Zvart 81 her husband died a natural death, she lives alone, she doesn't have any income, she lives with aids. Arus 48 her husband died because of cancer, she has two kids under 18.</p>",
+        "video-link": {
+          "url": "https://youtu.be/L7pgOOqSB-c",
+          "metadata": {
+            "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FL7pgOOqSB-c%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DL7pgOOqSB-c&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FL7pgOOqSB-c%2Fhqdefault.jpg&key=96f1f04c5f4143bcb0f2e68c87d65feb&type=text%2Fhtml&schema=youtube\" width=\"854\" height=\"480\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\"></iframe>",
+            "type": "video",
+            "title": "Syria",
+            "width": 854,
+            "height": 480,
+            "aspectRatio": 0,
+            "author_name": "Edgar Solis",
+            "provider_name": "YouTube",
+            "thumbnail_url": "https://i.ytimg.com/vi/L7pgOOqSB-c/hqdefault.jpg"
+          }
+        },
+        "other-images": [
+          {
+            "fileId": "62d8481ab9ba494ec23bcde0",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d8481ab9ba494ec23bcde0_Sy1.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d8481a21fe6231fad88604",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d8481a21fe6231fad88604_Sy2.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d84811b8ca97ec68784061",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d84811b8ca97ec68784061_Syria.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dade06f00f3c208e586279",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dade06f00f3c208e586279_IMG_0800.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dade0674f948745ad57324",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dade0674f948745ad57324_IMG_0801.jpeg",
+            "alt": null
+          }
+        ],
+        "map-code": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106456.49873162748!2d36.28289545!3d33.50747549999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1518e6dc413cc6a7%3A0x6b9f66ebd1e394f2!2sDamascus%2C%20Syria!5e0!3m2!1sen!2smx!4v1658345135745!5m2!1sen!2smx",
+        "in-home-carousel": true,
+        "carousel-image": {
+          "fileId": "62dec904c28a4e2ee4e5f61a",
+          "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dec904c28a4e2ee4e5f61a_Syria.jpeg",
+          "alt": null
+        },
+        "order": null,
+        "carousel-info": "<p id=\"\">$5.00 = 50 meals in Syria</p><p id=\"\">Currently feeding 1500 children</p>",
+        "regular": false,
+        "name": "Syria",
+        "slug": "syria"
+      }
+    },
+    {
+      "id": "62d8478889a8629c18c29e21",
+      "cmsLocaleId": "653ad68ee882f528b33aeeaa",
+      "lastPublished": "2023-01-11T20:35:10.366Z",
+      "lastUpdated": "2023-01-11T20:35:10.366Z",
+      "createdOn": "2022-07-20T18:20:56.942Z",
+      "isArchived": false,
+      "isDraft": false,
+      "fieldData": {
+        "subtitle": "WOMENS' OUTREACH",
+        "main-image-s": [
+          {
+            "fileId": "63bf1d5646e5c74a48f73839",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf1d5646e5c74a48f73839_20180707_121912.jpg",
+            "alt": null
+          },
+          {
+            "fileId": "62dec8fe5ec6764abe5aed83",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dec8fe5ec6764abe5aed83_Spain.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "63bf1d7beac5d50bafccae83",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf1d7beac5d50bafccae83_IMG_0627.jpeg",
+            "alt": null
+          }
+        ],
+        "info": "<p id=\"\">FIET GRATIA is an NGO that actively fights against Human Trafficking. &nbsp;It was founded in 2009 to help eradicate slavery around the world and in 2012 we became affiliates of Project Rescue International.</p><p id=\"\">Our mission is to Rescue and Restore Victims of Human Trafficking.</p><p id=\"\">Through our Detection Program we make weekly visits at the Detention Centre, where women may be deported back to their countries of origin or released. &nbsp;There we detect the possible cases of Trafficking. &nbsp;We help them by giving them basic needs. Kit that includes: toiletries, shower gel, deodorant, shampoo and conditioner and body lotion. &nbsp;It also includes new underwear (bra, pants and socks), leggings, paper tissues, comb, flip flops, a phone card so they can call family, coins to purchase water, coffee…a self-help book and card from our NGO.</p><p id=\"\">After this first visit we then find out about their other needs as most of them have no clothes, money…and so we can bring them clothing, shoes and bags. If the woman is to be deported we will try to give her a contact in her country of origin and if she is released she may come into our New Beginnings Home. We have assisted women from over 50 countries and many women have had an opportunity to change their lives through our intervention. In our Street Outreach program we go to the areas where girls are prostituted. &nbsp;The objective is to offer help and try to detect and rescue those who are victims of Human Trafficking. </p><p id=\"\"> After care at the New Beginnings Home. When a survivor of Human Trafficking comes into our home we help to give her all the tools she needs to make her own choices and walk the journey towards a future of hope and dreams. &nbsp;We have a holistic and individual approach towards each woman´s needs and offer support in areas such as health care, psychological therapy, legal aid, educational skills and voluntary return for those who decide to return to their home countries. The women leave the home after they have completed their restoration process and are ready to live in an autonomous way in society.</p>",
+        "video-link": null,
+        "other-images": [
+          {
+            "fileId": "62d8477a6f55b1e4fcfaebd6",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d8477a6f55b1e4fcfaebd6_Spa2.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d8477a3a33e0398d15ec54",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d8477a3a33e0398d15ec54_Spa1.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadacaf00f3c7956561ecd",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadacaf00f3c7956561ecd_IMG_0623.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadacaa955d83d4d463339",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadacaa955d83d4d463339_IMG_0624.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadaca0a061c4afd66f9b6",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadaca0a061c4afd66f9b6_IMG_0627.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadaca1c1d634f2a4a925f",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadaca1c1d634f2a4a925f_IMG_0628.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadaca81dfa2e296cdf881",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadaca81dfa2e296cdf881_IMG_0629.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadacaace397affdf7c85e",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadacaace397affdf7c85e_IMG_0630.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadaca9a049b64ddfe6673",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadaca9a049b64ddfe6673_IMG_0631.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dadacaf00f3cec82561ec2",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dadacaf00f3cec82561ec2_IMG_0632.jpeg",
+            "alt": null
+          }
+        ],
+        "map-code": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d758.8810504837458!2d-3.7492221999999997!3d40.4636667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdbe29ffebcf4fe07!2zNDDCsDI3JzQ5LjIiTiAzwrA0NCc1Ny4yIlc!5e0!3m2!1sen!2smx!4v1658345083572!5m2!1sen!2smx",
+        "in-home-carousel": true,
+        "carousel-image": {
+          "fileId": "62dec8fe5ec6764abe5aed83",
+          "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dec8fe5ec6764abe5aed83_Spain.jpeg",
+          "alt": null
+        },
+        "order": null,
+        "carousel-info": "<p id=\"\">$5.00 = 50 meals in Spain</p><p id=\"\">Currently feeding 1500 children</p>",
+        "regular": false,
+        "name": "Spain",
+        "slug": "spain"
+      }
+    },
+    {
+      "id": "62d846cd21fe622c6ad800fe",
+      "cmsLocaleId": "653ad68ee882f528b33aeeaa",
+      "lastPublished": "2023-01-11T20:32:37.505Z",
+      "lastUpdated": "2023-01-11T20:32:37.505Z",
+      "createdOn": "2022-07-20T18:17:49.542Z",
+      "isArchived": false,
+      "isDraft": false,
+      "fieldData": {
+        "subtitle": "MEALS FOR CHILDREN IN THE SLUMS",
+        "main-image-s": [
+          {
+            "fileId": "63bf1c4c2189630e27003b9d",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf1c4c2189630e27003b9d_IMG_4774.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "63bf1c4c218963013c003b9c",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf1c4c218963013c003b9c_IMG_0498.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dec8f762bc533dcf2a74ef",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dec8f762bc533dcf2a74ef_Philippines.jpeg",
+            "alt": null
+          }
+        ],
+        "info": "<p id=\"\">We feed about 1200 children in 10 locations in the slums in Cebu. We work with Lucille and team, WYAM Cebu. The ministry started in 1999 held at the YWAM Ministry center with kids from the nearby villages. There were about a hundred kids who came faithfully to our kids club. Many of them now are professionals; teaching in the schools, and some are on staff in YWAM. In our Kids ministry, we teach them the Word of God, action Songs, play with them and also pray for them and also taught them to pray for others. Along with our kids ministry is also the Mother's Bible Study. </p><p id=\"\">Many Moms bring their kids to the kids ministry every afternoon. After we feed them spiritually, kids are always more excited to be feed physically, as a result the number of kids would increase during the food distribution but the Lord always muliply the food. Kids would call their siblings to come and get food. The feeding program is one of the most effective tool to reach out the kids and families in the slums for Jesus. Many families came to know the Lord through our feeding program. From a hundred to more than a thousand kids with their moms that we feed each week. Families are always excited to see us everyday bringing nutritious food for them. We prepare different menu for them each week; rice and chicken porridge, macaroni soup, pork and vegetable stew with rice, Noodles soup, chicken soup and rice, champorado ( chocolate porridge which is every child's favorite and the most requested food. We are so thanful for High5Give5 as our sole supporter in our feeding program . </p><p id=\"\">Without their faithful support we won't be able to feed nutritious food in our feeding program. Thank you High5Give5 for your partnership and for your generous support. We are training and teaching the kids to be warriors for the Lord that they will not give up when everything in life is tough that they will learn to trust the Lord for their future. Location #of People 1.) 6th St. Carmen Village - 60 2.) Garden, Uldog Talisay - 120 3.) Sambag - 150 4.) Aromahan - 250 5.) Tangke - 140 6.) Mananga- 105 7.) Cogon, Pardo - 90 8.) Biasong - 70 9.) Kalubihan - 90 10.)Canton - 130 Total - 1205</p>",
+        "video-link": {
+          "url": "https://youtu.be/KU5BIsqGBBY",
+          "metadata": {
+            "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FKU5BIsqGBBY%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DKU5BIsqGBBY&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FKU5BIsqGBBY%2Fhqdefault.jpg&key=96f1f04c5f4143bcb0f2e68c87d65feb&type=text%2Fhtml&schema=youtube\" width=\"640\" height=\"480\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\"></iframe>",
+            "type": "video",
+            "title": "YWAM - Cebu, Phillipines",
+            "width": 640,
+            "height": 480,
+            "aspectRatio": 0,
+            "author_name": "Edgar Solis",
+            "provider_name": "YouTube",
+            "thumbnail_url": "https://i.ytimg.com/vi/KU5BIsqGBBY/hqdefault.jpg"
+          }
+        },
+        "other-images": [
+          {
+            "fileId": "62d846b43dafc51edd970347",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d846b43dafc51edd970347_Phi2.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d846b364752d2b3156548f",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d846b364752d2b3156548f_Phi1.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dada6dc3faf2b206769c0e",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dada6dc3faf2b206769c0e_IMG_0056.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dada6d1c1d63e27d4a6204",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dada6d1c1d63e27d4a6204_IMG_0057.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dada6d1c1d632b444a6203",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dada6d1c1d632b444a6203_IMG_0058.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dada6d964e0632ad03295d",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dada6d964e0632ad03295d_IMG_0059.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dada6c8447da645bb819b0",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dada6c8447da645bb819b0_IMG_0060.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dada6cc3faf24202769b47",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dada6cc3faf24202769b47_IMG_0061.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dada6cd8cb6fe6a7cdbe91",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dada6cd8cb6fe6a7cdbe91_IMG_0062.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dada6c964e06458a03283f",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dada6c964e06458a03283f_IMG_0063.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dada6cace3975489f7545c",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dada6cace3975489f7545c_IMG_0064.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dada6bd8cb6f4acecdbe80",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dada6bd8cb6f4acecdbe80_IMG_0067.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dada6b964e065f95032735",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dada6b964e065f95032735_IMG_0235.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dada6b233d4d2d2e8841a0",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dada6b233d4d2d2e8841a0_IMG_0236.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dada6aaa7d2d65269c4d98",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dada6aaa7d2d65269c4d98_IMG_0238.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dada6af1f0055a7cac5b0b",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dada6af1f0055a7cac5b0b_IMG_0239.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dada6aaa7d2daa9b9c4d97",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dada6aaa7d2daa9b9c4d97_IMG_0240.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dada6ad8cb6f0177cdbe5c",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dada6ad8cb6f0177cdbe5c_IMG_0241.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dada6ad8cb6fd395cdbe5b",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dada6ad8cb6fd395cdbe5b_IMG_0489.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dada6a05335c5a9590e426",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dada6a05335c5a9590e426_IMG_0490.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dada6a233d4d0270883fe7",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dada6a233d4d0270883fe7_IMG_0492.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dada6a233d4d3837883fe0",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dada6a233d4d3837883fe0_IMG_0493.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dada6ac3faf26afa769aa4",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dada6ac3faf26afa769aa4_IMG_0494.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dada691c1d636e854a610d",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dada691c1d636e854a610d_IMG_0496.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dada6a45585de5aec36e2e",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dada6a45585de5aec36e2e_IMG_0497.jpeg",
+            "alt": null
+          }
+        ],
+        "map-code": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125585.22068163013!2d123.84629469999999!3d10.37876445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a999258dcd2dfd%3A0x4c34030cdbd33507!2sCebu%20City%2C%20Cebu%2C%20Philippines!5e0!3m2!1sen!2smx!4v1658345025489!5m2!1sen!2smx",
+        "in-home-carousel": true,
+        "carousel-image": {
+          "fileId": "62dec8f762bc533dcf2a74ef",
+          "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dec8f762bc533dcf2a74ef_Philippines.jpeg",
+          "alt": null
+        },
+        "order": null,
+        "carousel-info": "<p id=\"\">$5.00 = 50 meals in Philippines</p><p id=\"\">Currently feeding 1500 children</p>",
+        "regular": false,
+        "name": "Philippines",
+        "slug": "philippines"
+      }
+    },
+    {
+      "id": "62d845ba21fe621104d795c7",
+      "cmsLocaleId": "653ad68ee882f528b33aeeaa",
+      "lastPublished": "2024-08-28T13:50:59.515Z",
+      "lastUpdated": "2024-08-28T13:50:59.515Z",
+      "createdOn": "2022-07-20T18:13:14.638Z",
+      "isArchived": false,
+      "isDraft": false,
+      "fieldData": {
+        "subtitle": "ESMERALDA HOME",
+        "main-image-s": [
+          {
+            "fileId": "6474cb1c1e87c6abc3df78b1",
+            "url": "https://cdn.prod.website-files.com/62b5f83678249b816dfa2a97/6474cb1c1e87c6abc3df78b1_Paraguay5.jpg",
+            "alt": null
+          },
+          {
+            "fileId": "642c517d427ef2dbe66e6582",
+            "url": "https://cdn.prod.website-files.com/62b5f83678249b816dfa2a97/642c517d427ef2dbe66e6582_Paraguay2.jpg",
+            "alt": null
+          }
+        ],
+        "info": "<p id=\"\">A home for children was founded over 10 years ago, by missionaries from the UK. They saw the need in the town of Quyquyho, and decided to sponsor a “comedor” or Commissary, where children from the poorest communities could enjoy a free lunch. The Commissary eventually evolved into what is now Esmeralda Home.</p><p id=\"\">Today, Esmeralda Home is run by the Evangelistic Association Gracia y Gloria, Paraguay, that shelters 13 girls who, due to various types of abuse, had to leave their family homes through a Court Order. The home, based on Christian principles, provides comprehensive care to restore in these girls a perspective of a victorious life which has been disrupted through family violence.</p><p id=\"\">The youngest girl at is 3 years old, and the oldest is 17. They live a normal life where they go to school, perform daily chores and do fun activities. They receive regular visits from church members, youth groups and other organizations, with whom they establish friendships, participate in faith-building activities, learn a lot and have fun.</p><p id=\"\">The Home staff is composed of an Executive Director and a Technical Team: a lawyer, a psychologist and a social worker. There are also four caregivers who rotate so that the girls are looked after 24/7.</p><p id=\"\">Due to their background, the girls are given the necessary emotional support, therapeutic spaces, opportunities to reflect and other activities. They also work on their “Life Project” – a document where they lay out their goals, dreams, ambitions and wishes for their lives. Wherever possible, the girls are reconnected with their families or relatives through visits.</p><p id=\"\">During the holidays, families from Casa de Gracia host the girls to stay with them. They join in their family dynamics, and get to experience a closer connection with others. The girls enjoy these experiences as it broadens their horizons and expands their world beyond the little town of Quyquyho.</p><p id=\"\">The Home continues to be supported by donors from the UK and occasionally, receives anonymous donations. Volunteers from the US and other Christian organizations also support the Home. High5Give5 contributes monthly to the girls’ nutritional needs.</p>",
+        "video-link": {
+          "url": "https://youtu.be/6Q_B5Z6apCs",
+          "metadata": {
+            "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2F6Q_B5Z6apCs%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D6Q_B5Z6apCs&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2F6Q_B5Z6apCs%2Fhqdefault.jpg&key=96f1f04c5f4143bcb0f2e68c87d65feb&type=text%2Fhtml&schema=youtube\" width=\"854\" height=\"480\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen; encrypted-media; picture-in-picture;\" allowfullscreen=\"true\"></iframe>",
+            "type": "video",
+            "title": "Esmeralda Home",
+            "width": 854,
+            "height": 480,
+            "aspectRatio": 0,
+            "author_name": "Amigos de Paraguay",
+            "description": "Uploaded by Amigos de Paraguay on 2024-02-17.",
+            "provider_name": "YouTube",
+            "thumbnail_url": "https://i.ytimg.com/vi/6Q_B5Z6apCs/hqdefault.jpg"
+          }
+        },
+        "other-images": [
+          {
+            "fileId": "642c5112da1fbd27e874223c",
+            "url": "https://cdn.prod.website-files.com/62b5f83678249b816dfa2a97/642c5112da1fbd27e874223c_Paraguay.jpg",
+            "alt": null
+          },
+          {
+            "fileId": "642c517d718d1b5a7fdba8a0",
+            "url": "https://cdn.prod.website-files.com/62b5f83678249b816dfa2a97/642c517d718d1b5a7fdba8a0_Paraguay1.jpg",
+            "alt": null
+          },
+          {
+            "fileId": "642c517d427ef2dbe66e6582",
+            "url": "https://cdn.prod.website-files.com/62b5f83678249b816dfa2a97/642c517d427ef2dbe66e6582_Paraguay2.jpg",
+            "alt": null
+          },
+          {
+            "fileId": "642c51a03a15aac65925c9c1",
+            "url": "https://cdn.prod.website-files.com/62b5f83678249b816dfa2a97/642c51a03a15aac65925c9c1_Paraguay3.jpg",
+            "alt": null
+          },
+          {
+            "fileId": "6474cb1c1e87c6abc3df78b1",
+            "url": "https://cdn.prod.website-files.com/62b5f83678249b816dfa2a97/6474cb1c1e87c6abc3df78b1_Paraguay5.jpg",
+            "alt": null
+          }
+        ],
+        "map-code": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115243.16613812385!2d-54.6716698!3d-25.4934066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f68499feb6b1d1%3A0xce33cb9eeb700b1e!2sCiudad%20del%20Este%2C%20Paraguay!5e0!3m2!1sen!2smx!4v1658344982775!5m2!1sen!2smx",
+        "in-home-carousel": true,
+        "carousel-image": {
+          "fileId": "62dec8ed62bc5314042a74db",
+          "url": "https://cdn.prod.website-files.com/62b5f83678249b816dfa2a97/62dec8ed62bc5314042a74db_Paraguay.jpeg",
+          "alt": null
+        },
+        "order": null,
+        "carousel-info": "<p id=\"\">$5.00 = 50 meals in Paraguay</p><p id=\"\">Currently feeding 1500 children</p>",
+        "regular": false,
+        "name": "Paraguay",
+        "slug": "paraguay"
+      }
+    },
+    {
+      "id": "62d8454913e637d7daf4e3f5",
+      "cmsLocaleId": "653ad68ee882f528b33aeeaa",
+      "lastPublished": "2023-01-11T20:28:36.429Z",
+      "lastUpdated": "2023-01-11T20:28:36.429Z",
+      "createdOn": "2022-07-20T18:11:21.940Z",
+      "isArchived": false,
+      "isDraft": false,
+      "fieldData": {
+        "subtitle": "BREAD FOR THE POOR",
+        "main-image-s": [
+          {
+            "fileId": "63bf1bf073394b70b254301c",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf1bf073394b70b254301c_IMG_8888.jpg",
+            "alt": null
+          },
+          {
+            "fileId": "63bf1bf00d5520dc90b2733a",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf1bf00d5520dc90b2733a_IMG_0533.jpeg",
+            "alt": null
+          }
+        ],
+        "info": "<p id=\"\">We provide about 500 loaves of bread per day 5 days a week for the poor families, widows and elderly. Charity Bakery give bread to children who come to the church for the after school program where they are helped with their homework and taught Bible lessons.</p><p id=\"\">We work with Viktor Kulyak, pastor of the Emmanuel Church, giving bread who live in very poor villages around the town of Sarata-Galbana which is located 50 miles from the capital city of Chisinau. Recently, we also funded industrial bread slicer.</p>",
+        "video-link": {
+          "url": "https://youtu.be/S_TZ-_e4eGs",
+          "metadata": {
+            "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FS_TZ-_e4eGs%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DS_TZ-_e4eGs&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FS_TZ-_e4eGs%2Fhqdefault.jpg&key=96f1f04c5f4143bcb0f2e68c87d65feb&type=text%2Fhtml&schema=youtube\" width=\"854\" height=\"480\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\"></iframe>",
+            "type": "video",
+            "title": "Bread Distribution - Moldova",
+            "width": 854,
+            "height": 480,
+            "aspectRatio": 0,
+            "author_name": "Edgar Solis",
+            "provider_name": "YouTube",
+            "thumbnail_url": "https://i.ytimg.com/vi/S_TZ-_e4eGs/hqdefault.jpg"
+          }
+        },
+        "other-images": [
+          {
+            "fileId": "62d845336c80b255637110dd",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d845336c80b255637110dd_Mol1.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d84534502cc7984a10bb6b",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d84534502cc7984a10bb6b_Mol2.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad9310a061ca6aa65e374",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad9310a061ca6aa65e374_4a3a55a8-79f0-419e-96c5-c5c0a29081ad.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad93081dfa221d2ccf022",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad93081dfa221d2ccf022_4f405c95-216e-439d-8196-9225acc64536.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad93081dfa2097acceffe",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad93081dfa2097acceffe_5b08909a-e8bf-483a-8066-5e182162fad2.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad930fe68fff03fb6d962",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad930fe68fff03fb6d962_5ca44810-b448-4675-9a09-83ab3bd15adf.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad93045585dcac2c19df3",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad93045585dcac2c19df3_8d7eb57b-218a-4593-b9fe-8b6cbd20800e.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad9301c1d635e0f497a03",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad9301c1d635e0f497a03_031fa4aa-2398-476d-b54c-b6e45457e298.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad930233d4dad2c877103",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad930233d4dad2c877103_328c900a-1a16-4156-a9d1-2f5cbf98c87a.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad9301c1d63cd0849799f",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad9301c1d63cd0849799f_2253c245-6127-4581-820a-b1021cc383a0.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad92f9d5e5ec3aa2d0716",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad92f9d5e5ec3aa2d0716_a52b1fb8-ce3e-4b9d-a057-27639521437a.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad92ffc120a27d27b0831",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad92ffc120a27d27b0831_c35f2eb4-af60-4081-80a6-f94501668bcf.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad92ffc120af6967b0830",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad92ffc120af6967b0830_e782472f-0657-44a7-ba05-ee4f3fa8424f.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad92faa7d2d43739b2e2a",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad92faa7d2d43739b2e2a_IMG_0516.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad92eace397aa8ef5359a",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad92eace397aa8ef5359a_IMG_0517.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad92e81dfa2b994ccef92",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad92e81dfa2b994ccef92_IMG_0518.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad92e45585dea36c19be0",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad92e45585dea36c19be0_IMG_0524.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad92e233d4d1aa2876ec3",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad92e233d4d1aa2876ec3_IMG_0522.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad92ef1f00586f0ab39fd",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad92ef1f00586f0ab39fd_IMG_0527.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad92e81dfa21955ccef41",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad92e81dfa21955ccef41_IMG_0528.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad92e4efb4eedfaf173df",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad92e4efb4eedfaf173df_IMG_0532.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad92d61d99f3cd041a2ed",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad92d61d99f3cd041a2ed_IMG_0531.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad92dfe68ff0fadb6d6d2",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad92dfe68ff0fadb6d6d2_IMG_0535.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad92d4efb4efe37f17345",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad92d4efb4efe37f17345_IMG_0530.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad92cccfb309c346afe03",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad92cccfb309c346afe03_IMG_0529.jpeg",
+            "alt": null
+          }
+        ],
+        "map-code": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21876.821315358455!2d28.51765395!3d46.73329799999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c98bb683d3da9f%3A0x4ac7e58b8570a22b!2zU8SDcmF0YS1HYWxiZW7EgywgTW9sZG92YQ!5e0!3m2!1sen!2smx!4v1658344940214!5m2!1sen!2smx",
+        "in-home-carousel": true,
+        "carousel-image": {
+          "fileId": "62dec8e661520f16842b469d",
+          "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dec8e661520f16842b469d_Moldova.jpeg",
+          "alt": null
+        },
+        "order": null,
+        "carousel-info": "<p id=\"\">$5.00 = 50 meals in Moldova</p><p id=\"\">Currently feeding 1500 children</p>",
+        "regular": false,
+        "name": "Moldova",
+        "slug": "moldova"
+      }
+    },
+    {
+      "id": "62d844a889a8620984beb069",
+      "cmsLocaleId": "653ad68ee882f528b33aeeaa",
+      "lastPublished": "2023-01-11T20:33:06.417Z",
+      "lastUpdated": "2023-01-11T20:33:06.417Z",
+      "createdOn": "2022-07-20T18:08:40.894Z",
+      "isArchived": false,
+      "isDraft": false,
+      "fieldData": {
+        "subtitle": "WATER AND WELL",
+        "main-image-s": [
+          {
+            "fileId": "63bf1b833f32b057fb95a175",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf1b833f32b057fb95a175_IMG_1921.jpg",
+            "alt": null
+          },
+          {
+            "fileId": "63bf1ba9e3eba27490266c7b",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf1ba9e3eba27490266c7b_1e3b80a4-bb9e-4452-90cf-37066e020e97.jpeg",
+            "alt": null
+          }
+        ],
+        "info": "<p id=\"\">A well was built in Juja Farm, 60 kilometers from Nairobi. Hope &amp; Faith is a Rescue Centre for abandoned children with physical and/or mental disabilities including autism, cerebral palsy among other such conditions. It aims to rehabilitate the children so they can have some self-dependency. It is the only one of its kind in Kiambu County and was started by Mrs Marion Karimi in 2006. Kiambu has a population of approximately 2 million people. It currently has about 50 children, some of whom have been successfully incorporated into the regular or special school system The sanitation has been poor with no running water. The borehole will give them clean water for domestic use, sell the water to the local community and establish a kitchen garden. The management is also considering a fish farm.</p><p id=\"\">‍</p><h4 id=\"\">THE WELL WAS COMPLETED IN NOVEMBER 2018 IN HONOR OF JOANN WHO PASSED AWAY IN 2017.<strong id=\"\">‍</strong></h4><h2 id=\"\"><strong id=\"\">FOOD BAGS TO CHILDREN IN THE SLUMS</strong></h2><p id=\"\">‍</p><p id=\"\">We work with New Hope School, Pastor Edward, Daisy and local friends to provide food bags for 275 children in the slums of Soweto. Most of the kids eat one meal a day at the school and for the most part, that is their only meal for the day. Once a week, they give them a bag to take home. In the bag is a boiled egg, a banana or orange, a small carton or milk or yogurt, and porridge mix or bread. It only costs $1 to fill a bag.</p>",
+        "video-link": null,
+        "other-images": [
+          {
+            "fileId": "62d8449bce76582d6546a115",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d8449bce76582d6546a115_Ken1.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d8449bf0e5c4e924b14190",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d8449bf0e5c4e924b14190_Ken2.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad75aaa7d2dbfed992804",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad75aaa7d2dbfed992804_IMG_0074.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad758e23ae073fdb67953",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad758e23ae073fdb67953_IMG_0075.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad75881dfa2d5e5cb7e2a",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad75881dfa2d5e5cb7e2a_IMG_0078.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad75881dfa217fbcb7dab",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad75881dfa217fbcb7dab_IMG_0080.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad758ab3c6a726d319af0",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad758ab3c6a726d319af0_IMG_0082.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad758e23ae0bac9b678b0",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad758e23ae0bac9b678b0_IMG_0083.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad7591c1d63fbf947edfe",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad7591c1d63fbf947edfe_IMG_0169.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad757cef794b5b41fc631",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad757cef794b5b41fc631_IMG_0170.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad757ace39726b5f23558",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad757ace39726b5f23558_IMG_0172.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad757f1f005bd96a9271a",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad757f1f005bd96a9271a_IMG_0185.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad757f1f005069da9270d",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad757f1f005069da9270d_IMG_0186.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad75ae23ae0bb35b679ea",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad75ae23ae0bb35b679ea_IMG_0188.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad757cef79442341fc5ee",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad757cef79442341fc5ee_IMG_0247.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad757ace39762cdf2353c",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad757ace39762cdf2353c_IMG_0248.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad729e23ae09e1bb6525f",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad729e23ae09e1bb6525f_IMG_0251.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad7299d5e5e306a2ab643",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad7299d5e5e306a2ab643_IMG_0254.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad72854307943f476d8a6",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad72854307943f476d8a6_IMG_0257.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad728543079204776d8a0",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad728543079204776d8a0_IMG_1869.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad728fe68ff82a5b60b05",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad728fe68ff82a5b60b05_IMG_1876.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad7279d5e5e6da72ab587",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad7279d5e5e6da72ab587_IMG_1881.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad728ccfb303f06685a5f",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad728ccfb303f06685a5f_IMG_1901.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad727e23ae09b03b651e6",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad727e23ae09b03b651e6_IMG_1918.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad727fe68ff40f4b60af3",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad727fe68ff40f4b60af3_IMG_1921.jpeg",
+            "alt": null
+          }
+        ],
+        "map-code": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7977.965318513341!2d36.83213055!3d-1.1726913999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f3c6280decd87%3A0x1a1a1908e6fd13e9!2sKiambu%2C%20Kenya!5e0!3m2!1sen!2smx!4v1658344887981!5m2!1sen!2smx",
+        "in-home-carousel": true,
+        "carousel-image": {
+          "fileId": "62dec8e066f64f5ee138f771",
+          "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dec8e066f64f5ee138f771_Kenya.jpeg",
+          "alt": null
+        },
+        "order": null,
+        "carousel-info": "<p id=\"\">$5.00 = 50 meals in Kenya</p><p id=\"\">Currently feeding 1500 children</p>",
+        "regular": false,
+        "name": "Kenya",
+        "slug": "kenya"
+      }
+    },
+    {
+      "id": "62d843ba8f1523363c0898b5",
+      "cmsLocaleId": "653ad68ee882f528b33aeeaa",
+      "lastPublished": null,
+      "lastUpdated": "2023-01-13T17:45:51.375Z",
+      "createdOn": "2022-07-20T18:04:42.657Z",
+      "isArchived": false,
+      "isDraft": true,
+      "fieldData": {
+        "subtitle": "FOOD BAGS AND BABY FORMULA FOR SYRIAN REFUGEES",
+        "main-image-s": [
+          {
+            "fileId": "63bf19b2923bd4c327792094",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf19b2923bd4c327792094_IMG_1482.jpg",
+            "alt": null
+          },
+          {
+            "fileId": "63bf19b246e5c72fa1f6fc2c",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf19b246e5c72fa1f6fc2c_IMG_1483.jpg",
+            "alt": null
+          }
+        ],
+        "info": "<p id=\"\">At High5Give5, we are continuing our commitment to helping the refugees who are flooding into Jordan. These refugees arrive with little more than the clothes on their backs, without food, resources, or hope. Our partners from the church in Erbed visit these families to pray, encourage, and deliver much needed parcels of food. Each parcel includes basic necessities such as, rice, milk, tuna, tomato paste, macaroni, oil, tea, and baby formula. We are humbled to know that these bags help to sustain a family for a month, and point lost souls to a God which many of them have never known.</p>",
+        "video-link": null,
+        "other-images": [
+          {
+            "fileId": "62d843a88f15236460088714",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d843a88f15236460088714_Jor1.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d843a8c0aeac7f3d31d431",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d843a8c0aeac7f3d31d431_Jor2.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad650d8cb6fc1c7cc265e",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad650d8cb6fc1c7cc265e_4fc7338f-2524-43d1-8dea-6c66cd2c534a.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad6509d5e5e00ec29d626",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad6509d5e5e00ec29d626_8b47d24b-387f-40d6-bb50-cc42a23471d9.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad650964e066b3dfdff2d",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad650964e066b3dfdff2d_9b5361b3-52f6-42e2-95c1-fc28290947cd.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad65081dfa262a9cb1952",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad65081dfa262a9cb1952_72e10b49-706c-4d7e-8ee1-348b5de14867.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad65008ab2af1af58ad5a",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad65008ab2af1af58ad5a_0987f5fd-fbe1-431a-af36-adce2e37e553.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad650d6f266d8f18d647b",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad650d6f266d8f18d647b_938875d6-b0fb-48c1-a6f4-b745551d3290.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad65008ab2aa08858ad5f",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad65008ab2aa08858ad5f_cbc16c53-ccd6-4733-84e0-c9c9a0082976.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad650d8cb6f25b7cc264d",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad650d8cb6f25b7cc264d_ead573b6-2d26-40ce-a416-fea5333adbef.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad65008ab2a820758ad60",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad65008ab2a820758ad60_IMG_1484.jpeg",
+            "alt": null
+          }
+        ],
+        "map-code": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d439309.8138463827!2d35.8337934!3d30.6590894!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6871cf25902bdf4b!2zMzDCsDM1JzE3LjIiTiAzNsKwMTMnNDIuNyJF!5e0!3m2!1sen!2smx!4v1658344841663!5m2!1sen!2smx",
+        "in-home-carousel": true,
+        "carousel-image": {
+          "fileId": "62dec8dabb55e07178fb351d",
+          "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dec8dabb55e07178fb351d_Jordan.jpeg",
+          "alt": null
+        },
+        "order": null,
+        "carousel-info": "<p id=\"\">$5.00 = 50 meals in Jordan</p><p id=\"\">Currently feeding 1500 children</p>",
+        "regular": false,
+        "name": "Jordan",
+        "slug": "jordan"
+      }
+    },
+    {
+      "id": "62d843133dafc5effb943196",
+      "cmsLocaleId": "653ad68ee882f528b33aeeaa",
+      "lastPublished": null,
+      "lastUpdated": "2023-07-11T17:33:54.317Z",
+      "createdOn": "2022-07-20T18:01:55.633Z",
+      "isArchived": false,
+      "isDraft": true,
+      "fieldData": {
+        "subtitle": "BABY FORMULA AND FOOD BAGS FOR REFUGEES",
+        "main-image-s": [
+          {
+            "fileId": "63bf19773f32b00554955716",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf19773f32b00554955716_IMG_0386.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d84304ce7658768b469634",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d84304ce7658768b469634_Iraq.jpeg",
+            "alt": null
+          }
+        ],
+        "info": "<p id=\"\">We provide food bags and baby formula for the families in Baghdad and Fallujah. It costs $7 for a can of baby formula and $20 for a food bag. A food bag includes rice, beans, pasta, tomato sauce, flour, peas, oil, tea and sugar.</p><p id=\"\">We work with Joy of Heaven, a ministry of New Life Assemblies of God Church pastored by Pastor Jules in Baghdad. This ministry was founded by Pastor Jules’ wife Hala in 2006 and is now led by Pastor Jameel. The ministry started by reaching out to street children and widows and then began working with Muslim refugees. Currently, they are serving 4 different refugee camps. The largest has 1500 families and the others have 600, 400, and 125 families. The moderate size of a family is 6 with some families having more than 10. On average they distribute once a week to these camps and more when they receive extra provision.</p>",
+        "video-link": null,
+        "other-images": [
+          {
+            "fileId": "62d84309ce76584ec3469639",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d84309ce76584ec3469639_Ir1.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d8430913e637b045f34aec",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d8430913e637b045f34aec_Ir2.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad5e5cef794cc591eee16",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad5e5cef794cc591eee16_2.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad5e59d5e5e098e297e49",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad5e59d5e5e098e297e49_6.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad5e545585d0dc0bc45ae",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad5e545585d0dc0bc45ae_IMG_0110.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad5e5cef79435591eede7",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad5e5cef79435591eede7_IMG_0112.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad5e50cbcec12e0211538",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad5e50cbcec12e0211538_IMG_0113.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad5e57a96f669b9368034",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad5e57a96f669b9368034_IMG_0116.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad5e598e855cab1c29c9b",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad5e598e855cab1c29c9b_IMG_0117.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad5e5d6f26645d28cf8b3",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad5e5d6f26645d28cf8b3_IMG_0118.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad5e48c271480bc8f31c5",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad5e48c271480bc8f31c5_IMG_0153.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad5e408ab2ae6385881df",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad5e408ab2ae6385881df_IMG_0154.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad5e48c2714161f8f31a2",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad5e48c2714161f8f31a2_IMG_0156.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad5e5e23ae05163b522ab",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad5e5e23ae05163b522ab_IMG_0159.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad5e408ab2ae6b75881ce",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad5e408ab2ae6b75881ce_IMG_0163.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad5e47a96f66263367c76",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad5e47a96f66263367c76_IMG_0311.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad5e4e528ce2a2b566fb7",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad5e4e528ce2a2b566fb7_IMG_0313.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad5e4d6f2664a9f8cf83c",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad5e4d6f2664a9f8cf83c_IMG_0315.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad5e49d5e5e3411297ccb",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad5e49d5e5e3411297ccb_IMG_0384.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad5e4e528ce2c07566fb6",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad5e4e528ce2c07566fb6_IMG_0386.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad5e4cef79421681eec3a",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad5e4cef79421681eec3a_IMG_0390.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad5e47a96f66f28367bd0",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad5e47a96f66f28367bd0_IMG_0393.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad5e3ccfb30cd9d6716be",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad5e3ccfb30cd9d6716be_IMG_0394.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad5e6e528ce4acb566fba",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad5e6e528ce4acb566fba_IMG_0663.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad5e3cef79466731eebe2",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad5e3cef79466731eebe2_IMG_0665.jpeg",
+            "alt": null
+          }
+        ],
+        "map-code": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d833.534093696987!2d44.3660556!3d33.315250000000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x163099c9a50d234e!2zMzPCsDE4JzU0LjkiTiA0NMKwMjEnNTcuOCJF!5e0!3m2!1sen!2smx!4v1658344520682!5m2!1sen!2smx",
+        "in-home-carousel": true,
+        "carousel-image": {
+          "fileId": "62dec8d353be856665e2bfb5",
+          "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dec8d353be856665e2bfb5_Iraq.jpeg",
+          "alt": null
+        },
+        "order": null,
+        "carousel-info": "<p id=\"\">$5.00 = 50 meals in Iraq</p><p id=\"\">Currently feeding 1500 children</p>",
+        "regular": false,
+        "name": "Iraq",
+        "slug": "iraq"
+      }
+    },
+    {
+      "id": "62d8428a153d9c5b19a77727",
+      "cmsLocaleId": "653ad68ee882f528b33aeeaa",
+      "lastPublished": "2023-01-11T20:15:23.178Z",
+      "lastUpdated": "2023-01-11T20:15:23.178Z",
+      "createdOn": "2022-07-20T17:59:38.173Z",
+      "isArchived": false,
+      "isDraft": false,
+      "fieldData": {
+        "subtitle": "FEEDING IN THE SLUMS AND ORPHANAGE",
+        "main-image-s": [
+          {
+            "fileId": "63bf18b621896363e400065a",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf18b621896363e400065a_DSC_0405%2B%25282%2529.jpg",
+            "alt": null
+          },
+          {
+            "fileId": "63bf18b52cb08e5ece1ecb6a",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf18b52cb08e5ece1ecb6a_IMG_0433.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "63bf18b5f834a958305d7e97",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf18b5f834a958305d7e97_IMG_9666.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "63bf18d987ee81f43c75b85e",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf18d987ee81f43c75b85e_IMG_9674.jpeg",
+            "alt": null
+          }
+        ],
+        "info": "<p id=\"\">At Love Never Fails in India we care for 37 orphaned girls in Nagpur, India providing them with an English education, healthy food each day thanks to the support of High5 and we also build up our girls in the Word of God.. High5 works with Johnathan Kraus and the team at Love Never Fails International.. The ministry started in 2010 to improve the lives of orphans and India's most vulnerable children.</p><p>‍</p><p id=\"\">Many of these children will be the future Christian leaders and break the chains of poverty by the power of God and an English educaiton.. The school drop out rate in India is 50% so we put a priority on educating the children in private English schools where we pay 100% for them to attend.. But it’s hard to go to school if your malnourished and sick.. This led to a robust feeding menu with the help of High5.. When a child is healthy and strong, they can attend school and learn discipline.. We realize this is only one component to the full development of a child.. At our centers we feed the children a nutritious meal, give them a great English education, and also we teach them about Jesus so they know they are more than conquerors in Christ and not just a child from poverty.</p><p>‍</p><p id=\"\">Our children come from non -Christian families and we have seen a majority of the children come to Christ.. We’re also seeing their families accepting Jesus and attending church.. The children are fed physically and spiritually. Each month we have a new menu: chicken curry and rice with a fruit of the day (Banana, mango, apple, and papaya), Eggs, Paneer cheese, and lots of healthy vegetables that the children love.<br>High5 stands with us providing the financial support to give these children a better today, to build a better tomorrow.. From this opportunity to feed the children and care for them at the orphanage, many of our children have accepted Jesus as their Lord and savior seeing He’s a providing loving God!</p><p id=\"\">Thank you High5 and all the supporters. Come visit our orphanage and stay with our children in Nagpur, India and see how High5 and Love Never Fails are teaming up to make miracles happen every day. <a id=\"\" href=\"https://loveneverfailsindia.com/\"> Love Never Fails International - The Ministry of Johnathan Kraus</a></p><p id=\"\">‍</p><p id=\"\">‍</p>",
+        "video-link": null,
+        "other-images": [
+          {
+            "fileId": "62d842813dafc5750393bfdb",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d842813dafc5750393bfdb_In2.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d84281534afd6c1a7ececc",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d84281534afd6c1a7ececc_In1.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad4bcace397f03bee79fc",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad4bcace397f03bee79fc_20190206_074907.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad4bc23786f5dd3ff8721",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad4bc23786f5dd3ff8721_20190206_074924.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad4bb08ab2a23a857e867",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad4bb08ab2a23a857e867_IMG_0436.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d84281534afd6c1a7ececc",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d84281534afd6c1a7ececc_In1.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad4bb08ab2a23a857e867",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad4bb08ab2a23a857e867_IMG_0436.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad4bb233d4d789c83ac48",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad4bb233d4d789c83ac48_IMG_0437.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad4baccfb3005ef65d1a7",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad4baccfb3005ef65d1a7_IMG_0438.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad4bcb7ab4ce152079cae",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad4bcb7ab4ce152079cae_IMG_9662.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad4ba4cd68f21ec6a779c",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad4ba4cd68f21ec6a779c_IMG_9663.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad4bae23ae0172db437cb",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad4bae23ae0172db437cb_IMG_9664.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad4b9ca4a21e4a3b913db",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad4b9ca4a21e4a3b913db_IMG_9666.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad4b8ca4a21a9f0b913b3",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad4b8ca4a21a9f0b913b3_IMG_9669.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad4b8d67e2ea4cbac5986",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad4b8d67e2ea4cbac5986_IMG_9671.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad4b8e519d22d0060138f",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad4b8e519d22d0060138f_IMG_9674.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad4b8964e06796bfbc388",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad4b8964e06796bfbc388_IMG_9675.jpeg",
+            "alt": null
+          }
+        ],
+        "map-code": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d471219.7256039201!2d88.32972875!3d22.6759958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f882db4908f667%3A0x43e330e68f6c2cbc!2sKolkata%2C%20West%20Bengal%2C%20India!5e0!3m2!1sen!2smx!4v1658344439209!5m2!1sen!2smx",
+        "in-home-carousel": true,
+        "carousel-image": {
+          "fileId": "62dec8cd7eed452c41453b58",
+          "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dec8cd7eed452c41453b58_India.jpeg",
+          "alt": null
+        },
+        "order": null,
+        "carousel-info": "<p id=\"\">$5.00 = 50 meals in India</p><p id=\"\">Currently feeding 1500 children</p>",
+        "regular": false,
+        "name": "India",
+        "slug": "india"
+      }
+    },
+    {
+      "id": "62d84222acb43336cd45a175",
+      "cmsLocaleId": "653ad68ee882f528b33aeeaa",
+      "lastPublished": "2023-01-11T20:12:21.474Z",
+      "lastUpdated": "2023-01-11T20:12:21.474Z",
+      "createdOn": "2022-07-20T17:57:54.582Z",
+      "isArchived": false,
+      "isDraft": false,
+      "fieldData": {
+        "subtitle": "FEEDING THE HOMELESS",
+        "main-image-s": [
+          {
+            "fileId": "63bf18145dd1213ccead1ad8",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf18145dd1213ccead1ad8_IMG_9680.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d8420c3dafc552c6937972",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d8420c3dafc552c6937972_Greece.jpeg",
+            "alt": null
+          }
+        ],
+        "info": "<p id=\"\">At the Center Of Hope International food, clothing, &nbsp;baby supplies, hygiene products, &nbsp;shoes and warm blankets are given out to the single moms and poor families that come by the Center on a daily basis. &nbsp;In addition hot meals are prepared at the Center and distributed to the homeless in different locations in Athens.</p>",
+        "video-link": null,
+        "other-images": [
+          {
+            "fileId": "62d8421bf2d15d0e3124dafd",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d8421bf2d15d0e3124dafd_Gree1.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d8421bb8ca979973761555",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d8421bb8ca979973761555_Gree2.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad1d7e23ae0225cb28961",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad1d7e23ae0225cb28961_IMG_1001.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad1d7e519d21b565d8fe2",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad1d7e519d21b565d8fe2_IMG_1002.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad1d751ee9c57ccc64863",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad1d751ee9c57ccc64863_IMG_1003.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad1d745585d8b99b82394",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad1d745585d8b99b82394_IMG_1004.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad1d7b1c2fc847849d31e",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad1d7b1c2fc847849d31e_IMG_1005.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad1d751ee9cf0d8c64862",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad1d751ee9cf0d8c64862_IMG_1006.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad1d781dfa2b13dc7a31c",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad1d781dfa2b13dc7a31c_IMG_1008.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad1d745585db5c5b8238d",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad1d745585db5c5b8238d_IMG_1009.jpeg",
+            "alt": null
+          }
+        ],
+        "map-code": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50310.60044109002!2d23.73833935!3d37.9908372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bd1f067043f1%3A0x2736354576668ddd!2sAthens%2C%20Greece!5e0!3m2!1sen!2smx!4v1658344288000!5m2!1sen!2smx",
+        "in-home-carousel": true,
+        "carousel-image": {
+          "fileId": "62dec8bcad95eb69ff35e480",
+          "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dec8bcad95eb69ff35e480_Greece.jpeg",
+          "alt": null
+        },
+        "order": null,
+        "carousel-info": "<p id=\"\">$5.00 = 50 meals in Greece</p><p id=\"\">Currently feeding 1500 children</p>",
+        "regular": false,
+        "name": "Greece",
+        "slug": "greece"
+      }
+    },
+    {
+      "id": "62d841bc7aef6d091e51a75b",
+      "cmsLocaleId": "653ad68ee882f528b33aeeaa",
+      "lastPublished": "2023-01-11T20:11:12.482Z",
+      "lastUpdated": "2023-01-11T20:11:12.482Z",
+      "createdOn": "2022-07-20T17:56:12.438Z",
+      "isArchived": false,
+      "isDraft": false,
+      "fieldData": {
+        "subtitle": "SCHOOL SUPPLIES FOR CHILDREN",
+        "main-image-s": [
+          {
+            "fileId": "63bf17d1f834a93bfa5d73d6",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf17d1f834a93bfa5d73d6_IMG_4124.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "63bf17ddc5159a5dcc91fae8",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf17ddc5159a5dcc91fae8_IMG_0674.jpeg",
+            "alt": null
+          }
+        ],
+        "info": "<p id=\"\">We work with Fundación Esteban (Steven Foundation). David Bueno founded the Stephen Foundation in 2014 to be a conduit of resources to those living in poverty in El Salvador. They work in 7 schools, 3 orphanages, 4 churches and within 2 communities. The foundation feeds approximately 1000 people weekly. We also recently purchased machinery for the farm.</p><p id=\"\">We provided school supplies to children in need, help fund a pig farm and planted guava trees.</p><p>‍</p>",
+        "video-link": null,
+        "other-images": [
+          {
+            "fileId": "62d841b3a8902010d33de0b9",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d841b3a8902010d33de0b9_els2.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d841adb8ca97338f75ef97",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d841adb8ca97338f75ef97_Elsalvador.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad08960327f45fbd09dee",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad08960327f45fbd09dee_IMG_0676.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad088da168e071d26890d",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad088da168e071d26890d_IMG_0677.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad089ace397cb9fe6bb10",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad089ace397cb9fe6bb10_IMG_0678.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad08845585d162cb7073e",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad08845585d162cb7073e_IMG_0679.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad088ace3971837e6ba74",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad088ace3971837e6ba74_IMG_0680.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad0886efb72beed4de674",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad0886efb72beed4de674_IMG_0681.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad08845585d4894b7073a",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad08845585d4894b7073a_IMG_0682.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad0880e712a43b5c906d6",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad0880e712a43b5c906d6_IMG_0683.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad08860327f41c5d09dba",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad08860327f41c5d09dba_IMG_0684.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dad088ace3973c39e6ba67",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dad088ace3973c39e6ba67_IMG_0685.jpeg",
+            "alt": null
+          }
+        ],
+        "map-code": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62023.11967331696!2d-89.21525175000001!3d13.691478199999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f633067b411775d%3A0x1f75978893fb5c96!2sSan%20Salvador%2C%20El%20Salvador!5e0!3m2!1sen!2smx!4v1658344201362!5m2!1sen!2smx",
+        "in-home-carousel": true,
+        "carousel-image": {
+          "fileId": "62dec88616ef6f313a9c1b3e",
+          "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dec88616ef6f313a9c1b3e_Elsalvador.jpeg",
+          "alt": null
+        },
+        "order": null,
+        "carousel-info": "<p id=\"\">$5.00 = 50 meals in El Salvador</p><p id=\"\">Currently feeding 1500 children</p>",
+        "regular": false,
+        "name": "El Salvador",
+        "slug": "el-salvador"
+      }
+    },
+    {
+      "id": "62d84169534afd4c797dd309",
+      "cmsLocaleId": "653ad68ee882f528b33aeeaa",
+      "lastPublished": null,
+      "lastUpdated": "2023-07-11T17:32:55.548Z",
+      "createdOn": "2022-07-20T17:54:49.498Z",
+      "isArchived": false,
+      "isDraft": true,
+      "fieldData": {
+        "subtitle": null,
+        "main-image-s": [
+          {
+            "fileId": "62d84155d096c2d3d6bfb96b",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d84155d096c2d3d6bfb96b_Croatia.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "63bf17a067565c5225173010",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf17a067565c5225173010_5a51f40b-f3ba-4ea3-a421-6d3e993652d7.jpg",
+            "alt": null
+          }
+        ],
+        "info": "<p id=\"\">In 2010, with a deep burden for their own people, a Roma couple began to reach out to two Roma communities in Darda, a small village close to Osijek. As they continued to minister in the area, they met with other like-minded believers from the US, the Netherlands and locals who shared their burden for the Romani people in these communities.</p><p id=\"\">After a year of home visits, bible studies, prayer meetings, and street evangelism, a community church was birth. The Roma Pentecostal Evangelical Church is made up of different nationalities. As the ministry to the different Roma communities grew, the majority of the congregation are the Romani people. The vision of the church is to see the congregant being discipled; to grow in faith and in the gifts that God has given to the body of Christ to serve those in the communities. To date, the church has extended their work to other surrounding villages such as Bistrinci, Beli Manastir, Vardarac, and Jagodnjak.</p><p id=\"\">The vision of this growing ministry is to raise up strong and committed disciples among the largely overlooked and forgotten Romani communities scattered throughout Eastern Europe. One of the ways to achieve this objective is to focus on the Romani children. Tutoring programs, helping with homework and lessons were set up to fight against rampant delinquency and high dropout rate among them.</p><p id=\"\">The church is reaching out to poor families in these communities through food packages. Many in these communities live in difficult conditions especially after the summer months when it is hard to find work. With the support of High5 support, 25 families in Jagodnjak and Darda are given these packages once a month. During the delivery of the food packages, the recipients are shown the tangible love of Christ and opportunities to connect and share the Gospel to new people become a reality.</p>",
+        "video-link": null,
+        "other-images": [
+          {
+            "fileId": "62d8415c7caa54054febb26d",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d8415c7caa54054febb26d_Cro.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d8415c64752d2de456514a",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d8415c64752d2de456514a_Cro2.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dacfbb964e06aae3f66470",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dacfbb964e06aae3f66470_5a51f40b-f3ba-4ea3-a421-6d3e993652d7.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dacfbbb88982efc5f6058a",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dacfbbb88982efc5f6058a_14ba3f84-ec5f-48f6-b857-8f0df31223e6.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dacfbb233d4dd7447f5821",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dacfbb233d4dd7447f5821_330fc103-fe42-4e0a-9023-dd08c8d74164.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dacfbbc80016b1a4e3e6e3",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dacfbbc80016b1a4e3e6e3_cbdb5e84-3141-4ba6-8659-4256c5dc5c19.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dacfbb5bf3888fc9e214ed",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dacfbb5bf3888fc9e214ed_d1cae5e3-e14f-44e7-95ee-4479aa4524e4.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dacfbbb889828ed4f6058b",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dacfbbb889828ed4f6058b_e3372f80-7e7b-437c-8a01-aa7d4ddbb664.jpeg",
+            "alt": null
+          }
+        ],
+        "map-code": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d89294.20897808645!2d18.63242525!3d45.62181555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475cdc4aa0a4932b%3A0x8d2842eb249b483d!2sDarda%2C%20Croatia!5e0!3m2!1sen!2smx!4v1658344145233!5m2!1sen!2smx",
+        "in-home-carousel": true,
+        "carousel-image": {
+          "fileId": "62dec87eb7b38e648e6a1db9",
+          "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dec87eb7b38e648e6a1db9_Croatia.jpeg",
+          "alt": null
+        },
+        "order": null,
+        "carousel-info": "<p id=\"\">$5.00 = 50 meals in Croatia</p><p id=\"\">Currently feeding 1500 children</p>",
+        "regular": false,
+        "name": "Croatia",
+        "slug": "croatia"
+      }
+    },
+    {
+      "id": "62d840f2a89020f3b33d2c5e",
+      "cmsLocaleId": "653ad68ee882f528b33aeeaa",
+      "lastPublished": "2023-04-10T16:35:21.944Z",
+      "lastUpdated": "2023-04-10T16:34:49.245Z",
+      "createdOn": "2022-07-20T17:52:50.067Z",
+      "isArchived": false,
+      "isDraft": false,
+      "fieldData": {
+        "subtitle": "FOOD DISTRIBUTION",
+        "main-image-s": [
+          {
+            "fileId": "63bf176e60d71ff50a74f8e0",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf176e60d71ff50a74f8e0_P2231114.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "63bf176ec5159ae72491f0e0",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf176ec5159ae72491f0e0_P2231047.jpeg",
+            "alt": null
+          }
+        ],
+        "info": "<p id=\"\">Douglas Calvano arrived with a one-way ticket to Medellin in 1993, to a city rife with addiction, warring drug cartels and massive internal displacement due to Colombia's decades old civil conflict. Douglas began to work with displaced Colombians, homeless, and addicts, sharing Christ and helping as able with practical needs. Formally registered in 2008, City of Refuge remains committed to providing Christian programing and emergency assistance to vulnerable individuals living in Colombia.  </p><p id=\"\">Colombia's drug war has left 7,300,000 internally displaced persons migrating into urban centers looking for help.  Additionally, the recent humanitarian crisis in Venezuela has caused thousands of Venezuelans to flee their country and daily enter Colombia seeking assistance and/or transiting to other countries.  The neighborhood surrounding Ciudad Refugio currently comprised 80% Venezuleans, large historical homes have been purchased corruptly and turned into illegal shelters, charging high daily rates to poor families to rent rooms.  Individuals and families beg, prostitute or work informally to pay for housing.  These families often go without food and other basic services.    </p><p id=\"\">In partnership with High5Give5, Ciudad Refugio has opened its doors to our local community, providing weekly feeding programs and humanitarian aid to Colombians and Venezuelans in need.  We provide 50 families with grocery boxes containing basic food staples sufficient to sustain them for a month. Grocery boxes contain: rice, beans, lentils, salt, panela, oil, pastas, bologna and toilet paper.  We also have weekend feeding programs offering a hot meal to children and single mothers.  This meal is accompanied by Christian teaching and emotional support for children and single moms (and often grandmothers).  Once a week we also visit local shelters in our community, carrying food, children's activities and the word of God to encourage children and single moms to make a decision for Jesus and to become a part of Ciudad Refugio's church community.  </p>",
+        "video-link": {
+          "url": "https://youtu.be/nSxWYJ7QXng",
+          "metadata": {
+            "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FnSxWYJ7QXng%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DnSxWYJ7QXng&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FnSxWYJ7QXng%2Fhqdefault.jpg&key=96f1f04c5f4143bcb0f2e68c87d65feb&type=text%2Fhtml&schema=youtube\" width=\"854\" height=\"480\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\"></iframe>",
+            "type": "video",
+            "title": "Ciudad Refugio - Colombia",
+            "width": 854,
+            "height": 480,
+            "aspectRatio": 0,
+            "author_name": "Edgar Solis",
+            "provider_name": "YouTube",
+            "thumbnail_url": "https://i.ytimg.com/vi/nSxWYJ7QXng/hqdefault.jpg"
+          }
+        },
+        "other-images": [
+          {
+            "fileId": "64343a7e697cd6fbdd2e70be",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/64343a7e697cd6fbdd2e70be_13-DSC02061.jpg",
+            "alt": null
+          },
+          {
+            "fileId": "64343a7ee185b1d38e5cbf11",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/64343a7ee185b1d38e5cbf11_14-DSC02390.jpg",
+            "alt": null
+          },
+          {
+            "fileId": "64343a7ee557aaf07da38910",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/64343a7ee557aaf07da38910_15-DSC02630.jpg",
+            "alt": null
+          },
+          {
+            "fileId": "64343a7e36f1b8f7d949a82b",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/64343a7e36f1b8f7d949a82b_17-DSC02651.jpg",
+            "alt": null
+          }
+        ],
+        "map-code": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.751275973045!2d-72.32669944999999!3d11.2060295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e8bead38d48f991%3A0xda7c7293d33cd44f!2sLos%20Manantiales%2C%20Maicao%2C%20La%20Guajira%2C%20Colombia!5e0!3m2!1sen!2smx!4v1658344091576!5m2!1sen!2smx",
+        "in-home-carousel": true,
+        "carousel-image": {
+          "fileId": "62dec877e6d0a97b98a0efce",
+          "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dec877e6d0a97b98a0efce_Colombia.jpeg",
+          "alt": null
+        },
+        "order": null,
+        "carousel-info": "<p id=\"\">$5.00 = 50 meals in Colombia</p><p id=\"\">Currently feeding 1500 children</p><p id=\"\">‍</p>",
+        "regular": false,
+        "name": "Colombia",
+        "slug": "colombia"
+      }
+    },
+    {
+      "id": "62d84076a84a0f2268f1c979",
+      "cmsLocaleId": "653ad68ee882f528b33aeeaa",
+      "lastPublished": null,
+      "lastUpdated": "2023-01-13T17:45:44.939Z",
+      "createdOn": "2022-07-20T17:50:46.973Z",
+      "isArchived": false,
+      "isDraft": true,
+      "fieldData": {
+        "subtitle": "FOOD PACKAGES",
+        "main-image-s": [
+          {
+            "fileId": "63bf1a13eac5d52e46cc81ad",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf1a13eac5d52e46cc81ad_Banner.jpg",
+            "alt": null
+          },
+          {
+            "fileId": "62dec86f62bc53a2c42a6f77",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dec86f62bc53a2c42a6f77_Belarus.jpeg",
+            "alt": null
+          }
+        ],
+        "info": "<p id=\"\">Food, medicine, and other basic needs are met in connection with social activities that uplift and care for those most in need.The government keeps a watchful eye on all foreign activity, especially Christian in this socialist country. The church is restricted from public activities, but High 5 partners with evangelistic risk-taking groups that share Christ through a variety of children’s projects. Children’s with disabilities, which are still high in number due to the fallout of Chernobyl suffer from neglect and a shame based culture regarding the marginalized. We work with Bruce, Mir Ministries based in Ukraine.</p>",
+        "video-link": null,
+        "other-images": [
+          {
+            "fileId": "62d8402e153d9c360aa776e0",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d8402e153d9c360aa776e0_Bel1.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d8402e1c87a10a11217544",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d8402e1c87a10a11217544_Bel2.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dacbe070b5547d4a1c7769",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dacbe070b5547d4a1c7769_IMG_0935.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dacbe070b5547ecd1c7779",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dacbe070b5547ecd1c7779_IMG_0936.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62dacbe038f24c774e9085e2",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dacbe038f24c774e9085e2_IMG_0937.jpeg",
+            "alt": null
+          }
+        ],
+        "map-code": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9445.911625039484!2d27.9455194!3d53.7097483!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb0d6aa35c8f3a27a!2zNTPCsDQyJzM1LjMiTiAyN8KwNTcnMTIuMiJF!5e0!3m2!1sen!2smx!4v1658344033855!5m2!1sen!2smx",
+        "in-home-carousel": true,
+        "carousel-image": {
+          "fileId": "62dec86f62bc53a2c42a6f77",
+          "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dec86f62bc53a2c42a6f77_Belarus.jpeg",
+          "alt": null
+        },
+        "order": null,
+        "carousel-info": "<p id=\"\">$5.00 = 50 meals in Belarus</p><p id=\"\">Currently feeding 1500 children</p><p id=\"\">‍</p>",
+        "regular": false,
+        "name": "Belarus",
+        "slug": "belarus"
+      }
+    },
+    {
+      "id": "62d83e6537af0a33bf8ef74d",
+      "cmsLocaleId": "653ad68ee882f528b33aeeaa",
+      "lastPublished": "2023-06-08T17:00:29.405Z",
+      "lastUpdated": "2023-06-08T17:00:26.007Z",
+      "createdOn": "2022-07-20T17:41:57.043Z",
+      "isArchived": false,
+      "isDraft": false,
+      "fieldData": {
+        "subtitle": "FOOD BAGS TO THE ELDERLY",
+        "main-image-s": [
+          {
+            "fileId": "62d83e5e153d9c7c33a75fa7",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d83e5e153d9c7c33a75fa7_Armenia.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d9ad03a0d74e6d3de15da5",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d9ad03a0d74e6d3de15da5_IMG_0590.jpeg",
+            "alt": null
+          }
+        ],
+        "info": "<p id=\"\">In 2001, Veronika Hananyan founded Hope Ministry, a social charity organization to serve the elderly in Vanadzor. The ministry started with bread distribution to the elderly living in poverty in the surrounding towns. Veronika saw many in this program living on their own and needed assistance with their daily activities. Her vision was to start a home where she could tend to those who are bedridden and those who needed better living condition. In 2006, Hope Ministry started a nursing home to provide care and medical assistance to the elderly who are in desperate need. &nbsp;</p><p id=\"\"> </p><p id=\"\">In this nursing home, Veronika has a baker comes daily in the evening to bake bread for the home as well as for the distribution. The bread ministry continues to reach many elderlies, widows and children and today, the distribution covers 7 regions such as Spitak, Gyumri, Artik, Tashir, Taron, Vanadzor and Yerevan. The groups of people who accept the Lord as their Savior through this ministry are entrusted to the local congregations. &nbsp;</p><p id=\"\"> </p><p id=\"\">With the support from High5 give5, we began a new ministry to children from poor families by serving them a hot meal daily. There are 30 children in this program and this is an opportunity to create a special relationship between the elderly in the home and these children. The hope is that the bond between these two generations can grow into a grandparent and grandchild relationship, which can bring heal and joy to both groups.</p><p id=\"\">‍</p>",
+        "video-link": null,
+        "other-images": [
+          {
+            "fileId": "62d83ec2f0e5c44a83ad5fc6",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d83ec2f0e5c44a83ad5fc6_Arm1.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d83ec2d51b64febddc3a59",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d83ec2d51b64febddc3a59_Arm2.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d9ad03185428e6b114227f",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d9ad03185428e6b114227f_IMG_0229.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d9ad0353a4fb1c91c16cf2",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d9ad0353a4fb1c91c16cf2_IMG_0231.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d9ad0353a4fbbaa0c16cba",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d9ad0353a4fbbaa0c16cba_IMG_0228.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d9ad0345add6cc9215bb12",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d9ad0345add6cc9215bb12_IMG_0227.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d9ad0311b6651f72fe24e4",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d9ad0311b6651f72fe24e4_IMG_0582.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d9ad03a0d74e6d3de15da5",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d9ad03a0d74e6d3de15da5_IMG_0590.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d9ad0235f69c4fbf1ed409",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d9ad0235f69c4fbf1ed409_IMG_0586.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d9ad0245add6360a15bb11",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d9ad0245add6360a15bb11_IMG_0585.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d9ad032ac8b722bedaa668",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d9ad032ac8b722bedaa668_IMG_0581.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d9ad027d6ff6831a830c99",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d9ad027d6ff6831a830c99_IMG_0698.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d9ad0235f69cfa061ed408",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d9ad0235f69cfa061ed408_IMG_0697.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d9ad0235f69c7f9d1ed407",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d9ad0235f69c7f9d1ed407_IMG_0696.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d9ad0235f69c33071ed3f3",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d9ad0235f69c33071ed3f3_IMG_0695.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d9ad02a0d74ea1ade15d6d",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d9ad02a0d74ea1ade15d6d_IMG_0694.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d9ad332ac8b7f25ddadab0",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d9ad332ac8b7f25ddadab0_IMG_0355.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d9ad3353a4fb1edec19655",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d9ad3353a4fb1edec19655_IMG_0587.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d9ad3311b665943bfe4d5b",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d9ad3311b665943bfe4d5b_IMG_0348.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d9ad3345add650d015bb9c",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d9ad3345add650d015bb9c_IMG_0347.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d9ad338feed8ad7f9ba703",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d9ad338feed8ad7f9ba703_IMG_0349.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d9ad3353a4fbb036c19654",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d9ad3353a4fbb036c19654_IMG_0353.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d9ad3376091549b65db935",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d9ad3376091549b65db935_IMG_0350.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d9ad3311b6653a17fe4d5a",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d9ad3311b6653a17fe4d5a_IMG_0352.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d9ad33d29864488f63e0bd",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d9ad33d29864488f63e0bd_IMG_0351.jpeg",
+            "alt": null
+          }
+        ],
+        "map-code": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d97584.04254026728!2d44.4885671!3d40.1533904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406aa2dab8fc8b5b%3A0x3d1479ae87da526a!2sYerevan%2C%20Armenia!5e0!3m2!1sen!2smx!4v1658343958741!5m2!1sen!2smx",
+        "in-home-carousel": true,
+        "carousel-image": {
+          "fileId": "62d9ad03185428e6b114227f",
+          "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d9ad03185428e6b114227f_IMG_0229.jpeg",
+          "alt": null
+        },
+        "order": null,
+        "carousel-info": "<p id=\"\">$5.00 = 50 meals in Armenia&nbsp;</p><p id=\"\">Currently feeding 1500 children</p>",
+        "regular": false,
+        "name": "Armenia",
+        "slug": "armenia"
+      }
+    },
+    {
+      "id": "62d82d7d589d1d99db343f63",
+      "cmsLocaleId": "653ad68ee882f528b33aeeaa",
+      "lastPublished": "2023-07-18T17:24:19.582Z",
+      "lastUpdated": "2023-07-18T17:24:15.521Z",
+      "createdOn": "2022-07-20T16:29:49.938Z",
+      "isArchived": false,
+      "isDraft": false,
+      "fieldData": {
+        "subtitle": "FEEDING BUTTERFLY PROJECT #3",
+        "main-image-s": [
+          {
+            "fileId": "63bf05e3765182894f1b8bd2",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf05e3765182894f1b8bd2_29243153_1701490979938809_1073698528_o%20(1).jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "63bf05e36df40f0e4000f0db",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf05e36df40f0e4000f0db_27783095_1777428445892759_168208560_n.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "63bf062dedb60a149f101b36",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf062dedb60a149f101b36_27848846_1777428582559412_952754286_n.jpeg",
+            "alt": null
+          }
+        ],
+        "info": "<p id=\"\">Ancora International was established to bring hope to suffering children, to strengthen families to be an anchor for the youth and to be a shelter for the orphans and the needy throughout Albania, the Balkans region and southeast Europe. </p><p id=\"\">Through our food project, Ancora International provides food packages, emotional and spiritual care to many families, abandoned elderly people, widows, orphans and children in deep poverty in the city of Tirana and the surrounding villages. Our team of volunteers give food packages and share the love of God, providing physical and spiritual food. &nbsp;</p><p id=\"\"> </p><p id=\"\">The current economic crisis in Albania has caused food prices to increase by 70%, transportation by 50% and also the prices of everything. Many are afraid for their future and the poor suffer the most. We continue to visit with these families and children on a regular basis as we believe in the transformation power of God’s Word. Through the visits and sharing, many have learned that God cares for them and they are not alone. </p><p id=\"\"> <br>We are serving, praying and believing for the transformation of the lives of the people through the power of God's Word and by being His hands in reaching their needs. During Easter, Christmas, Women's Day, Children's Day, etc, we hold special services to share messages from the Bible and encourage them to put their trust in Jesus.  </p><p id=\"\">‍</p><p id=\"\">‍</p>",
+        "video-link": {
+          "url": "https://youtu.be/ei3sOO5x2gE",
+          "metadata": {
+            "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2Fei3sOO5x2gE%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dei3sOO5x2gE&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2Fei3sOO5x2gE%2Fhqdefault.jpg&key=96f1f04c5f4143bcb0f2e68c87d65feb&type=text%2Fhtml&schema=youtube\" width=\"854\" height=\"480\" scrolling=\"no\" title=\"YouTube embed\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen=\"true\"></iframe>",
+            "type": "video",
+            "title": "Butterfly Project - Albania",
+            "width": 854,
+            "height": 480,
+            "aspectRatio": 0,
+            "author_name": "Edgar Solis",
+            "provider_name": "YouTube",
+            "thumbnail_url": "https://i.ytimg.com/vi/ei3sOO5x2gE/hqdefault.jpg"
+          }
+        },
+        "other-images": [
+          {
+            "fileId": "62e4088440f75dd4c6a5bcf1",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62e4088440f75dd4c6a5bcf1_20201031_133119.jpg",
+            "alt": null
+          },
+          {
+            "fileId": "62e40884ad9641b2c38e36bb",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62e40884ad9641b2c38e36bb_20201031_132512.jpg",
+            "alt": null
+          },
+          {
+            "fileId": "62e40884ad964118e18e36b6",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62e40884ad964118e18e36b6_20201031_121534.jpg",
+            "alt": null
+          },
+          {
+            "fileId": "62e40884bcd10662d5a6e442",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62e40884bcd10662d5a6e442_20201031_122531.jpg",
+            "alt": null
+          }
+        ],
+        "map-code": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d748.9023610105714!2d19.893901429275587!3d41.3391053056238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1350368394f12605%3A0x8234b788cfc4a016!2sLanabregas%2C%20Albania!5e0!3m2!1sen!2smx!4v1659458514929!5m2!1sen!2smx",
+        "in-home-carousel": true,
+        "carousel-image": {
+          "fileId": "62e40884bcd10662d5a6e442",
+          "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62e40884bcd10662d5a6e442_20201031_122531.jpg",
+          "alt": null
+        },
+        "order": null,
+        "carousel-info": "<p id=\"\">$5.00 = 50 meals in Albania</p><p id=\"\">Currently feeding 1500 children</p><p id=\"\">‍</p>",
+        "regular": false,
+        "name": "Albania",
+        "slug": "albania"
+      }
+    },
+    {
+      "id": "62d82d28d7e4c14deb16189f",
+      "cmsLocaleId": "653ad68ee882f528b33aeeaa",
+      "lastPublished": null,
+      "lastUpdated": "2023-01-13T19:26:03.644Z",
+      "createdOn": "2022-07-20T16:28:24.490Z",
+      "isArchived": false,
+      "isDraft": true,
+      "fieldData": {
+        "subtitle": null,
+        "main-image-s": [
+          {
+            "fileId": "62d82d0c137ca13b5a74e152",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d82d0c137ca13b5a74e152_78ccf9fa-512d-4b9a-8397-9304deddd8fb.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "63bf04e98efbc86c91b250e2",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/63bf04e98efbc86c91b250e2_5baf15b7-d0b9-4721-8bcb-4c90646b2e2a.jpg",
+            "alt": null
+          }
+        ],
+        "info": "<p id=\"\">High5Give5 is called to extend a hand to ministries in some of the most difficult places in the world. Probably nowhere more-so, than a ministry currently operating in the nation of Afghanistan. Because of the dangerous political climate there, we are unable to post extensive information about this work, but please know that the Lord is moving, regardless of man's efforts to shut down His word. Most of the ministries that were in this region, have been forced to leave the country, or their leaders have been killed. There are a few remaining, who work under the radar - reaching out to the lost with the powerful love of Christ. High5Give5 is seeking to support to a woman who is fighting the good fight in the midst of unthinkable struggles and danger. Please find it in your heart to give. These are the powerful testimonies which are often untold by men, but are clearly seen and rewarded in Heaven.</p>",
+        "video-link": null,
+        "other-images": [
+          {
+            "fileId": "62d82d19675af2eef1b00f50",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d82d19675af2eef1b00f50_141ec98a-d080-46a1-a6ad-6ad4b6de2b49.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d82d1987181c83142923ea",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d82d1987181c83142923ea_356e11e3-9da2-4c2f-a404-8e7102385bf1.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d82d1933ef37b380b972c7",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d82d1933ef37b380b972c7_665f2655-9471-4e12-8bd3-371acc847585.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d82d19675af2d509b00f4f",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d82d19675af2d509b00f4f_2529bf91-91ba-4fb3-a1dd-20bb00e30775.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d82d18928ccb351da533d8",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d82d18928ccb351da533d8_6086d515-7c4e-45d1-ad95-93fef1aa551a.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d82d183a0ee33e4ee1241d",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d82d183a0ee33e4ee1241d_33543b53-3179-4933-b3fd-aa2fe903720f.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d82d180c43edb8320132f8",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d82d180c43edb8320132f8_a8207858-8f38-436b-8c31-cc5b99e7c73d.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d82d18d5c3e4fc57863212",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d82d18d5c3e4fc57863212_eb77f204-89ee-401f-8b2c-9c3059e8daa4.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d82d1f55b7885020fa427f",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d82d1f55b7885020fa427f_5baf15b7-d0b9-4721-8bcb-4c90646b2e2a.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d82d1f83048a4adb86e7b3",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d82d1f83048a4adb86e7b3_6a446246-fbda-462e-9a9b-372f86fa6bfc.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d82d1fa46a30f8cb3037c3",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d82d1fa46a30f8cb3037c3_9f96f1bc-54d1-4fa2-a7eb-e3855f8e1a70.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d82d1f33ef37559bb972d8",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d82d1f33ef37559bb972d8_24edd17e-cfa2-4f98-8e95-d1233d43fc29.jpeg",
+            "alt": null
+          },
+          {
+            "fileId": "62d82d1f928ccb51c6a533f2",
+            "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62d82d1f928ccb51c6a533f2_86b212f2-f053-4484-970c-f03fad2d93f1.jpeg",
+            "alt": null
+          }
+        ],
+        "map-code": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d210303.81909074532!2d69.05764761094248!3d34.55362695658164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38d1694c3c1e6d49%3A0xebdf473578214429!2sKabul%2C%20Afghanistan!5e0!3m2!1sen!2sus!4v1658258723318!5m2!1sen!2sus",
+        "in-home-carousel": true,
+        "carousel-image": {
+          "fileId": "62dec857e6d0a9fc47a0ef56",
+          "url": "https://uploads-ssl.webflow.com/62b5f83678249b816dfa2a97/62dec857e6d0a9fc47a0ef56_Afghanistan.jpeg",
+          "alt": null
+        },
+        "order": null,
+        "carousel-info": "<p id=\"\">$5.00 = 50 meals in Afghanistan &nbsp;</p><p id=\"\">Currently feeding 1500 children</p>",
+        "regular": false,
+        "name": "Afghanistan",
+        "slug": "afghanistan"
+      }
+    }
+  ]
+}

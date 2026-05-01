@@ -1,0 +1,24 @@
+{
+  "siteId": "62b34d428b67bb250e35007e",
+  "downloadedAt": "2026-04-30T23:52:22.681Z",
+  "collections": [
+    {
+      "slug": "countries",
+      "displayName": "Countries",
+      "itemCount": 26,
+      "file": "countries.json"
+    },
+    {
+      "slug": "blog",
+      "displayName": "Blogs",
+      "itemCount": 161,
+      "file": "blog.json"
+    },
+    {
+      "slug": "media",
+      "displayName": "Media",
+      "itemCount": 31,
+      "file": "media.json"
+    }
+  ]
+}

@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Webflow legacy migration artifacts: binaries live in S3, only manifests + CMS JSON are tracked
+public/legacy/webflow-assets/*
+!public/legacy/webflow-assets/_manifest.json
+public/legacy/webflow-cms-images/*
+!public/legacy/webflow-cms-images/_manifest.json
