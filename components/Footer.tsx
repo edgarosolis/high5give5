@@ -16,7 +16,7 @@ export default function Footer() {
           {/* Column 1: Logo & tagline */}
           <div>
             <Link href="/" aria-label="High5Give5 home" className="inline-block">
-              <Logo variant="white" className="h-12 w-auto" />
+              <Logo variant="white" className="h-24 w-auto" />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/70">
               Empowering communities around the world through education,

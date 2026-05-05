@@ -46,26 +46,26 @@ export default function Navbar() {
       className="fixed top-0 left-0 right-0 z-50"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-28 items-center justify-between">
           {/* Logo */}
           <Link
             href="/"
             aria-label="High5Give5 home"
-            className="relative flex h-12 w-32 items-center"
+            className="relative flex h-20 w-56 items-center"
           >
             <span
               className={`absolute inset-0 flex items-center transition-opacity duration-300 ${
                 scrolled ? "opacity-0" : "opacity-100"
               }`}
             >
-              <Logo variant="white" priority className="h-10 w-auto" />
+              <Logo variant="white" priority className="h-20 w-auto" />
             </span>
             <span
               className={`absolute inset-0 flex items-center transition-opacity duration-300 ${
                 scrolled ? "opacity-100" : "opacity-0"
               }`}
             >
-              <Logo variant="green" priority className="h-10 w-auto" />
+              <Logo variant="green" priority className="h-20 w-auto" />
             </span>
           </Link>
 

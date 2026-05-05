@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getCountryBySlug, getBlogPostsByCountry } from "@/lib/content";
 import { getCountryMedia } from "@/lib/media";
+import { getCountryFlagUrl } from "@/lib/country-flags";
 
 export const dynamic = "force-dynamic";
 
@@ -20,12 +21,25 @@ export default async function CountryPage({
 
   const blogPosts = await getBlogPostsByCountry(slug);
   const media = getCountryMedia(slug);
+  const flagUrl = getCountryFlagUrl(slug);
   const isHtml = (text: string) => /<[a-z][\s\S]*>/i.test(text);
 
   return (
     <div>
       {/* Hero */}
-      <section className="bg-secondary h-80 flex flex-col items-center justify-center text-center px-4">
+      <section className="bg-secondary py-20 flex flex-col items-center justify-center text-center px-4">
+        {flagUrl && (
+          <div className="mb-5 h-24 w-24 rounded-full overflow-hidden ring-4 ring-white/20 shadow-lg bg-white">
+            <Image
+              src={flagUrl}
+              alt={`${country.name} flag`}
+              width={320}
+              height={240}
+              className="h-full w-full object-cover"
+              unoptimized
+            />
+          </div>
+        )}
         <h1 className="font-serif text-4xl md:text-5xl text-white mb-3">
           {country.name}
         </h1>
@@ -159,7 +173,7 @@ export default async function CountryPage({
             </div>
           )}
 
-          {/* Photos */}
+          {/* Photos — preview tile linking to full gallery */}
           {media && media.photoCount > 0 && (
             <div className="mb-12">
               <div className="flex items-end justify-between mb-6">
@@ -170,32 +184,33 @@ export default async function CountryPage({
                   {media.photoCount} from {country.name}
                 </p>
               </div>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
-                {media.photos.map((p) => (
-                  <a
-                    key={p.fileId}
-                    href={p.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group relative aspect-square rounded-lg overflow-hidden bg-light shadow-sm hover:shadow-md transition-shadow"
-                  >
-                    <Image
-                      src={p.url}
-                      alt={p.alt || `${country.name} photo`}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
-                    />
-                    {p.blogTitle && (
-                      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <p className="text-white text-[10px] font-medium line-clamp-2">
-                          {p.blogTitle}
-                        </p>
-                      </div>
-                    )}
-                  </a>
-                ))}
-              </div>
+              <Link
+                href={`/media/${slug}`}
+                className="group relative block aspect-[16/9] rounded-2xl overflow-hidden bg-light shadow-sm hover:shadow-lg transition-shadow"
+              >
+                <Image
+                  src={media.photos[0].url}
+                  alt={`${country.name} photo gallery`}
+                  fill
+                  className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                  sizes="(max-width: 896px) 100vw, 896px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-6 flex items-end justify-between gap-4">
+                  <div>
+                    <p className="text-white/80 text-sm">View full gallery</p>
+                    <p className="text-white font-serif text-2xl md:text-3xl font-bold">
+                      {media.photoCount} photos from {country.name}
+                    </p>
+                  </div>
+                  <span className="hidden sm:inline-flex items-center gap-2 rounded-full bg-white/95 px-5 py-2.5 text-sm font-semibold text-secondary group-hover:bg-white transition-colors">
+                    Open gallery
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </div>
+              </Link>
             </div>
           )}
 
@@ -258,9 +273,16 @@ export default async function CountryPage({
                         <h3 className="font-serif text-xl font-bold text-secondary mb-2">
                           {post.title}
                         </h3>
-                        <p className="text-text leading-relaxed whitespace-pre-line">
-                          {post.body}
-                        </p>
+                        {isHtml(post.body) ? (
+                          <div
+                            className="rich-content text-text leading-relaxed"
+                            dangerouslySetInnerHTML={{ __html: post.body }}
+                          />
+                        ) : (
+                          <p className="text-text leading-relaxed whitespace-pre-line">
+                            {post.body}
+                          </p>
+                        )}
                       </div>
                     </article>
                   );
