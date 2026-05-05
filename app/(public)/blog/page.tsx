@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getAllBlogPosts } from "@/lib/content";
+import { toExcerpt } from "@/lib/text";
 
 export const dynamic = "force-dynamic";
 
@@ -82,7 +83,7 @@ export default async function BlogPage() {
                         {post.title}
                       </h3>
                       <p className="text-text text-sm leading-relaxed line-clamp-3">
-                        {post.body.replace(/<[^>]*>/g, "")}
+                        {toExcerpt(post.body)}
                       </p>
                     </div>
                   </Link>

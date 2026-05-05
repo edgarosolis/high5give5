@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Country } from "@/lib/countries";
+import { toExcerpt } from "@/lib/text";
 
 export default function CountryCard({ country }: { country: Country }) {
   return (
@@ -28,7 +29,7 @@ export default function CountryCard({ country }: { country: Country }) {
           {country.name}
         </h3>
         <p className="text-muted text-sm mt-1 line-clamp-2">
-          {country.description}
+          {toExcerpt(country.description)}
         </p>
         <div className="mt-3 flex items-center justify-between text-xs text-muted">
           <span>$5 = {country.mealsPerFive} meals</span>
