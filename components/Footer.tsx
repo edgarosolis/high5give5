@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Logo from "./Logo";
 
 const quickLinks = [
   { href: "/", label: "Home" },
@@ -14,11 +15,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
           {/* Column 1: Logo & tagline */}
           <div>
-            <Link href="/" className="inline-block">
-              <span className="font-serif text-2xl font-bold tracking-wide">
-                HIGH<span className="text-accent">5</span>GIVE
-                <span className="text-accent">5</span>
-              </span>
+            <Link href="/" aria-label="High5Give5 home" className="inline-block">
+              <Logo variant="white" className="h-12 w-auto" />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/70">
               Empowering communities around the world through education,

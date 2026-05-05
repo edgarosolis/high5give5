@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Logo from "./Logo";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -47,13 +48,24 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-1">
+          <Link
+            href="/"
+            aria-label="High5Give5 home"
+            className="relative flex h-12 w-32 items-center"
+          >
             <span
-              className={`font-serif text-2xl font-bold tracking-wide transition-colors duration-300 ${
-                scrolled ? "text-primary" : "text-white"
+              className={`absolute inset-0 flex items-center transition-opacity duration-300 ${
+                scrolled ? "opacity-0" : "opacity-100"
               }`}
             >
-              HIGH<span className="text-accent">5</span>
+              <Logo variant="white" priority className="h-10 w-auto" />
+            </span>
+            <span
+              className={`absolute inset-0 flex items-center transition-opacity duration-300 ${
+                scrolled ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <Logo variant="green" priority className="h-10 w-auto" />
             </span>
           </Link>
 
