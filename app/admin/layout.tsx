@@ -10,6 +10,7 @@ const navItems = [
   { href: "/admin/homepage", label: "Homepage", icon: "🏠" },
   { href: "/admin/countries", label: "Countries", icon: "🌍" },
   { href: "/admin/blog", label: "Blog Posts", icon: "📝" },
+  { href: "/admin/media", label: "Media Videos", icon: "🎬" },
   { href: "/admin/about", label: "About Page", icon: "📄" },
   { href: "/admin/contact", label: "Contact Info", icon: "📬" },
   { href: "/admin/guide", label: "Guide", icon: "📖" },

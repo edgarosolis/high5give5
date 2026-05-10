@@ -15,13 +15,35 @@ function sanitizeFilename(name: string): string {
     .replace(/-+/g, "-");
 }
 
+const ALLOWED_IMAGE_TYPES = [
+  "image/jpeg",
+  "image/png",
+  "image/webp",
+  "image/gif",
+  "image/svg+xml",
+];
+const ALLOWED_VIDEO_TYPES = [
+  "video/mp4",
+  "video/webm",
+  "video/quicktime", // .mov
+  "video/x-m4v",
+];
+
 // Generate a presigned URL for direct browser-to-S3 upload
 export async function POST(request: Request) {
   const contentType = request.headers.get("content-type") || "";
 
   // JSON request: generate presigned URL
   if (contentType.includes("application/json")) {
-    const { filename, contentType: fileType } = await request.json();
+    const {
+      filename,
+      contentType: fileType,
+      kind,
+    } = (await request.json()) as {
+      filename?: string;
+      contentType?: string;
+      kind?: "image" | "video";
+    };
 
     if (!filename || !fileType) {
       return Response.json(
@@ -30,15 +52,21 @@ export async function POST(request: Request) {
       );
     }
 
-    const allowedTypes = ["image/jpeg", "image/png", "image/webp", "image/gif", "image/svg+xml"];
-    if (!allowedTypes.includes(fileType)) {
+    const isVideo = kind === "video" || fileType.startsWith("video/");
+    const allowed = isVideo ? ALLOWED_VIDEO_TYPES : ALLOWED_IMAGE_TYPES;
+    if (!allowed.includes(fileType)) {
       return Response.json(
-        { error: "File type not allowed. Use JPEG, PNG, WebP, GIF, or SVG." },
+        {
+          error: isVideo
+            ? "Video type not allowed. Use mp4, webm, or mov."
+            : "File type not allowed. Use JPEG, PNG, WebP, GIF, or SVG.",
+        },
         { status: 400 }
       );
     }
 
-    const key = `images/${Date.now()}-${sanitizeFilename(filename)}`;
+    const folder = isVideo ? "videos" : "images";
+    const key = `${folder}/${Date.now()}-${sanitizeFilename(filename)}`;
 
     try {
       const command = new PutObjectCommand({

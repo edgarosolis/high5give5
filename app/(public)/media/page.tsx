@@ -8,10 +8,12 @@ export const metadata = {
     "Watch stories from the field — children's voices, partners, and the communities High5Give5 serves.",
 };
 
+export const dynamic = "force-dynamic";
+
 export default async function MediaPage() {
   const [video, categories] = await Promise.all([
     getHomepageVideo(),
-    Promise.resolve(getVideosByCategory()),
+    getVideosByCategory(),
   ]);
   const featured = {
     label: video.sectionLabel,
