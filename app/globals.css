@@ -98,3 +98,12 @@ body {
 .animate-marquee:hover {
   animation-play-state: paused;
 }
+
+/* Hide scrollbars on horizontal video rows */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
