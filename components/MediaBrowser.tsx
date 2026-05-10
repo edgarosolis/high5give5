@@ -4,13 +4,24 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import type { Video, VideoCategory } from "@/lib/videos";
 
+type Featured = {
+  label: string;
+  title: string;
+  videoUrl: string;
+  posterImage: string;
+};
+
 type Props = {
-  featured: Video;
+  featured: Featured;
   categories: VideoCategory[];
 };
 
+type ActivePlayer =
+  | { kind: "embed"; video: Video }
+  | { kind: "file"; videoUrl: string; title: string };
+
 export default function MediaBrowser({ featured, categories }: Props) {
-  const [active, setActive] = useState<Video | null>(null);
+  const [active, setActive] = useState<ActivePlayer | null>(null);
 
   useEffect(() => {
     if (!active) return;
@@ -27,24 +38,37 @@ export default function MediaBrowser({ featured, categories }: Props) {
 
   return (
     <>
-      <Hero video={featured} onPlay={() => setActive(featured)} />
+      <Hero
+        featured={featured}
+        onPlay={() =>
+          setActive({
+            kind: "file",
+            videoUrl: featured.videoUrl,
+            title: featured.title,
+          })
+        }
+      />
 
       <div className="bg-bg pb-16 -mt-12 relative z-10">
         {categories.map((cat) => (
-          <Row key={cat.name} category={cat} onPick={setActive} />
+          <Row
+            key={cat.name}
+            category={cat}
+            onPick={(v) => setActive({ kind: "embed", video: v })}
+          />
         ))}
       </div>
 
-      {active && <PlayerModal video={active} onClose={() => setActive(null)} />}
+      {active && <PlayerModal active={active} onClose={() => setActive(null)} />}
     </>
   );
 }
 
-function Hero({ video, onPlay }: { video: Video; onPlay: () => void }) {
+function Hero({ featured, onPlay }: { featured: Featured; onPlay: () => void }) {
   return (
     <section className="relative h-[70vh] min-h-[460px] w-full overflow-hidden bg-secondary">
       <Image
-        src={video.thumbnail}
+        src={featured.posterImage}
         alt=""
         fill
         priority
@@ -55,10 +79,10 @@ function Hero({ video, onPlay }: { video: Video; onPlay: () => void }) {
       <div className="absolute inset-0 flex items-end">
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pb-20 md:pb-28">
           <p className="text-accent text-sm font-semibold tracking-wider uppercase mb-3">
-            Featured story
+            {featured.label}
           </p>
           <h1 className="font-serif text-4xl md:text-6xl font-bold text-white drop-shadow-lg max-w-2xl">
-            {video.name}
+            {featured.title}
           </h1>
           <p className="text-white/80 text-base md:text-lg mt-4 max-w-xl">
             Stories from the field — kids, partners, and communities we serve.
@@ -179,14 +203,21 @@ function Card({ video, onClick }: { video: Video; onClick: () => void }) {
   );
 }
 
-function PlayerModal({ video, onClose }: { video: Video; onClose: () => void }) {
+function PlayerModal({
+  active,
+  onClose,
+}: {
+  active: ActivePlayer;
+  onClose: () => void;
+}) {
+  const title = active.kind === "embed" ? active.video.name : active.title;
   return (
     <div
       className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 p-4 md:p-8"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
-      aria-label={video.name}
+      aria-label={title}
     >
       <div
         className="relative w-full max-w-5xl"
@@ -204,16 +235,28 @@ function PlayerModal({ video, onClose }: { video: Video; onClose: () => void }) 
           </svg>
         </button>
         <div className="relative w-full aspect-video bg-black rounded-xl overflow-hidden shadow-2xl">
-          <iframe
-            key={video.slug}
-            src={video.embedUrl}
-            title={video.name}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            className="absolute inset-0 w-full h-full"
-          />
+          {active.kind === "embed" ? (
+            <iframe
+              key={active.video.slug}
+              src={active.video.embedUrl}
+              title={active.video.name}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
+            />
+          ) : (
+            <video
+              key={active.videoUrl}
+              src={active.videoUrl}
+              title={active.title}
+              controls
+              autoPlay
+              playsInline
+              className="absolute inset-0 w-full h-full"
+            />
+          )}
         </div>
-        <h2 className="text-white font-serif text-xl md:text-2xl mt-4">{video.name}</h2>
+        <h2 className="text-white font-serif text-xl md:text-2xl mt-4">{title}</h2>
       </div>
     </div>
   );

@@ -35,8 +35,3 @@ export function getVideosByCategory(): VideoCategory[] {
   return order.map((name) => ({ name, videos: groups.get(name)! }));
 }
 
-const FEATURED_SLUG = "happy-dance-in-kawangware-slum-kenya";
-
-export function getFeaturedVideo(): Video {
-  return all.find((v) => v.slug === FEATURED_SLUG) ?? all[0];
-}
