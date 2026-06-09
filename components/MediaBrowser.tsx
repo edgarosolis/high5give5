@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import type { Video, VideoCategory } from "@/lib/videos";
+import type { MediaSections, StoriesCountry, Video } from "@/lib/videos";
 
 type Featured = {
   label: string;
@@ -13,15 +13,16 @@ type Featured = {
 
 type Props = {
   featured: Featured;
-  categories: VideoCategory[];
+  sections: MediaSections;
 };
 
 type ActivePlayer =
   | { kind: "embed"; video: Video }
   | { kind: "file"; videoUrl: string; title: string };
 
-export default function MediaBrowser({ featured, categories }: Props) {
+export default function MediaBrowser({ featured, sections }: Props) {
   const [active, setActive] = useState<ActivePlayer | null>(null);
+  const [activeCountry, setActiveCountry] = useState<StoriesCountry | null>(null);
 
   useEffect(() => {
     if (!active) return;
@@ -35,6 +36,8 @@ export default function MediaBrowser({ featured, categories }: Props) {
       window.removeEventListener("keydown", onKey);
     };
   }, [active]);
+
+  const play = (v: Video) => setActive({ kind: "embed", video: v });
 
   return (
     <>
@@ -50,13 +53,45 @@ export default function MediaBrowser({ featured, categories }: Props) {
       />
 
       <div className="bg-bg pb-16 -mt-12 relative z-10">
-        {categories.map((cat) => (
-          <Row
-            key={cat.name}
-            category={cat}
-            onPick={(v) => setActive({ kind: "embed", video: v })}
-          />
-        ))}
+        {/* ── Stories (drill-down by country) ── */}
+        {sections.stories.length > 0 && (
+          <section
+            id="all-stories"
+            className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 mt-10 md:mt-14"
+          >
+            {activeCountry ? (
+              <CountryVideos
+                country={activeCountry}
+                onBack={() => setActiveCountry(null)}
+                onPick={play}
+              />
+            ) : (
+              <>
+                <h2 className="font-serif text-2xl md:text-3xl font-bold text-secondary mb-1">
+                  Stories
+                </h2>
+                <p className="text-muted mb-5">
+                  Choose a country to watch stories from the field.
+                </p>
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+                  {sections.stories.map((c) => (
+                    <CountryTile
+                      key={c.countrySlug || "more-stories"}
+                      country={c}
+                      onClick={() => setActiveCountry(c)}
+                    />
+                  ))}
+                </div>
+              </>
+            )}
+          </section>
+        )}
+
+        {/* ── Founders & Tributes ── */}
+        <Row title="Founders & Tributes" videos={sections.founders} onPick={play} />
+
+        {/* ── Children's Voices ── */}
+        <Row title="Children's Voices" videos={sections.children} onPick={play} />
       </div>
 
       {active && <PlayerModal active={active} onClose={() => setActive(null)} />}
@@ -111,14 +146,115 @@ function Hero({ featured, onPlay }: { featured: Featured; onPlay: () => void }) 
   );
 }
 
-function Row({
-  category,
+function CountryTile({
+  country,
+  onClick,
+}: {
+  country: StoriesCountry;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className="group/tile relative aspect-video rounded-lg overflow-hidden bg-light shadow-sm hover:shadow-2xl hover:scale-[1.03] transition-all duration-300 text-left"
+    >
+      {country.thumbnail ? (
+        <Image
+          src={country.thumbnail}
+          alt={country.name}
+          fill
+          sizes="320px"
+          className="object-cover"
+        />
+      ) : (
+        <div className="absolute inset-0 bg-secondary" />
+      )}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/10" />
+      <div className="absolute inset-x-0 bottom-0 p-3 md:p-4 flex items-end justify-between gap-2">
+        <div>
+          <p className="text-white font-bold text-base md:text-lg leading-tight drop-shadow">
+            {country.name}
+          </p>
+          <p className="text-white/75 text-xs md:text-sm">
+            {country.videos.length}{" "}
+            {country.videos.length === 1 ? "video" : "videos"}
+          </p>
+        </div>
+        {country.flagUrl && (
+          <Image
+            src={country.flagUrl}
+            alt=""
+            width={36}
+            height={24}
+            className="rounded-sm shadow ring-1 ring-white/40 shrink-0 h-auto w-9"
+          />
+        )}
+      </div>
+    </button>
+  );
+}
+
+function CountryVideos({
+  country,
+  onBack,
   onPick,
 }: {
-  category: VideoCategory;
+  country: StoriesCountry;
+  onBack: () => void;
+  onPick: (v: Video) => void;
+}) {
+  return (
+    <>
+      <button
+        type="button"
+        onClick={onBack}
+        className="inline-flex items-center gap-2 text-secondary hover:text-primary font-medium mb-4 transition-colors"
+      >
+        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+        All countries
+      </button>
+      <div className="flex items-center gap-3 mb-5">
+        {country.flagUrl && (
+          <Image
+            src={country.flagUrl}
+            alt=""
+            width={44}
+            height={30}
+            className="rounded-sm shadow ring-1 ring-black/10 h-auto w-11"
+          />
+        )}
+        <h2 className="font-serif text-2xl md:text-3xl font-bold text-secondary">
+          {country.name}
+          <span className="text-muted font-sans text-base font-normal ml-3">
+            {country.videos.length}{" "}
+            {country.videos.length === 1 ? "video" : "videos"}
+          </span>
+        </h2>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4">
+        {country.videos.map((v) => (
+          <Card key={v.slug} video={v} onClick={() => onPick(v)} />
+        ))}
+      </div>
+    </>
+  );
+}
+
+function Row({
+  title,
+  videos,
+  onPick,
+}: {
+  title: string;
+  videos: Video[];
   onPick: (v: Video) => void;
 }) {
   const scrollerRef = useRef<HTMLDivElement>(null);
+
+  if (videos.length === 0) return null;
 
   const scroll = (dir: 1 | -1) => {
     const el = scrollerRef.current;
@@ -127,12 +263,9 @@ function Row({
   };
 
   return (
-    <section
-      id={category.name === categoryAnchor ? "all-stories" : undefined}
-      className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 mt-10 md:mt-14"
-    >
+    <section className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 mt-10 md:mt-14">
       <h2 className="font-serif text-2xl md:text-3xl font-bold text-secondary mb-4">
-        {category.name}
+        {title}
       </h2>
       <div className="relative group">
         <button
@@ -161,8 +294,10 @@ function Row({
           className="flex gap-3 md:gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide"
           style={{ scrollbarWidth: "none" }}
         >
-          {category.videos.map((v) => (
-            <Card key={v.slug} video={v} onClick={() => onPick(v)} />
+          {videos.map((v) => (
+            <div key={v.slug} className="shrink-0 snap-start w-[260px] md:w-[320px]">
+              <Card video={v} onClick={() => onPick(v)} />
+            </div>
           ))}
         </div>
       </div>
@@ -170,14 +305,12 @@ function Row({
   );
 }
 
-const categoryAnchor = "Children's Voices"; // first category gets the #all-stories anchor
-
 function Card({ video, onClick }: { video: Video; onClick: () => void }) {
   return (
     <button
       type="button"
       onClick={onClick}
-      className="group/card relative shrink-0 snap-start w-[260px] md:w-[320px] aspect-video rounded-lg overflow-hidden bg-light shadow-sm hover:shadow-2xl hover:scale-[1.04] transition-all duration-300 text-left"
+      className="group/card relative w-full aspect-video rounded-lg overflow-hidden bg-light shadow-sm hover:shadow-2xl hover:scale-[1.04] transition-all duration-300 text-left"
     >
       <Image
         src={video.thumbnail}

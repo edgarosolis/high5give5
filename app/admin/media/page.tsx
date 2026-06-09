@@ -2,52 +2,100 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import CategoriesManager from "@/components/admin/CategoriesManager";
 
 type AdminVideo = {
   slug: string;
   name: string;
   kind: "embed" | "file";
   thumbnail: string;
-  categorySlug: string;
+  categorySlug?: string;
+  section?: "stories" | "founders" | "children";
+  countrySlug?: string;
   order: number;
   provider?: string;
 };
 
-type Category = { slug: string; name: string; order: number };
+type CountryOption = { slug: string; name: string; archived?: boolean };
+
+function inferSection(
+  categorySlug?: string
+): "stories" | "founders" | "children" {
+  const s = (categorySlug || "").toLowerCase();
+  if (s.includes("child")) return "children";
+  if (s.includes("found") || s.includes("tribut")) return "founders";
+  return "stories";
+}
+
+function resolve(v: AdminVideo) {
+  const section = v.section ?? inferSection(v.categorySlug);
+  let countrySlug = v.countrySlug ?? "";
+  if (
+    section === "stories" &&
+    !countrySlug &&
+    v.categorySlug &&
+    v.categorySlug !== "more-stories"
+  ) {
+    countrySlug = v.categorySlug;
+  }
+  return { section, countrySlug };
+}
+
+function byOrder(a: AdminVideo, b: AdminVideo) {
+  return a.order - b.order || a.name.localeCompare(b.name);
+}
 
 export default function AdminMediaPage() {
   const [videos, setVideos] = useState<AdminVideo[]>([]);
-  const [categories, setCategories] = useState<Category[]>([]);
+  const [countries, setCountries] = useState<CountryOption[]>([]);
   const [loading, setLoading] = useState(true);
 
-  async function load() {
-    const [vRes, cRes] = await Promise.all([
-      fetch("/api/admin/videos"),
-      fetch("/api/admin/video-categories"),
-    ]);
-    setVideos(await vRes.json());
-    setCategories(await cRes.json());
-    setLoading(false);
-  }
-
   useEffect(() => {
-    load();
+    Promise.all([
+      fetch("/api/admin/videos").then((r) => r.json()),
+      fetch("/api/admin/countries").then((r) => r.json()),
+    ])
+      .then(([v, c]) => {
+        setVideos(v);
+        setCountries(c);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
   }, []);
 
-  const grouped = new Map<string, AdminVideo[]>();
-  for (const v of videos) {
-    const list = grouped.get(v.categorySlug) ?? [];
-    list.push(v);
-    grouped.set(v.categorySlug, list);
-  }
-  for (const list of grouped.values()) {
-    list.sort((a, b) => a.order - b.order || a.name.localeCompare(b.name));
-  }
+  const countryName = (slug: string) =>
+    countries.find((c) => c.slug === slug)?.name ||
+    slug
+      .split("-")
+      .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+      .join(" ");
 
-  const orphanSlugs = [...grouped.keys()].filter(
-    (s) => !categories.find((c) => c.slug === s)
-  );
+  const stories = videos.filter((v) => resolve(v).section === "stories");
+  const founders = videos
+    .filter((v) => resolve(v).section === "founders")
+    .sort(byOrder);
+  const children = videos
+    .filter((v) => resolve(v).section === "children")
+    .sort(byOrder);
+
+  // Stories grouped by country (empty slug => "More Stories").
+  const byCountry = new Map<string, AdminVideo[]>();
+  for (const v of stories) {
+    const key = resolve(v).countrySlug;
+    const list = byCountry.get(key) ?? [];
+    list.push(v);
+    byCountry.set(key, list);
+  }
+  const storyCountries = [...byCountry.entries()]
+    .map(([slug, vids]) => ({
+      slug,
+      name: slug ? countryName(slug) : "More Stories (unassigned)",
+      videos: vids.sort(byOrder),
+    }))
+    .sort((a, b) => {
+      if (!a.slug) return 1;
+      if (!b.slug) return -1;
+      return a.name.localeCompare(b.name);
+    });
 
   return (
     <div className="space-y-8">
@@ -55,7 +103,8 @@ export default function AdminMediaPage() {
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Media videos</h1>
           <p className="text-gray-500 mt-1">
-            Manage the videos shown on the public Media page.
+            Three sections: Stories (by country), Founders &amp; Tributes, and
+            Children&apos;s Voices.
           </p>
         </div>
         <Link
@@ -66,110 +115,114 @@ export default function AdminMediaPage() {
         </Link>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-2 space-y-6">
-          {loading ? (
-            <p className="text-gray-500 text-sm">Loading…</p>
-          ) : (
-            <>
-              {categories.map((cat) => {
-                const inCat = grouped.get(cat.slug) ?? [];
-                return (
-                  <section
-                    key={cat.slug}
-                    className="bg-white rounded-xl shadow-sm border border-gray-200"
-                  >
-                    <header className="px-6 py-4 border-b border-gray-100 flex items-center justify-between">
-                      <h2 className="font-semibold text-gray-900">{cat.name}</h2>
-                      <span className="text-xs text-gray-400">
-                        {inCat.length} video{inCat.length === 1 ? "" : "s"}
-                      </span>
-                    </header>
-                    {inCat.length === 0 ? (
-                      <p className="px-6 py-4 text-sm text-gray-400">
-                        No videos in this category.
-                      </p>
-                    ) : (
-                      <ul className="divide-y divide-gray-100">
-                        {inCat.map((v) => (
-                          <li key={v.slug}>
-                            <Link
-                              href={`/admin/media/${v.slug}`}
-                              className="px-6 py-3 flex items-center gap-4 hover:bg-gray-50"
-                            >
-                              <span className="w-7 text-xs text-gray-400 tabular-nums">
-                                {v.order}
-                              </span>
-                              {v.thumbnail ? (
-                                // eslint-disable-next-line @next/next/no-img-element
-                                <img
-                                  src={v.thumbnail}
-                                  alt=""
-                                  className="w-20 h-12 object-cover rounded bg-gray-100 flex-shrink-0"
-                                />
-                              ) : (
-                                <div className="w-20 h-12 bg-gray-100 rounded flex-shrink-0" />
-                              )}
-                              <div className="flex-1 min-w-0">
-                                <p className="text-sm font-medium text-gray-900 truncate">
-                                  {v.name}
-                                </p>
-                                <p className="text-xs text-gray-500">
-                                  {v.kind === "embed"
-                                    ? `${v.provider ?? "embed"} link`
-                                    : "Direct upload"}
-                                </p>
-                              </div>
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </section>
-                );
-              })}
-
-              {orphanSlugs.length > 0 && (
-                <section className="bg-white rounded-xl shadow-sm border border-amber-200">
-                  <header className="px-6 py-4 border-b border-amber-100">
-                    <h2 className="font-semibold text-amber-700">
-                      Uncategorized
-                    </h2>
-                    <p className="text-xs text-amber-600 mt-0.5">
-                      These videos belong to a category that no longer exists.
-                      Reassign them by editing.
-                    </p>
-                  </header>
-                  <ul className="divide-y divide-gray-100">
-                    {orphanSlugs.flatMap((s) =>
-                      (grouped.get(s) ?? []).map((v) => (
-                        <li key={v.slug}>
-                          <Link
-                            href={`/admin/media/${v.slug}`}
-                            className="px-6 py-3 flex items-center gap-4 hover:bg-gray-50"
-                          >
-                            <div className="w-20 h-12 bg-gray-100 rounded flex-shrink-0" />
-                            <p className="text-sm font-medium text-gray-900 truncate">
-                              {v.name}
-                            </p>
-                            <span className="text-xs text-gray-500 ml-auto">
-                              category: {v.categorySlug}
-                            </span>
-                          </Link>
-                        </li>
-                      ))
-                    )}
-                  </ul>
-                </section>
+      {loading ? (
+        <p className="text-gray-500 text-sm">Loading…</p>
+      ) : (
+        <div className="space-y-8 max-w-3xl">
+          {/* ── Stories ── */}
+          <section className="bg-white rounded-xl shadow-sm border border-gray-200">
+            <header className="px-6 py-4 border-b border-gray-100">
+              <h2 className="font-semibold text-gray-900">Stories</h2>
+              <p className="text-xs text-gray-500 mt-0.5">
+                Grouped by country. Set a video&apos;s country when editing it.
+              </p>
+            </header>
+            <div className="divide-y divide-gray-100">
+              {storyCountries.length === 0 && (
+                <p className="px-6 py-4 text-sm text-gray-400">No stories yet.</p>
               )}
-            </>
-          )}
-        </div>
+              {storyCountries.map((c) => (
+                <div key={c.slug || "more-stories"} className="px-6 py-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <h3
+                      className={`text-sm font-semibold ${
+                        c.slug ? "text-gray-800" : "text-amber-700"
+                      }`}
+                    >
+                      {c.name}
+                    </h3>
+                    <span className="text-xs text-gray-400">
+                      {c.videos.length} video{c.videos.length === 1 ? "" : "s"}
+                    </span>
+                  </div>
+                  <VideoList videos={c.videos} />
+                </div>
+              ))}
+            </div>
+          </section>
 
-        <div className="lg:col-span-1">
-          <CategoriesManager />
+          {/* ── Founders & Tributes ── */}
+          <SectionBlock title="Founders & Tributes" videos={founders} />
+
+          {/* ── Children's Voices ── */}
+          <SectionBlock title="Children's Voices" videos={children} />
         </div>
-      </div>
+      )}
     </div>
+  );
+}
+
+function SectionBlock({
+  title,
+  videos,
+}: {
+  title: string;
+  videos: AdminVideo[];
+}) {
+  return (
+    <section className="bg-white rounded-xl shadow-sm border border-gray-200">
+      <header className="px-6 py-4 border-b border-gray-100 flex items-center justify-between">
+        <h2 className="font-semibold text-gray-900">{title}</h2>
+        <span className="text-xs text-gray-400">
+          {videos.length} video{videos.length === 1 ? "" : "s"}
+        </span>
+      </header>
+      <div className="px-6 py-4">
+        {videos.length === 0 ? (
+          <p className="text-sm text-gray-400">No videos in this section.</p>
+        ) : (
+          <VideoList videos={videos} />
+        )}
+      </div>
+    </section>
+  );
+}
+
+function VideoList({ videos }: { videos: AdminVideo[] }) {
+  return (
+    <ul className="divide-y divide-gray-100">
+      {videos.map((v) => (
+        <li key={v.slug}>
+          <Link
+            href={`/admin/media/${v.slug}`}
+            className="py-2.5 flex items-center gap-4 hover:bg-gray-50 rounded"
+          >
+            <span className="w-7 text-xs text-gray-400 tabular-nums text-center">
+              {v.order}
+            </span>
+            {v.thumbnail ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={v.thumbnail}
+                alt=""
+                className="w-20 h-12 object-cover rounded bg-gray-100 flex-shrink-0"
+              />
+            ) : (
+              <div className="w-20 h-12 bg-gray-100 rounded flex-shrink-0" />
+            )}
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-medium text-gray-900 truncate">
+                {v.name}
+              </p>
+              <p className="text-xs text-gray-500">
+                {v.kind === "embed"
+                  ? `${v.provider ?? "embed"} link`
+                  : "Direct upload"}
+              </p>
+            </div>
+          </Link>
+        </li>
+      ))}
+    </ul>
   );
 }

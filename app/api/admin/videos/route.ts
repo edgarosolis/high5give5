@@ -4,6 +4,7 @@ import {
   slugify,
   youtubeAutoThumbnail,
 } from "@/lib/video-url";
+import { deriveCategorySlug, type VideoSection } from "@/lib/videos";
 
 export async function GET() {
   try {
@@ -29,19 +30,24 @@ export async function POST(request: Request) {
     fileUrl?: string;
     thumbnail?: string;
     description?: string;
-    categorySlug?: string;
+    section?: VideoSection;
+    countrySlug?: string;
     order?: number;
   };
 
   if (!data.name) {
     return Response.json({ error: "name is required" }, { status: 400 });
   }
-  if (!data.categorySlug) {
-    return Response.json({ error: "categorySlug is required" }, { status: 400 });
+  if (!data.section) {
+    return Response.json({ error: "section is required" }, { status: 400 });
   }
   if (!data.kind) {
     return Response.json({ error: "kind is required" }, { status: 400 });
   }
+
+  const section = data.section;
+  const countrySlug = section === "stories" ? data.countrySlug || "" : "";
+  const categorySlug = deriveCategorySlug(section, countrySlug);
 
   const slug = data.slug || slugify(data.name);
   if (!slug) {
@@ -65,7 +71,9 @@ export async function POST(request: Request) {
     fileUrl: data.fileUrl,
     thumbnail: data.thumbnail,
     description: data.description,
-    categorySlug: data.categorySlug,
+    section,
+    countrySlug,
+    categorySlug,
     order: data.order,
   });
   const validation = validateVideo(enriched);
@@ -90,6 +98,8 @@ function enrich(input: {
   fileUrl?: string;
   thumbnail?: string;
   description?: string;
+  section: VideoSection;
+  countrySlug: string;
   categorySlug: string;
   order?: number;
 }) {
@@ -97,6 +107,8 @@ function enrich(input: {
     slug: input.slug,
     name: input.name,
     kind: input.kind,
+    section: input.section,
+    countrySlug: input.countrySlug,
     categorySlug: input.categorySlug,
     description: input.description,
     order: input.order ?? 0,

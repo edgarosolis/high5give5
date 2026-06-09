@@ -3,6 +3,7 @@ import {
   parseExternalVideoUrl,
   youtubeAutoThumbnail,
 } from "@/lib/video-url";
+import { deriveCategorySlug, type VideoSection } from "@/lib/videos";
 
 export async function GET(
   _request: Request,
@@ -27,6 +28,16 @@ export async function PUT(
   }
 
   const merged: Record<string, unknown> = { ...existing, ...data };
+
+  // Keep the 3-section model and the legacy categorySlug in sync.
+  if (typeof data.section === "string") {
+    const section = data.section as VideoSection;
+    const countrySlug =
+      section === "stories" ? (data.countrySlug as string) || "" : "";
+    merged.section = section;
+    merged.countrySlug = countrySlug;
+    merged.categorySlug = deriveCategorySlug(section, countrySlug);
+  }
 
   // Re-derive embed fields if externalUrl or kind changed.
   if (merged.kind === "embed" && typeof merged.externalUrl === "string" && merged.externalUrl) {

@@ -8,6 +8,8 @@ import SectionCard from "./SectionCard";
 import Toast from "./Toast";
 import VideoUpload from "./VideoUpload";
 
+export type VideoSection = "stories" | "founders" | "children";
+
 export type VideoData = {
   slug: string;
   name: string;
@@ -16,14 +18,29 @@ export type VideoData = {
   fileUrl: string;
   thumbnail: string;
   description: string;
-  categorySlug: string;
+  section: VideoSection;
+  countrySlug: string;
   order: number;
 };
 
-type Category = { slug: string; name: string };
+const SECTION_OPTIONS: { value: VideoSection; label: string }[] = [
+  { value: "stories", label: "Stories (by country)" },
+  { value: "founders", label: "Founders & Tributes" },
+  { value: "children", label: "Children's Voices" },
+];
+
+type CountryOption = { slug: string; name: string; archived?: boolean };
+
+// Local section inference for legacy videos that only carry a categorySlug.
+function inferSection(categorySlug?: string): VideoSection {
+  const s = (categorySlug || "").toLowerCase();
+  if (s.includes("child")) return "children";
+  if (s.includes("found") || s.includes("tribut")) return "founders";
+  return "stories";
+}
 
 interface VideoFormProps {
-  initial?: Partial<VideoData>;
+  initial?: Partial<VideoData> & { categorySlug?: string };
   isNew?: boolean;
   onSave: (data: VideoData) => Promise<{ ok: boolean; error?: string }>;
   onDelete?: () => Promise<boolean>;
@@ -38,25 +55,29 @@ export default function VideoForm({ initial, isNew, onSave, onDelete }: VideoFor
     fileUrl: initial?.fileUrl || "",
     thumbnail: initial?.thumbnail || "",
     description: initial?.description || "",
-    categorySlug: initial?.categorySlug || "",
+    section: initial?.section || inferSection(initial?.categorySlug),
+    // Legacy stories videos store the country in categorySlug.
+    countrySlug:
+      initial?.countrySlug ??
+      (initial?.categorySlug && initial.categorySlug !== "more-stories"
+        ? initial.categorySlug
+        : ""),
     order: initial?.order ?? 0,
   });
-  const [categories, setCategories] = useState<Category[]>([]);
+  const [countries, setCountries] = useState<CountryOption[]>([]);
   const [loading, setLoading] = useState(false);
   const [deleting, setDeleting] = useState(false);
   const [toast, setToast] = useState<{ message: string; type: "success" | "error" } | null>(null);
 
   useEffect(() => {
-    fetch("/api/admin/video-categories")
+    fetch("/api/admin/countries")
       .then((r) => r.json())
-      .then((cats: Category[]) => {
-        setCategories(cats);
-        if (!data.categorySlug && cats.length > 0) {
-          setData((d) => ({ ...d, categorySlug: cats[0].slug }));
-        }
+      .then((items: CountryOption[]) => {
+        setCountries(
+          [...items].sort((a, b) => a.name.localeCompare(b.name))
+        );
       })
       .catch(() => {});
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function update<K extends keyof VideoData>(key: K, value: VideoData[K]) {
@@ -100,15 +121,30 @@ export default function VideoForm({ initial, isNew, onSave, onDelete }: VideoFor
           onChange={(v) => update("description", v)}
         />
         <FormField
-          label="Category"
+          label="Section"
           type="select"
-          value={data.categorySlug}
-          onChange={(v) => update("categorySlug", v)}
+          value={data.section}
+          onChange={(v) => update("section", v as VideoSection)}
           required
-          options={categories.map((c) => ({ value: c.slug, label: c.name }))}
+          options={SECTION_OPTIONS.map((s) => ({ value: s.value, label: s.label }))}
         />
+        {data.section === "stories" && (
+          <FormField
+            label="Country"
+            type="select"
+            value={data.countrySlug}
+            onChange={(v) => update("countrySlug", v)}
+            options={[
+              { value: "", label: "— No country (More Stories) —" },
+              ...countries.map((c) => ({
+                value: c.slug,
+                label: c.archived ? `${c.name} (hidden)` : c.name,
+              })),
+            ]}
+          />
+        )}
         <FormField
-          label="Display order within category"
+          label="Display order within section"
           type="number"
           value={data.order}
           onChange={(v) => update("order", Number(v) || 0)}

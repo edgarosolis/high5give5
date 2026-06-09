@@ -1,6 +1,6 @@
 import MediaBrowser from "@/components/MediaBrowser";
 import { getHomepageVideo } from "@/lib/content";
-import { getVideosByCategory } from "@/lib/videos";
+import { getMediaSections } from "@/lib/videos";
 
 export const metadata = {
   title: "Media | High5Give5",
@@ -11,9 +11,9 @@ export const metadata = {
 export const dynamic = "force-dynamic";
 
 export default async function MediaPage() {
-  const [video, categories] = await Promise.all([
+  const [video, sections] = await Promise.all([
     getHomepageVideo(),
-    getVideosByCategory(),
+    getMediaSections(),
   ]);
   const featured = {
     label: video.sectionLabel,
@@ -21,5 +21,5 @@ export default async function MediaPage() {
     videoUrl: video.videoUrl,
     posterImage: video.posterImage,
   };
-  return <MediaBrowser featured={featured} categories={categories} />;
+  return <MediaBrowser featured={featured} sections={sections} />;
 }
