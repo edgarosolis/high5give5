@@ -14,7 +14,9 @@ export async function GET() {
         Number(a.order ?? 0) - Number(b.order ?? 0) ||
         String(a.name ?? "").localeCompare(String(b.name ?? ""))
     );
-    return Response.json(items);
+    // Seeded videos were stored without a `slug` attribute (only SK), which
+    // broke the admin edit links. Always expose slug derived from SK.
+    return Response.json(items.map((it) => ({ ...it, slug: it.slug ?? it.SK })));
   } catch (error) {
     console.error("Failed to fetch videos:", error);
     return Response.json([], { status: 500 });

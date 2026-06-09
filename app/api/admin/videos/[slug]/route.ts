@@ -12,7 +12,7 @@ export async function GET(
   const { slug } = await params;
   const item = await getItem("VIDEO", slug);
   if (!item) return Response.json({ error: "Not found" }, { status: 404 });
-  return Response.json(item);
+  return Response.json({ ...item, slug: item.slug ?? item.SK });
 }
 
 export async function PUT(
