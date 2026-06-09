@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { countries, type Country } from "@/lib/countries";
+import { type Country } from "@/lib/countries";
 
 // Robinson projection lookup table (standard parallels)
 const ROBINSON_TABLE: [number, number, number][] = [
@@ -116,7 +116,7 @@ function MapPin({
   );
 }
 
-export default function InteractiveMap() {
+export default function InteractiveMap({ countries }: { countries: Country[] }) {
   const [activeCountry, setActiveCountry] = useState<Country | null>(null);
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
   const { ref, inView } = useInView({ threshold: 0.15, triggerOnce: true });
@@ -173,7 +173,9 @@ export default function InteractiveMap() {
 
           {/* Animated pins */}
           {inView &&
-            countries.map((country, index) => (
+            countries
+              .filter((country) => country.lat !== 0 || country.lng !== 0)
+              .map((country, index) => (
               <MapPin
                 key={country.slug}
                 country={country}

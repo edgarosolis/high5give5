@@ -148,7 +148,7 @@ export default async function Home() {
             </p>
           </div>
 
-          <InteractiveMap />
+          <InteractiveMap countries={countries} />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
             {featuredCountries.map((country) => (

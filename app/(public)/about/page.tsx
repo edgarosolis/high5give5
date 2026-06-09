@@ -45,7 +45,7 @@ export default async function AboutPage() {
                 &quot;Take a chance with 5&quot;
               </p>
               <p className="text-muted mt-3 text-center">
-                A card, a prayer, and a world changed forever.
+                A card, a prayer, and multitudes fed.
               </p>
             </div>
           </div>

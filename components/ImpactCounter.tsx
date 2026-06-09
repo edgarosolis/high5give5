@@ -21,7 +21,6 @@ function AnimatedNumber({
   useEffect(() => {
     if (!inView) return;
 
-    let start = 0;
     const startTime = performance.now();
 
     function animate(currentTime: number) {
@@ -61,33 +60,21 @@ export default function ImpactCounter({ stats: globalStats }: ImpactCounterProps
     { target: globalStats?.countriesServed ?? 22, suffix: "+", label: "Countries" },
     { target: globalStats?.childrenFed ?? 6000, suffix: "+", label: "Children Fed" },
     { target: globalStats?.elderlyServed ?? 2000, suffix: "+", label: "Elderly Served" },
-    { target: globalStats?.mealsPerFive ?? 50, prefix: "$5 = ", label: "Meals", suffix: "" },
   ];
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
 
   return (
     <section id="impact" className="py-20 bg-white" ref={ref}>
       <div className="max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-4xl font-bold text-primary mb-2">
-                {stat.label === "Meals" ? (
-                  <span>
-                    $5 ={" "}
-                    <AnimatedNumber
-                      target={stat.target}
-                      inView={inView}
-                    />
-                  </span>
-                ) : (
-                  <AnimatedNumber
-                    target={stat.target}
-                    suffix={stat.suffix}
-                    prefix={stat.prefix}
-                    inView={inView}
-                  />
-                )}
+                <AnimatedNumber
+                  target={stat.target}
+                  suffix={stat.suffix}
+                  inView={inView}
+                />
               </div>
               <div className="text-muted text-sm font-medium uppercase tracking-wide">
                 {stat.label}
