@@ -37,7 +37,10 @@ export default function MediaBrowser({ featured, sections }: Props) {
     };
   }, [active]);
 
-  const play = (v: Video) => setActive({ kind: "embed", video: v });
+  const play = (v: Video) =>
+    v.kind === "file" && v.fileUrl
+      ? setActive({ kind: "file", videoUrl: v.fileUrl, title: v.name })
+      : setActive({ kind: "embed", video: v });
 
   return (
     <>
