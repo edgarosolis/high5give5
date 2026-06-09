@@ -9,7 +9,8 @@ interface VideoUploadProps {
 }
 
 const MAX_BYTES = 500 * 1024 * 1024;
-const ALLOWED = ["video/mp4", "video/webm", "video/quicktime", "video/x-m4v"];
+// .mov excluded: browsers won't reliably play QuickTime containers in <video>. Convert to .mp4 first.
+const ALLOWED = ["video/mp4", "video/webm", "video/x-m4v"];
 
 async function uploadVideo(
   file: File,
@@ -64,7 +65,7 @@ export default function VideoUpload({
 
   async function handleFile(file: File) {
     if (!ALLOWED.includes(file.type)) {
-      setError("Use mp4, webm, or mov.");
+      setError(".mov files don't play in most browsers — convert to .mp4 first. (Accepted: mp4, webm.)");
       return;
     }
     if (file.size > MAX_BYTES) {
@@ -96,7 +97,7 @@ export default function VideoUpload({
         <input
           ref={fileInputRef}
           type="file"
-          accept="video/mp4,video/webm,video/quicktime,video/x-m4v"
+          accept="video/mp4,video/webm,video/x-m4v"
           className="hidden"
           onChange={(e) => {
             const f = e.target.files?.[0];

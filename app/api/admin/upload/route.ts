@@ -22,10 +22,13 @@ const ALLOWED_IMAGE_TYPES = [
   "image/gif",
   "image/svg+xml",
 ];
+// .mov / video/quicktime is intentionally excluded: browsers (esp. Chrome/Firefox)
+// won't reliably play QuickTime containers in a <video> tag even when the codec is
+// H.264, so .mov uploads played fine for the uploader but were black boxes for
+// visitors. Convert to .mp4 before uploading.
 const ALLOWED_VIDEO_TYPES = [
   "video/mp4",
   "video/webm",
-  "video/quicktime", // .mov
   "video/x-m4v",
 ];
 
@@ -58,7 +61,7 @@ export async function POST(request: Request) {
       return Response.json(
         {
           error: isVideo
-            ? "Video type not allowed. Use mp4, webm, or mov."
+            ? ".mov files don't play in most browsers. Please convert to .mp4 first, then upload. (Accepted: mp4, webm.)"
             : "File type not allowed. Use JPEG, PNG, WebP, GIF, or SVG.",
         },
         { status: 400 }

@@ -1,1 +1,2 @@
 @AGENTS.md
+AUTH_PROFILE: high5give5
