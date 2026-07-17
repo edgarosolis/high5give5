@@ -1,4 +1,5 @@
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
+import { awsCredentials } from "./aws-credentials";
 import {
   DynamoDBDocumentClient,
   GetCommand,
@@ -10,6 +11,7 @@ import {
 
 const client = new DynamoDBClient({
   region: process.env.APP_AWS_REGION || process.env.AWS_REGION || "us-east-1",
+  credentials: awsCredentials(),
 });
 
 export const docClient = DynamoDBDocumentClient.from(client, {
